@@ -9,7 +9,11 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className={`bg-red-500 text-center text-lg`}>PBC LIFE</main>
+      <main
+        className={`grid min-h-screen place-items-center bg-slate-200 text-7xl font-extrabold tracking-tight text-indigo-600`}
+      >
+        PBC LIFE
+      </main>
     </>
   );
 }
