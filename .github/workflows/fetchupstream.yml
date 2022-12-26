@@ -1,10 +1,9 @@
 name: Sync to Upstream
 
 on:
-  schedule:
-    - cron:  '12 7 * * 1,4'
-    # scheduled at 07:12 every Monday and Thursday
   workflow_dispatch:
+  schedule: 
+  - cron: "0 13 * * 1"
 
 jobs:
   sync_with_upstream:
@@ -13,17 +12,14 @@ jobs:
 
     steps:
     # Step 1: run a standard checkout action, provided by github
-    - name: Checkout HEAD
-      uses: actions/checkout@v2
+    - name: Sync and merge upstream repository with your current repository
+      uses: dabreadman/sync-upstream-repo@v1.0.0.b
       with:
-        ref: main
-
-    # Step 2: run this sync action - specify the upstream repo, upstream branch to sync with, and target sync branch
-    - name: Pull upstream changes
-      id: sync
-      uses: bdougie/Fork-Sync-With-Upstream-action@fork
-      with:
-        upstream_repository: pbclife/pbclife
+        # URL of gitHub public upstream repo
+        upstream_repo: "https://github.com/actions/starter-workflows.git"
+        # Branch to merge from upstream (defaults to downstream branch)
         upstream_branch: main
-        target_branch: main                       # optional
-        github_token: ${{ secrets.GITHUB_TOKEN }}   # optional, for accessing repos that require authentication
+        # Branch to merge into downstream
+        downstream_branch: master
+        # GitHub Bot token
+        token: ${{ secrets.GITHUB_TOKEN }}
