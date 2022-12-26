@@ -12,6 +12,7 @@
     "npm": "The project is built on Yarn architecture, Please use yarn"
   },
   "scripts": {
+    "prepare": "husky install",
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
@@ -31,8 +32,6 @@
     "typescript": "4.9.4"
   },
   "devDependencies": {
-    "@commitlint/cli": "^17.3.0",
-    "@commitlint/config-conventional": "^17.3.0",
     "husky": "^8.0.2",
     "prettier": "^2.8.1"
   }
