@@ -44,6 +44,7 @@ module.exports = {
         'translation',
         'security',
         'changeset',
+        'contribution',
       ],
     ],
   },
