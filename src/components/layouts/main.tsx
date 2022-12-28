@@ -1,7 +1,7 @@
 import Head from 'next/head';
 import React from 'react';
 import Footer from '../footer';
-import Navbar from '../navbar';
+import Header from '../header';
 
 export type LayoutProps = React.HTMLAttributes<HTMLDivElement> & {
   children: React.ReactNode;
@@ -24,7 +24,7 @@ const Layout: React.FC<LayoutProps> = ({
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div {...props}>
-        <Navbar />
+        <Header />
         {children}
         <Footer />
       </div>
