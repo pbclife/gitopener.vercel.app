@@ -81,6 +81,25 @@ module.exports = {
       );
       matchUtilities(
         {
+          'bg-mouse': (value) => ({
+            backgroundImage: `url("${svgToDataUri(
+              `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24px" height="24px">
+        <polygon
+          fill="${value}"
+          fill-rule="evenodd"
+          points="8 4 12 6 8 8 6 12 4 8 0 6 4 4 6 0 8 4"
+        />
+      </svg>`
+            )}")`,
+          }),
+        },
+        {
+          values: flattenColorPalette(theme('backgroundColor')),
+          type: 'color',
+        }
+      );
+      matchUtilities(
+        {
           'bg-dot': (value) => ({
             backgroundImage: `radial-gradient(${value} 2px, transparent 2px), radial-gradient(${value} 2px, transparent 2px)`,
             backgroundSize: `44px 44px`,
