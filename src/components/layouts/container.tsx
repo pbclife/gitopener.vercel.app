@@ -1,22 +1,14 @@
-import { FC, HTMLAttributes, ReactNode } from 'react';
+import { clsx } from 'clsx';
+import { FC, HTMLAttributes } from 'react';
 
-type ContainerProps = HTMLAttributes<HTMLDivElement> & {
-  children: ReactNode;
-  styles?: string;
-};
+type ContainerProps = HTMLAttributes<HTMLDivElement>;
 
-const Container: FC<ContainerProps> = ({
-  children,
-  className,
-  styles,
-  ...props
-}) => {
+const Container: FC<ContainerProps> = ({ className, ...props }) => {
   return (
-    <section className={`w-full ${styles || ``} `}>
-      <div {...props} className={`container mx-auto ${className || ``}`}>
-        {children}
-      </div>
-    </section>
+    <div
+      {...props}
+      className={clsx('mx-auto max-w-7xl px-4 sm:px-6 lg:px-8', className)}
+    />
   );
 };
 
