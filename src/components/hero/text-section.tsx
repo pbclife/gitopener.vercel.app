@@ -1,5 +1,6 @@
 import Dot from '@/utilities/dot';
 import TypoComp from '@/utilities/typo-component';
+import Links from './links';
 
 export default function TextSection() {
   return (
@@ -12,17 +13,16 @@ export default function TextSection() {
         <Dot />
         Student community
       </div>
-      <TypoComp>
-        <h1>
-          Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet consectetur.{' '}
-        </h1>
+      <TypoComp className="prose-sm prose-h1:capitalize xs:prose-base">
+        <h1>Great place to start Open-Source Journey. Contribute today</h1>
         <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure,
-          veritatis architecto totam accusantium placeat voluptas ipsum numquam.
+          An open source project focuses on student learning, If you want to get
+          started with open source with Github you are on the right spot. Just
+          create a copy
         </p>
       </TypoComp>
       {/* links */}
-      <div className="">links</div>
+      <Links />
     </section>
   );
 }
