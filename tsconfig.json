@@ -18,6 +18,7 @@
     "paths": {
       "@/*": ["src/*"],
       "~/*": ["public/*"],
+      "&/*": ["server/*"],
       "@/layouts/*": ["src/components/layouts/*"],
       "@/utilities/*": ["src/components/utilities/*"],
       "~/images/*": ["public/images/*"]
