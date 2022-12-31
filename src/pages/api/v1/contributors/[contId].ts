@@ -1,6 +1,7 @@
 import {
-  createContributor,
-  getAllContributors,
+  deleteContributor,
+  getSingleContributor,
+  updateContributor,
 } from '&/controllers/contributors';
 import connectDB from '&/db/connectDB';
 import { NextApiHandler } from 'next';
@@ -11,10 +12,12 @@ const handler: NextApiHandler = async (req, res) => {
 
   if (method === 'GET') {
     // handle get request
-    return getAllContributors(req, res);
-  } else if (method === 'POST') {
+    return getSingleContributor(req, res);
+  } else if (method === 'PATCH') {
     // handle post request
-    return createContributor(req, res);
+    return updateContributor(req, res);
+  } else if (method === 'DELETE') {
+    return deleteContributor(req, res);
   } else {
     // error no supported method
     res.status(405).json({ message: `method is not supported` });
