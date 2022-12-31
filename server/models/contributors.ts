@@ -12,6 +12,7 @@ export type TContributor = {
   bio: string;
   content: string;
   profile_views: number;
+  isDeleted: boolean;
 };
 
 type ContributorModel = Model<TContributor>;
@@ -59,6 +60,10 @@ const contributorSchema = new mongoose.Schema<TContributor, ContributorModel>(
     profile_views: {
       type: Number,
       default: 0,
+    },
+    isDeleted: {
+      type: Boolean,
+      default: false,
     },
   },
   { timestamps: true, validateBeforeSave: true }
