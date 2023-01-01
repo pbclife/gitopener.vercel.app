@@ -92,10 +92,6 @@ export const deleteContributor: NextApiHandler = errorHandler(
   async (req, res) => {
     const { contId } = req.query;
     assertIsString(contId, `Route does not exist`);
-    //  although delete req doesn't contains body
-    setUpdatableProperty<TContributor, keyof TContributor>(req.body, [
-      'isDeleted',
-    ]);
     await Contributor.findOneAndUpdate(
       { gh_username: contId },
       { isDeleted: true }
