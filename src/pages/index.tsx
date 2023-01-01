@@ -1,6 +1,9 @@
 import Layout from '@/layouts/main';
+import { FC } from 'react';
 
-export default function Home() {
+type HomeProps = {};
+
+const Home: FC<HomeProps> = () => {
   return (
     <Layout>
       <main
@@ -10,4 +13,6 @@ export default function Home() {
       </main>
     </Layout>
   );
-}
+};
+
+export default Home;
