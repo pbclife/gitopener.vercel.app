@@ -1,19 +1,5 @@
 import mongoose, { Model, model } from 'mongoose';
-
-export type TContributor = {
-  ghid: number;
-  gh_username: string;
-  name: string;
-  email: string;
-  avatar_url: string;
-  html_url: string;
-  location: string;
-  occupation: string;
-  bio: string;
-  content: string;
-  profile_views: number;
-  isDeleted: boolean;
-};
+import { TContributor } from 'types/contributors';
 
 type ContributorModel = Model<TContributor>;
 
