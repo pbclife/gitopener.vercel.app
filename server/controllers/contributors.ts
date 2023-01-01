@@ -22,8 +22,33 @@ function setUpdatableProperty<T, Prop extends keyof T>(
 export const getAllContributors: NextApiHandler = errorHandler(
   async (req, res) => {
     //TODO: Implement query system
-    const users = await Contributor.find({});
-    res.status(200).json(users);
+    const query = {
+      select: `gh_username name avatar_url occupation createdAt`,
+      sortBy: `updatedAt profile_views`,
+      limit: req.query?.limit || 20,
+      page: req.query?.page || 1,
+    };
+    const { select, sort } = req.query;
+
+    if (select && typeof select === 'string') {
+      const qstr = select.split(',').join(' ');
+      query.select = qstr;
+    }
+
+    if (sort && typeof sort === 'string') {
+      const qstr = sort.split(',').join(' ');
+      query.sortBy = qstr;
+    }
+
+    // todo: search non-Deleted items
+    const result = Contributor.find({});
+    const contributors = await result
+      .select(query.select)
+      .sort(query.sortBy)
+      .limit(Number(query.limit))
+      .skip((Number(query.page) - 1) * Number(query.limit));
+
+    res.status(200).json({ count: contributors.length, contributors });
   }
 );
 
