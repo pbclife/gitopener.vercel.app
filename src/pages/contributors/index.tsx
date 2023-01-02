@@ -19,7 +19,6 @@ export const getStaticProps: GetStaticProps<ContributorsProps> = async () => {
   try {
     // fetch all contributors limit 10
     const contributors = await fetchAllContributors(10);
-
     return {
       props: {
         contributors,
