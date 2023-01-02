@@ -38,8 +38,6 @@ export default function connectDB<T>(handler: NextApiHandler<T>) {
       console.log(`connected to DB`);
       return handler(req, res);
     } catch (error) {
-      console.log(error);
-
       console.log((error as CallbackError)?.message);
     }
   };

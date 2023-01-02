@@ -35,7 +35,6 @@ export const fetchSingleContributor = async ({
     const { data } = await axios.get(`/contributors/${params!.contId}`);
     return data;
   } catch (error) {
-    console.log(error);
     throw new Error(`Something went wrong`);
   }
 };

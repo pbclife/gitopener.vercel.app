@@ -40,8 +40,6 @@ export const getStaticProps: GetStaticProps<SingleContributorProps> = async (
       revalidate: 15,
     };
   } catch (error) {
-    console.log(error);
-
     return {
       notFound: true,
     };

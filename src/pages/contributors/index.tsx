@@ -26,7 +26,6 @@ export const getStaticProps: GetStaticProps<ContributorsProps> = async () => {
       revalidate: 15,
     };
   } catch (error) {
-    console.log(error);
     return {
       notFound: true,
     };
