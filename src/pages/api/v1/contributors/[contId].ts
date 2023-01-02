@@ -9,8 +9,8 @@ import { NextApiHandler } from 'next';
 // end-point: origin/api/v1/contributors
 const handler: NextApiHandler = async (req, res) => {
   const { method } = req;
-
-  if (method === 'GET') {
+  console.log(req.query);
+  if (method === ('GET' as 'GET')) {
     // handle get request
     return getSingleContributor(req, res);
   } else if (method === 'PATCH') {

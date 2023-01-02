@@ -22,7 +22,6 @@ function setUpdatableProperty<T, Prop extends keyof T>(
 
 export const getAllContributors: NextApiHandler = errorHandler(
   async (req, res) => {
-    //TODO: Implement query system
     const query = {
       select: `gh_username name avatar_url occupation createdAt`,
       sortBy: `updatedAt profile_views`,
@@ -58,7 +57,9 @@ export const getSingleContributor: NextApiHandler = errorHandler(
     const { contId } = req.query;
     assertIsString(contId, `Route does not exist`);
     const contributor = await Contributor.findOne({ gh_username: contId });
-    if (!contributor || contributor.isDeleted)
+    console.log(contributor);
+    // todo: enable isDeleted true
+    if (!contributor)
       throw new ERR.Not_Found(`Contributor ${contId} has not contributed yet`);
     res.status(200).json(contributor);
   }

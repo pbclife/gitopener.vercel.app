@@ -19,7 +19,6 @@ export const getStaticProps: GetStaticProps<ContributorsProps> = async () => {
   try {
     // fetch all contributors limit 10
     const contributors = await fetchAllContributors(10);
-
     return {
       props: {
         contributors,
@@ -27,6 +26,7 @@ export const getStaticProps: GetStaticProps<ContributorsProps> = async () => {
       revalidate: 15,
     };
   } catch (error) {
+    console.log(error);
     return {
       notFound: true,
     };
