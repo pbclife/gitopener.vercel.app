@@ -1,20 +1,20 @@
-import { fetchSingleContributor, getDynamicPaths } from 'lib/contributors';
+import type { TContributor } from '&validation/contributor.validation';
+import {
+  fetchSingleContributor,
+  getContribution,
+  getDynamicPaths,
+} from 'lib/contributors';
 import { GetStaticPaths, GetStaticProps } from 'next';
-import { useRouter } from 'next/router';
 import { FC } from 'react';
-import { TCont } from 'types/contributors';
 
 type SingleContributorProps = {
-  contributor: TCont & {
-    createdAt: Date;
+  contributor: Omit<TContributor, 'isDeleted'> & {
+    createdAt?: Date;
   };
 };
 
 const SingleContributor: FC<SingleContributorProps> = ({ contributor }) => {
-  const router = useRouter();
-  const { contId } = router.query;
-  console.log(contributor);
-  return <>single contributor {contId} </>;
+  return <>single contributor {contributor.name} </>;
 };
 
 export default SingleContributor;
@@ -28,11 +28,18 @@ export const getStaticPaths: GetStaticPaths<{ contId: string }> = async () => {
   };
 };
 
-export const getStaticProps: GetStaticProps<SingleContributorProps> = async (
-  context
-) => {
+export const getStaticProps: GetStaticProps<SingleContributorProps> = async ({
+  params,
+}) => {
   try {
-    const contributor = await fetchSingleContributor(context);
+    if (!params?.contId || Array.isArray(params.contId))
+      throw new Error(`Please specify a single contributor id`);
+    const contribution = await getContribution(params.contId); // autometically throws error if file not found
+    const contributor = await fetchSingleContributor(
+      contribution.meta.github_username as string,
+      contribution
+    );
+
     return {
       props: {
         contributor,

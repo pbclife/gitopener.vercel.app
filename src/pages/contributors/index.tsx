@@ -1,16 +1,20 @@
+import type { TCont } from '&validation/contributor.validation';
 import { fetchAllContributors } from 'lib/contributors';
 import { GetStaticProps } from 'next';
 import { FC } from 'react';
-import { TCont } from 'types/contributors';
 
 export type ContributorsProps = {
-  contributors: TCont[];
+  count: number;
+  contributors: (TCont & { _id: string })[];
 };
 
 const Contributors: FC<ContributorsProps> = ({ contributors }) => {
-  console.log(contributors);
-
-  return <>Contributors</>;
+  const conts = contributors.map((cont) => (
+    <div className="" key={cont._id}>
+      <p>{cont.name}</p>
+    </div>
+  ));
+  return <>{conts}</>;
 };
 
 export default Contributors;
@@ -18,10 +22,12 @@ export default Contributors;
 export const getStaticProps: GetStaticProps<ContributorsProps> = async () => {
   try {
     // fetch all contributors limit 10
-    const contributors = await fetchAllContributors(10);
+    const data = await fetchAllContributors(10);
+
     return {
       props: {
-        contributors,
+        count: data.count,
+        contributors: data.contributors,
       },
       revalidate: 15,
     };
