@@ -20,7 +20,6 @@ if (!cached) {
 export default function connectDB<T>(handler: NextApiHandler<T>) {
   return async (req: NextApiRequest, res: NextApiResponse<T>) => {
     if (cached.conn) {
-      console.log(`I'm here all is ok`);
       return handler(req, res);
     }
 
@@ -28,7 +27,7 @@ export default function connectDB<T>(handler: NextApiHandler<T>) {
       const opts = {
         bufferCommands: false,
       };
-
+      mongoose.set('strictQuery', true);
       cached.promise = mongoose.connect(MONGODB_URI!, opts).then((mongoose) => {
         return mongoose;
       });
