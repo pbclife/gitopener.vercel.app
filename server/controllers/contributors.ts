@@ -1,9 +1,10 @@
 import { ERR } from '&/errors';
 import errorHandler from '&/middlewares/errorHandler';
 import Contributor from '&/models/contributors';
-import { assertHasProps, assertIsString } from '&/validator/assertionGuards';
+import { assertIsString } from '&/validator/assertionGuards';
+import type { TContributor } from '&validation/contributor.validation';
+import ContV from '&validation/contributor.validation';
 import { NextApiHandler } from 'next';
-import { TContributor } from 'types/contributors';
 
 function setUpdatableProperty<T, Prop extends keyof T>(
   value: object,
@@ -57,7 +58,10 @@ export const getSingleContributor: NextApiHandler = errorHandler(
     const { contId } = req.query;
     assertIsString(contId, `Route does not exist`);
     const contributor = await Contributor.findOne({ gh_username: contId });
-    // todo: enable isDeleted true
+    if (contributor!.isDeleted)
+      throw new ERR.Not_Found(
+        `Contributor ${contId} had deleted his/her account`
+      );
     if (!contributor)
       throw new ERR.Not_Found(`Contributor ${contId} has not contributed yet`);
     res.status(200).json(contributor);
@@ -66,24 +70,16 @@ export const getSingleContributor: NextApiHandler = errorHandler(
 
 export const createContributor: NextApiHandler = errorHandler(
   async (req, res) => {
-    assertHasProps<TContributor, keyof TContributor>(req.body, [
-      'avatar_url',
-      'gh_username',
-      'content',
-      'ghid',
-      'html_url',
-      'name',
-      'occupation',
-    ]);
+    const contData = ContV.parse(req.body);
     const isExistingContributor = await Contributor.findOne({
-      gh_username: req.body.gh_username,
+      gh_username: contData.gh_username,
     });
     if (isExistingContributor)
       throw new ERR.Bad_Request(
         `Contributor ${req.body.name} already contributed`
       );
 
-    const contributor = await Contributor.create(req.body);
+    const contributor = await Contributor.create(contData);
     res.status(201).json(contributor);
   }
 );

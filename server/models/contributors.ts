@@ -1,8 +1,7 @@
+import type { TContributor } from '&validation/contributor.validation';
 import mongoose, { Model, model } from 'mongoose';
-import { TContributor } from 'types/contributors';
 
 type ContributorModel = Model<TContributor>;
-
 const contributorSchema = new mongoose.Schema<TContributor, ContributorModel>(
   {
     ghid: {
@@ -41,7 +40,7 @@ const contributorSchema = new mongoose.Schema<TContributor, ContributorModel>(
     },
     content: {
       type: String,
-      require: true,
+      required: true,
     },
     profile_views: {
       type: Number,
