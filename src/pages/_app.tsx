@@ -1,3 +1,5 @@
+import ThemeProvider from '@/context/theme-context';
+import useProgressBar from '@/hooks/useProgressBar';
 import { Fira_Code, Inter } from '@next/font/google';
 import type { AppProps } from 'next/app';
 import '../styles/globals.css';
@@ -14,6 +16,7 @@ const firaCode = Fira_Code({
 });
 
 export default function App({ Component, pageProps }: AppProps) {
+  useProgressBar(`#a3e635`);
   return (
     <>
       <style jsx global>
@@ -24,7 +27,9 @@ export default function App({ Component, pageProps }: AppProps) {
         `}
       </style>
       <main className={`${inter.variable} ${firaCode.variable}`}>
-        <Component {...pageProps} />
+        <ThemeProvider>
+          <Component {...pageProps} />
+        </ThemeProvider>
       </main>
     </>
   );
