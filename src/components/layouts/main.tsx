@@ -11,7 +11,7 @@ export type LayoutProps = React.HTMLAttributes<HTMLDivElement> & {
 
 const Layout: React.FC<LayoutProps> = ({
   children,
-  title = 'PBC Life',
+  title = 'Git Opener',
   description = 'Open source student community to learn and getting started with open-source',
   ...props
 }) => {
@@ -25,7 +25,8 @@ const Layout: React.FC<LayoutProps> = ({
       </Head>
       <div {...props}>
         <Header />
-        {children}
+        {/* outlet */}
+        <div className="bg-skin-base">{children}</div>
         <Footer />
       </div>
     </>

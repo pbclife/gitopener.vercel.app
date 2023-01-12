@@ -1,6 +1,8 @@
 import type { TCont } from '&validation/contributor.validation';
+import Layout from '@layouts/main';
 import { fetchAllContributors } from 'lib/contributors';
 import { GetStaticProps } from 'next';
+import Link from 'next/link';
 import { FC } from 'react';
 
 export type ContributorsProps = {
@@ -10,11 +12,13 @@ export type ContributorsProps = {
 
 const Contributors: FC<ContributorsProps> = ({ contributors }) => {
   const conts = contributors.map((cont) => (
-    <div className="" key={cont._id}>
-      <p>{cont.name}</p>
-    </div>
+    <Link key={cont._id} href={`/contributors/${cont.gh_username}`}>
+      <div className="text-accent">
+        <p>{cont.name}</p>
+      </div>
+    </Link>
   ));
-  return <>{conts}</>;
+  return <Layout>{conts}</Layout>;
 };
 
 export default Contributors;

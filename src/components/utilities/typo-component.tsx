@@ -1,8 +1,14 @@
-import { HTMLAttributes } from 'react';
+import { ComponentProps } from 'react';
 
-type TypoCompType = HTMLAttributes<HTMLDivElement> & {};
+type TypoCompType = ComponentProps<'div'>;
 
 export default function TypoComp({ className, ...props }: TypoCompType) {
-  // todo: implement theme system
-  return <div className={` prose max-w-2xl ${className || ``}`} {...props} />;
+  return (
+    <div
+      className={` prose max-w-2xl prose-headings:text-skin-base prose-p:font-medium prose-p:text-skin-muted ${
+        className || ``
+      }`}
+      {...props}
+    />
+  );
 }
