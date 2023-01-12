@@ -9,7 +9,7 @@ export default function Header() {
     <div className="relative border-b border-slate-200">
       <Navbar />
       <div className="pointer-events-none absolute inset-0 -z-10 bg-dot-slate-500/30 [mask-image:linear-gradient(-90deg,white,rgba(255,255,255,0))]"></div>
-      <div className="pointer-events-none absolute inset-0 -z-20 bg-gradient-to-r from-white to-white/80 backdrop-blur-md"></div>
+      <div className="pointer-events-none absolute inset-0 -z-20 bg-gradient-to-br from-white via-white/90 to-white/50 backdrop-blur-md"></div>
       <GradientBG
         className="absolute inset-0 -z-30 h-full w-full animate-bg-shift"
         colors={[

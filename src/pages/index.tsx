@@ -1,5 +1,5 @@
 import useProgressBar from '@/hooks/useProgressBar';
-import Layout from '@/layouts/main';
+import Layout from '@layouts/main';
 import Link from 'next/link';
 import { FC } from 'react';
 

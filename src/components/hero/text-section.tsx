@@ -1,5 +1,5 @@
-import Dot from '@/utilities/dot';
-import TypoComp from '@/utilities/typo-component';
+import Dot from '@utilities/dot';
+import TypoComp from '@utilities/typo-component';
 import Links from './links';
 
 export default function TextSection() {
