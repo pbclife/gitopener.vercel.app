@@ -1,6 +1,15 @@
 const defaultTheme = require('tailwindcss/defaultTheme');
 const svgToDataUri = require('mini-svg-data-uri');
 // const colors = require('tailwindcss/colors');
+const withOpacity =
+  (variable) =>
+  ({ opacityValue }) => {
+    if (opacityValue !== undefined) {
+      return `rgba(var(${variable}),${opacityValue})`;
+    }
+    return `rgb(var(${variable}))`;
+  };
+
 const {
   default: flattenColorPalette,
 } = require('tailwindcss/lib/util/flattenColorPalette');
@@ -10,6 +19,32 @@ module.exports = {
   content: ['./src/**/*.{js,jsx,ts,tsx}'],
   theme: {
     extend: {
+      colors: {
+        accent: withOpacity('--color-accent'),
+        primary: withOpacity('--color-bg'),
+      },
+      textColor: {
+        skin: {
+          base: withOpacity('--color-text'),
+          muted: withOpacity('--color-text-muted'),
+        },
+      },
+      backgroundColor: {
+        skin: {
+          base: withOpacity('--color-bg'),
+          shine: withOpacity('--color-bg-shine'),
+        },
+      },
+      borderColor: {
+        skin: {
+          base: withOpacity('--color-border'),
+        },
+      },
+      stroke:{
+        skin:{
+          base:withOpacity('--color-stroke')
+        }
+      },
       screens: {
         xs: '375px',
       },
