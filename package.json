@@ -19,6 +19,7 @@
     "prettier": "prettier --write ."
   },
   "dependencies": {
+    "@badrap/bar-of-progress": "^0.2.2",
     "@heroicons/react": "^2.0.13",
     "@mdx-js/loader": "^2.2.1",
     "@mdx-js/react": "^2.2.1",
