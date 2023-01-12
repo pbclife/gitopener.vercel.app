@@ -18,7 +18,7 @@ const HeroLinks = [
 
 export default function Links() {
   return (
-    <div className="flex flex-wrap-reverse items-center gap-y-4 gap-x-4 font-semibold sm:gap-x-6">
+    <div className="flex flex-wrap-reverse items-center gap-y-4 gap-x-4 font-semibold text-skin-base sm:gap-x-6">
       {HeroLinks.map((link) => (
         <a
           href={link.href}
