@@ -48,6 +48,7 @@
     "@tailwindcss/typography": "^0.5.8",
     "autoprefixer": "^10.4.13",
     "clsx": "^1.2.1",
+    "framer-motion": "^8.4.2",
     "gray-matter": "^4.0.3",
     "husky": "^8.0.2",
     "mini-svg-data-uri": "^1.4.4",
