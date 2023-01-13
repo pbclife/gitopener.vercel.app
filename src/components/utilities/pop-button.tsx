@@ -12,7 +12,7 @@ const PopButton: FC<Props> = ({ children, onClick, className }) => {
     <Menu.Item
       as="button"
       onClick={onClick}
-      className={`font-lexend rounded-full px-6 py-2 font-semibold capitalize outline-none ${
+      className={`font-lexend px-6 py-2 font-semibold capitalize outline-none ${
         className || ``
       }`}
     >
