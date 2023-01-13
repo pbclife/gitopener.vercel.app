@@ -20,18 +20,26 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        accent: withOpacity('--color-accent'),
-        primary: withOpacity('--color-bg'),
+        accent: {
+          DEFAULT: withOpacity('--color-accent'),
+          inverted: withOpacity('--color-accent-inverted'),
+        },
+        primary: {
+          DEFAULT: withOpacity('--color-bg'),
+          inverted: withOpacity('--color-bg-inverted'),
+        },
       },
       textColor: {
         skin: {
           base: withOpacity('--color-text'),
           muted: withOpacity('--color-text-muted'),
+          inverted: withOpacity('--color-text-inverted'),
         },
       },
       backgroundColor: {
         skin: {
           base: withOpacity('--color-bg'),
+          inverted: withOpacity('--color-bg-inverted'),
           shine: withOpacity('--color-bg-shine'),
         },
       },
@@ -40,10 +48,10 @@ module.exports = {
           base: withOpacity('--color-border'),
         },
       },
-      stroke:{
-        skin:{
-          base:withOpacity('--color-stroke')
-        }
+      stroke: {
+        skin: {
+          base: withOpacity('--color-stroke'),
+        },
       },
       screens: {
         xs: '375px',

@@ -21,6 +21,7 @@
       "&/*": ["server/*"],
       "&validation/*": ["server/models/validation/*"],
       "@layouts/*": ["src/components/layouts/*"],
+      "@components/*": ["src/components/*"],
       "@utilities/*": ["src/components/utilities/*"],
       "~/images/*": ["public/images/*"]
     }

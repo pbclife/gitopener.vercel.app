@@ -1,7 +1,8 @@
+import Footer from '@components/footer';
+import Header from '@components/header';
+import Menu from '@components/menu';
 import Head from 'next/head';
 import React from 'react';
-import Footer from '../footer';
-import Header from '../header';
 
 export type LayoutProps = React.HTMLAttributes<HTMLDivElement> & {
   children: React.ReactNode;
@@ -25,6 +26,10 @@ const Layout: React.FC<LayoutProps> = ({
       </Head>
       <div {...props}>
         <Header />
+        {/* Menu  */}
+        <div className="sticky top-0">
+          <Menu />
+        </div>
         {/* outlet */}
         <div className="bg-skin-base">{children}</div>
         <Footer />

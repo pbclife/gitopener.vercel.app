@@ -16,7 +16,7 @@ const firaCode = Fira_Code({
 });
 
 export default function App({ Component, pageProps }: AppProps) {
-  useProgressBar(`#a3e635`);
+  useProgressBar(`#0ea5e9`);
   return (
     <>
       <style jsx global>

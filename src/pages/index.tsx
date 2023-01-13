@@ -1,5 +1,4 @@
 import Layout from '@layouts/main';
-import Link from 'next/link';
 import { FC } from 'react';
 
 type HomeProps = {};
@@ -7,12 +6,7 @@ type HomeProps = {};
 const Home: FC<HomeProps> = () => {
   return (
     <Layout>
-      <main
-        className={`grid min-h-screen place-items-center text-7xl font-extrabold tracking-tight text-accent`}
-      >
-        PBC LIFE
-        <Link href={`/contributors`}>Contributors</Link>
-      </main>
+      <main className={`min-h-screen bg-skin-base`}></main>
     </Layout>
   );
 };

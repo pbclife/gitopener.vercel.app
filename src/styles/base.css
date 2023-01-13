@@ -4,24 +4,43 @@
   :root {
     --color-bg: 250, 250, 250; /* Neutral-50 */
     --color-bg-shine: 255, 255, 255; /* white */
+    --color-bg-inverted: 23, 23, 23; /* Neutral-900 */
 
     --color-text: 38, 38, 38; /* Neutral-800 */
     --color-text-muted: 82, 82, 82; /* Neutral-600 */
+    --color-text-inverted: 255, 255, 255; /* white */
 
     --color-stroke: 38, 38, 38; /* Neutral-800 */
     --color-border: 212, 212, 212; /* Neutral-300 */
+
     --color-accent: 14, 165, 233; /* Sky-500 */
+    --color-accent-inverted: 219, 39, 119; /* pink-600 */
   }
 
   .dark {
     --color-bg: 23, 23, 23; /* Neutral-900 */
     --color-bg-shine: 38, 38, 38; /* Neutral-800 */
+    --color-bg-inverted: 250, 250, 250; /* Neutral-50 */
 
     --color-text: 255, 255, 255; /* white */
     --color-text-muted: 212, 212, 212; /* Neutral-300 */
+    --color-text-inverted: 38, 38, 38; /* Neutral-800 */
 
     --color-stroke: 255, 255, 255; /* white */
     --color-border: 64, 64, 64; /* Neutral-700 */
+
     --color-accent: 219, 39, 119; /* pink-600 */
+    --color-accent-inverted: 14, 165, 233; /* Sky-500 */
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: rgb(250, 250, 250);
+    border-radius: 40px;
+  }
+  ::-webkit-scrollbar-track {
+    background-color: rgb(23, 23, 23);
+  }
+  ::-webkit-scrollbar {
+    width: 6px;
   }
 }
