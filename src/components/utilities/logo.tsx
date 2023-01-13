@@ -11,10 +11,10 @@ export default function Logo() {
     <button
       type="button"
       onClick={scrollToTop}
-      className="flex items-center gap-x-2 border-none py-4 text-skin-base outline-none"
+      className="flex items-center -space-x-[0.35rem] border-none py-4 text-skin-base outline-none"
     >
-      <GitOpenerIcon className="h-10 w-10 rotate-90 " />
-      <span className="text-2xl font-bold tracking-tight">Git Opener</span>
+      <GitOpenerIcon className="h-9 w-9 -rotate-90  " />
+      <span className=" text-2xl font-bold tracking-tight">Git Opener</span>
     </button>
   );
 }
