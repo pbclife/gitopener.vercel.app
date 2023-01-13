@@ -40,10 +40,10 @@ module.exports = {
           base: withOpacity('--color-border'),
         },
       },
-      stroke:{
-        skin:{
-          base:withOpacity('--color-stroke')
-        }
+      stroke: {
+        skin: {
+          base: withOpacity('--color-stroke'),
+        },
       },
       screens: {
         xs: '375px',
