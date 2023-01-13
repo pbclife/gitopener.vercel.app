@@ -1,7 +1,7 @@
-import GitOpenerIcon from '@/components/icons/git-opener';
 import { useThemeContext } from '@/context/theme-context';
 import { MoonIcon, SunIcon } from '@heroicons/react/24/solid';
 import Container from '@layouts/container';
+import Logo from '@utilities/logo';
 import Pop from '@utilities/pop';
 import Themes from './theme';
 
@@ -10,10 +10,7 @@ export default function Navbar() {
   return (
     <Container className="z-10 flex items-center justify-between">
       {/* logo */}
-      <div className="flex items-center gap-x-2 py-4 text-skin-base">
-        <GitOpenerIcon className="h-10 w-10 rotate-90 " />
-        <span className="text-2xl font-bold tracking-tight">Git Opener</span>
-      </div>
+      <Logo />
       {/* social icons */}
       <div className="">
         <Pop Icon={isDark ? MoonIcon : SunIcon} className="!z-50">
