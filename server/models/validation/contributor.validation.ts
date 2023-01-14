@@ -13,10 +13,11 @@ const ContV = z.object({
   content: z.string(),
   profile_views: z.number().default(0),
   isDeleted: z.boolean().default(false),
+  createdAt: z.date().optional().default(new Date(Date.now())),
 });
 export default ContV;
 export type TContributor = z.infer<typeof ContV>;
 export type TCont = Pick<
   TContributor,
-  'avatar_url' | 'gh_username' | 'name' | 'bio' | 'occupation'
+  'avatar_url' | 'gh_username' | 'name' | 'bio' | 'occupation' | 'createdAt'
 >;

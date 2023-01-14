@@ -34,7 +34,7 @@ export const fetchAllContributors = async (
 ): Promise<{ count: number; contributors: (TCont & { _id: string })[] }> => {
   try {
     const { data } = await axios.get(
-      `/contributors?select=avatar_url,gh_username,name,occupation,bio,createdAt,_id&limit=${limit}`
+      `/contributors?select=avatar_url,gh_username,name,occupation,bio,createdAt,_id,createdAt&limit=${limit}`
     );
     return data;
   } catch (error) {
@@ -65,7 +65,10 @@ export const fetchSingleContributor = async (
       username: userName,
     });
     // creating payload for new contributor
-    const contPayload: Omit<TContributor, 'isDeleted' | 'profile_views'> = {
+    const contPayload: Omit<
+      TContributor,
+      'isDeleted' | 'profile_views' | 'createdAt'
+    > = {
       avatar_url: gh_user.avatar_url,
       bio: gh_user.bio,
       content: contribution.content,
