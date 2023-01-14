@@ -2,18 +2,17 @@ import Footer from '@components/footer';
 import Header from '@components/header';
 import Menu from '@components/menu';
 import Head from 'next/head';
-import React from 'react';
+import React, { ComponentProps } from 'react';
 
-export type LayoutProps = React.HTMLAttributes<HTMLDivElement> & {
-  children: React.ReactNode;
+export type LayoutProps = ComponentProps<'div'> & {
   title?: string;
   description?: string;
 };
 
 const Layout: React.FC<LayoutProps> = ({
-  children,
   title = 'Git Opener',
   description = 'Open source student community to learn and getting started with open-source',
+  className,
   ...props
 }) => {
   return (
@@ -24,16 +23,16 @@ const Layout: React.FC<LayoutProps> = ({
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <div {...props}>
+      <section className="z-0">
         <Header />
         {/* Menu  */}
-        <div className="sticky top-0">
+        <div className="sticky top-0 z-10">
           <Menu />
         </div>
         {/* outlet */}
-        <div className="bg-skin-base">{children}</div>
+        <div className={`bg-skin-base ${className || ``}`} {...props} />
         <Footer />
-      </div>
+      </section>
     </>
   );
 };
