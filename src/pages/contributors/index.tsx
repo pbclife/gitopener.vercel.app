@@ -1,8 +1,9 @@
 import type { TCont } from '&validation/contributor.validation';
+import NewContributrs from '@/components/contributorpage/NewContributrs';
+import Container from '@layouts/container';
 import Layout from '@layouts/main';
 import { fetchAllContributors } from 'lib/contributors';
 import { GetStaticProps } from 'next';
-import Link from 'next/link';
 import { FC } from 'react';
 
 export type ContributorsProps = {
@@ -11,14 +12,13 @@ export type ContributorsProps = {
 };
 
 const Contributors: FC<ContributorsProps> = ({ contributors }) => {
-  const conts = contributors.map((cont) => (
-    <Link key={cont._id} href={`/contributors/${cont.gh_username}`}>
-      <div className="text-accent">
-        <p>{cont.name}</p>
-      </div>
-    </Link>
-  ));
-  return <Layout>{conts}</Layout>;
+  return (
+    <Layout className="min-h-screen" title="Git Opener | Contributors">
+      <Container className="py-4">
+        <NewContributrs contributors={contributors} />
+      </Container>
+    </Layout>
+  );
 };
 
 export default Contributors;
