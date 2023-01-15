@@ -1,20 +1,20 @@
 import { ContributorsProps } from '@/pages/contributors';
-import FresLeafIcon from '@icons/fresh-leaf';
+import EarlyBirdsIcon from '@icons/early-birds';
 import { FC } from 'react';
 import Represent from '../layouts/represent';
 import RenderContributors from './RenderContributors';
 
 type Props = {
-  contributors: ContributorsProps['newContributors'];
+  contributors: ContributorsProps['oldContributors'];
 };
 
-const NewContributrs: FC<Props> = ({ contributors }) => {
+const OldContributrs: FC<Props> = ({ contributors }) => {
   return (
     <Represent
       about="Lorem ipsum dolor sit amet consectetur adipisicing elit. In modi aliquid sapiente dicta ab accusamus id."
-      mainTitle="Fresh Contributors"
-      topTitle="Welcome"
-      TopIcon={FresLeafIcon}
+      mainTitle="Our Early Birds"
+      topTitle="Had Contributed First"
+      TopIcon={EarlyBirdsIcon}
     >
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
         <RenderContributors data={contributors} />
@@ -23,4 +23,4 @@ const NewContributrs: FC<Props> = ({ contributors }) => {
   );
 };
 
-export default NewContributrs;
+export default OldContributrs;
