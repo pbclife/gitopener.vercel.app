@@ -30,16 +30,28 @@ function asserHasPropertyArray(
 }
 
 export const fetchAllContributors = async (
-  limit: number
+  queryString: string
 ): Promise<{ count: number; contributors: (TCont & { _id: string })[] }> => {
   try {
-    const { data } = await axios.get(
-      `/contributors?select=avatar_url,gh_username,name,occupation,bio,createdAt,_id,createdAt&limit=${limit}`
-    );
+    const { data } = await axios.get(queryString);
     return data;
   } catch (error) {
     throw new Error(`Something went wrong`);
   }
+};
+
+export const fetchNewContributors = async (
+  limit: number
+): Promise<ReturnType<typeof fetchAllContributors>> => {
+  const queryString = `/contributors?select=avatar_url,gh_username,name,occupation,bio,createdAt,_id,createdAt&limit=${limit}&sort=-createdAt`;
+  return await fetchAllContributors(queryString);
+};
+
+export const fetchOldContributors = async (
+  limit: number
+): Promise<ReturnType<typeof fetchAllContributors>> => {
+  const queryString = `/contributors?select=avatar_url,gh_username,name,occupation,bio,createdAt,_id,createdAt&limit=${limit}&sort=createdAt`;
+  return await fetchAllContributors(queryString);
 };
 
 export const fetchSingleContributor = async (
