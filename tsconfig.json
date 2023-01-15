@@ -23,6 +23,7 @@
       "@layouts/*": ["src/components/layouts/*"],
       "@components/*": ["src/components/*"],
       "@utilities/*": ["src/components/utilities/*"],
+      "@icons/*": ["src/components/icons/*"],
       "~/images/*": ["public/images/*"]
     }
   },
