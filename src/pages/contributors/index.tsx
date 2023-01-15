@@ -1,9 +1,14 @@
 import type { TCont } from '&validation/contributor.validation';
 import NewContributrs from '@/components/contributorpage/NewContributrs';
 import OldContributrs from '@/components/contributorpage/OldContributrs';
+import PopularContributrs from '@/components/contributorpage/PopularContributrs';
 import Container from '@layouts/container';
 import Layout from '@layouts/main';
-import { fetchNewContributors, fetchOldContributors } from 'lib/contributors';
+import {
+  fetchNewContributors,
+  fetchOldContributors,
+  fetchPopularContributors,
+} from 'lib/contributors';
 import { GetStaticProps } from 'next';
 import { FC } from 'react';
 
@@ -14,17 +19,20 @@ interface TContributors extends TCont {
 export type ContributorsProps = {
   newContributors: TContributors[];
   oldContributors: TContributors[];
+  popularContributors: TContributors[];
 };
 
 const Contributors: FC<ContributorsProps> = ({
   newContributors,
   oldContributors,
+  popularContributors,
 }) => {
   return (
     <Layout className="min-h-screen" title="Git Opener | Contributors">
-      <Container className="py-4">
+      <Container className="overflow-hidden py-4">
         <NewContributrs contributors={newContributors} />
         <OldContributrs contributors={oldContributors} />
+        <PopularContributrs contributors={popularContributors} />
       </Container>
     </Layout>
   );
@@ -37,11 +45,14 @@ export const getStaticProps: GetStaticProps<ContributorsProps> = async () => {
     // fetch all contributors limit 10
     const { contributors: newContributors } = await fetchNewContributors(6);
     const { contributors: oldContributors } = await fetchOldContributors(6);
+    const { contributors: popularContributors } =
+      await fetchPopularContributors(6);
 
     return {
       props: {
         newContributors,
         oldContributors,
+        popularContributors,
       },
       revalidate: 15,
     };
