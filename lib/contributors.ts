@@ -54,6 +54,13 @@ export const fetchOldContributors = async (
   return await fetchAllContributors(queryString);
 };
 
+export const fetchPopularContributors = async (
+  limit: number
+): Promise<ReturnType<typeof fetchAllContributors>> => {
+  const queryString = `/contributors?select=avatar_url,gh_username,name,occupation,bio,createdAt,_id,followers,createdAt&limit=${limit}&sort=-followers`;
+  return await fetchAllContributors(queryString);
+};
+
 export const fetchSingleContributor = async (
   contId: string,
   contribution: Contribution
@@ -91,6 +98,8 @@ export const fetchSingleContributor = async (
       name: contribution.meta.author as string,
       occupation: contribution.meta.occupation as string,
       location: gh_user.location,
+      followers: gh_user.followers,
+      following: gh_user.following,
     };
 
     const {
