@@ -12,9 +12,9 @@ type Props = {
 const RenderContributors: FC<Props> = ({ data }) => {
   return (
     <>
-      {data.map((cont) => (
+      {data.map((cont, index) => (
         <Link key={cont._id} href={`/contributors/${cont.gh_username}`}>
-          <ContributorComp {...cont}>
+          <ContributorComp {...cont} glow={index === 0}>
             <p>{cont.name}</p>
           </ContributorComp>
         </Link>
