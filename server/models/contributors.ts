@@ -42,6 +42,14 @@ const contributorSchema = new mongoose.Schema<TContributor, ContributorModel>(
       type: String,
       required: true,
     },
+    followers: {
+      type: Number,
+      default: 0,
+    },
+    following: {
+      type: Number,
+      default: 0,
+    },
     profile_views: {
       type: Number,
       default: 0,
