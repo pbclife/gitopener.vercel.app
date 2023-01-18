@@ -96,12 +96,12 @@ export default function Menu() {
       <Glow className="sm:right-0 sm:max-w-3xl " />
       <Container className="relative z-0 flex min-h-[4rem] flex-col items-center  justify-end sm:min-h-[5rem] sm:flex-row sm:justify-between">
         {/* upper section */}
-        <div className="z-10 flex items-center gap-x-12">
+        <div className="flex items-center gap-x-12">
           {displayLogo}
           {displayIcon}
         </div>
         {/* links section */}
-        <div className="z-0 sm:self-end">
+        <div className="sm:self-end">
           <MenuList />
         </div>
       </Container>
