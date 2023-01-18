@@ -1,1 +1,6 @@
 @tailwind components;
+@layer components {
+  .rounded-btn {
+    @apply rounded-full px-6 py-3 outline-none;
+  }
+}
