@@ -1,7 +1,7 @@
 import { links } from '@/data/menu-links';
-import Link from 'next/link';
+import SmoothLink from '@utilities/SmoothLink';
+import ToolTip from '@utilities/tooltip';
 import { useRouter } from 'next/router';
-import ToolTip from '../utilities/tooltip';
 
 export default function MenuList() {
   const { pathname } = useRouter();
@@ -9,18 +9,52 @@ export default function MenuList() {
     <ul className="flex items-center ">
       {links.map((link, indx) => {
         const isActive: boolean = pathname === link.to;
-        return (
-          <Link href={link.to} key={link.title + indx}>
+        return isActive ? (
+          <li
+            key={link.title + indx}
+            className={`
+            border-b-2
+            border-accent
+            px-4
+            py-2
+            text-lg
+            font-semibold
+            capitalize
+            tracking-tight
+            text-accent
+            transition-all
+            duration-300
+            ease-in-out
+            hover:text-accent            
+            `}
+          >
+            <ToolTip tip={link.title}>
+              <link.icon className="h-6 w-6" />
+            </ToolTip>
+          </li>
+        ) : (
+          <SmoothLink href={link.to} key={link.title + indx}>
             <li
-              className={`border-b-2 px-4 py-2 text-lg font-semibold capitalize tracking-tight transition-all duration-300 ease-in-out hover:text-accent
-            ${isActive ? ` border-accent text-accent ` : `border-transparent`}
+              className={`
+              border-b-2
+              border-transparent
+              px-4
+              py-2
+              text-lg
+              font-semibold
+              capitalize
+              tracking-tight
+              transition-all
+              duration-300
+              ease-in-out
+              hover:text-accent
             `}
             >
               <ToolTip tip={link.title}>
                 <link.icon className="h-6 w-6" />
               </ToolTip>
             </li>
-          </Link>
+          </SmoothLink>
         );
       })}
     </ul>

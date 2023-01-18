@@ -1,24 +1,41 @@
 import type { TCont } from '&validation/contributor.validation';
+import NewContributrs from '@/components/contributorpage/NewContributrs';
+import OldContributrs from '@/components/contributorpage/OldContributrs';
+import PopularContributrs from '@/components/contributorpage/PopularContributrs';
+import Container from '@layouts/container';
 import Layout from '@layouts/main';
-import { fetchAllContributors } from 'lib/contributors';
+import {
+  fetchNewContributors,
+  fetchOldContributors,
+  fetchPopularContributors,
+} from 'lib/contributors';
 import { GetStaticProps } from 'next';
-import Link from 'next/link';
 import { FC } from 'react';
 
+interface TContributors extends TCont {
+  _id: string;
+}
+
 export type ContributorsProps = {
-  count: number;
-  contributors: (TCont & { _id: string })[];
+  newContributors: TContributors[];
+  oldContributors: TContributors[];
+  popularContributors: TContributors[];
 };
 
-const Contributors: FC<ContributorsProps> = ({ contributors }) => {
-  const conts = contributors.map((cont) => (
-    <Link key={cont._id} href={`/contributors/${cont.gh_username}`}>
-      <div className="text-accent">
-        <p>{cont.name}</p>
-      </div>
-    </Link>
-  ));
-  return <Layout>{conts}</Layout>;
+const Contributors: FC<ContributorsProps> = ({
+  newContributors,
+  oldContributors,
+  popularContributors,
+}) => {
+  return (
+    <Layout className="min-h-screen" title="Git Opener | Contributors">
+      <Container className="overflow-hidden py-4">
+        <NewContributrs contributors={newContributors} />
+        <OldContributrs contributors={oldContributors} />
+        <PopularContributrs contributors={popularContributors} />
+      </Container>
+    </Layout>
+  );
 };
 
 export default Contributors;
@@ -26,12 +43,16 @@ export default Contributors;
 export const getStaticProps: GetStaticProps<ContributorsProps> = async () => {
   try {
     // fetch all contributors limit 10
-    const data = await fetchAllContributors(10);
+    const { contributors: newContributors } = await fetchNewContributors(6);
+    const { contributors: oldContributors } = await fetchOldContributors(6);
+    const { contributors: popularContributors } =
+      await fetchPopularContributors(6);
 
     return {
       props: {
-        count: data.count,
-        contributors: data.contributors,
+        newContributors,
+        oldContributors,
+        popularContributors,
       },
       revalidate: 15,
     };

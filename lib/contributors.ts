@@ -30,16 +30,35 @@ function asserHasPropertyArray(
 }
 
 export const fetchAllContributors = async (
-  limit: number
+  queryString: string
 ): Promise<{ count: number; contributors: (TCont & { _id: string })[] }> => {
   try {
-    const { data } = await axios.get(
-      `/contributors?select=avatar_url,gh_username,name,occupation,bio,createdAt,_id&limit=${limit}`
-    );
+    const { data } = await axios.get(queryString);
     return data;
   } catch (error) {
     throw new Error(`Something went wrong`);
   }
+};
+
+export const fetchNewContributors = async (
+  limit: number
+): Promise<ReturnType<typeof fetchAllContributors>> => {
+  const queryString = `/contributors?select=avatar_url,gh_username,name,occupation,bio,createdAt,_id,createdAt&limit=${limit}&sort=-createdAt`;
+  return await fetchAllContributors(queryString);
+};
+
+export const fetchOldContributors = async (
+  limit: number
+): Promise<ReturnType<typeof fetchAllContributors>> => {
+  const queryString = `/contributors?select=avatar_url,gh_username,name,occupation,bio,createdAt,_id,createdAt&limit=${limit}&sort=createdAt`;
+  return await fetchAllContributors(queryString);
+};
+
+export const fetchPopularContributors = async (
+  limit: number
+): Promise<ReturnType<typeof fetchAllContributors>> => {
+  const queryString = `/contributors?select=avatar_url,gh_username,name,occupation,bio,createdAt,_id,followers,createdAt&limit=${limit}&sort=-followers`;
+  return await fetchAllContributors(queryString);
 };
 
 export const fetchSingleContributor = async (
@@ -65,7 +84,10 @@ export const fetchSingleContributor = async (
       username: userName,
     });
     // creating payload for new contributor
-    const contPayload: Omit<TContributor, 'isDeleted' | 'profile_views'> = {
+    const contPayload: Omit<
+      TContributor,
+      'isDeleted' | 'profile_views' | 'createdAt'
+    > = {
       avatar_url: gh_user.avatar_url,
       bio: gh_user.bio,
       content: contribution.content,
@@ -76,6 +98,8 @@ export const fetchSingleContributor = async (
       name: contribution.meta.author as string,
       occupation: contribution.meta.occupation as string,
       location: gh_user.location,
+      followers: gh_user.followers,
+      following: gh_user.following,
     };
 
     const {
