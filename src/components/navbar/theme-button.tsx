@@ -7,7 +7,7 @@ export default function ThemeButton() {
   const { isDark } = useThemeContext();
   return (
     <div className="">
-      <Pop Icon={isDark ? MoonIcon : SunIcon} className="!z-50">
+      <Pop Icon={isDark ? MoonIcon : SunIcon} className="z-50">
         <Themes />
       </Pop>
     </div>
