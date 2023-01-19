@@ -1,3 +1,4 @@
+import HeaderProvider from '@/context/headerContext';
 import ThemeProvider from '@/context/theme-context';
 import useProgressBar from '@/hooks/useProgressBar';
 import { Fira_Code, Inter } from '@next/font/google';
@@ -28,7 +29,9 @@ export default function App({ Component, pageProps }: AppProps) {
       </style>
       <main className={`${inter.variable} ${firaCode.variable}`}>
         <ThemeProvider>
-          <Component {...pageProps} />
+          <HeaderProvider>
+            <Component {...pageProps} />
+          </HeaderProvider>
         </ThemeProvider>
       </main>
     </>

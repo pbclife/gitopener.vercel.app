@@ -1,13 +1,15 @@
+import { useHeaderContext } from '@/context/headerContext';
 import Dot from '@utilities/dot';
 import TypoComp from '@utilities/typo-component';
 import Links from './links';
 
 export default function TextSection() {
+  const { contributorsCount } = useHeaderContext();
   return (
     <section className="space-y-6">
       {/* icons */}
       <div className="flex flex-wrap items-center gap-x-4 text-sm font-medium capitalize text-skin-base">
-        1 contributors
+        {contributorsCount} contributors
         <Dot />
         Open Source
         <Dot />
