@@ -21,6 +21,15 @@ function setUpdatableProperty<T, Prop extends keyof T>(
   }
 }
 
+export const getTotalContributors: NextApiHandler = errorHandler(
+  async (req, res) => {
+    const totalContributors = await Contributor.countDocuments();
+    res.status(200).json({
+      totalContributors,
+    });
+  }
+);
+
 export const getAllContributors: NextApiHandler = errorHandler(
   async (req, res) => {
     const query = {
