@@ -1,10 +1,12 @@
 import { links } from '@/data/menu-links';
+import useArea from '@/hooks/useArea';
 import SmoothLink from '@utilities/SmoothLink';
 import ToolTip from '@utilities/tooltip';
 import { useRouter } from 'next/router';
 
 export default function MenuList() {
   const { pathname } = useRouter();
+  const { width } = useArea();
   return (
     <ul className="flex items-center ">
       {links.map((link, indx) => {
@@ -28,7 +30,10 @@ export default function MenuList() {
             hover:text-accent            
             `}
           >
-            <ToolTip tip={link.title}>
+            <ToolTip
+              direction={width < 640 ? `button` : `top`}
+              tip={link.title}
+            >
               <link.icon className="h-6 w-6" />
             </ToolTip>
           </li>
@@ -50,7 +55,10 @@ export default function MenuList() {
               hover:text-accent
             `}
             >
-              <ToolTip tip={link.title}>
+              <ToolTip
+                direction={width < 640 ? `button` : `top`}
+                tip={link.title}
+              >
                 <link.icon className="h-6 w-6" />
               </ToolTip>
             </li>
