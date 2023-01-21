@@ -1,95 +1,17 @@
-# GitOpener
+Welcome to Gitopener contributing guide Thank you for investing your time in contributing to my project!
 
-<!-- Descrption -->
+In this guide, you will get an overview on how to contribute, open issues, open a PR, review and merge it.
 
-Checkout out [contribution guidelines](https://github.com/pbclife/gitopener.vercel.app/blob/main/CONTRIBUTING.md) before you start with contributions
+New contributor guide To get an overview of the project, read the README. The README contains everything you need to get yourself started with your contributions to this Open Source Project.
 
-## Contribution guide
+Getting started Issues Create a new issue If you spot any bugs with the existing code / contributions, head over to the Issues section and make sure the issue / bug is not already in the list of open issues. If you do not find the issue you want to report, you can open a new issue, by clicking on the New Issue button and filling up the form with the relavant information.
 
-### Installation
+Solve an issue Scan through our existing issues to find one that interests you. You can assign to you, any issue that is open and start working on it. After you have solved an issue, open a Pull Request for review.
 
-> This is a Next.js project bootstrapped with create-next-app
+Make Changes For any changes you make, be it solving an existing / new Issue, or contributing a new feature, make sure you:
 
-1. Fork the repo into your account
+Fork the repository, if not already done. Ensure the base branch of your repository is in sync with that of the OS project. Create a new branch in your forked repository, specifically for the task you are doing. Clone the newly created branch from your repository to your local enviroment, perform the initial setup in the README and start working on your change. Commit your update After you've made your changes, make sure to self review to verify its working, and commit the changes once you are happy with them, with an appropriate commit message.
 
-![Fork Image](https://i.imgur.com/mNw6zxu.png)
+Pull Request When you're finished with the changes, and have commited the same, create a pull request, also known as a PR.
 
-2. Clone the project into your local machine
-
-```sh
-git clone https://github.com/<Your-name>/gitopener.vercel.app.git
-```
-
-3. Navigate the folder
-
-```sh
-cd gitopener.vercel.app
-```
-
-3. Install the dependencies
-
-```sh
-npm install
-```
-
-4. Run the project on local machine
-
-```sh
-npm run dev
-```
-
-6. Every time you start making changes to your forked repo make sure it's in sync with the original repo
-
-## Contributing Guidelines
-
-Thank you for considering to contribute to this project.
-
-### What do I need to know to contribute?
-
-This project is in a very early stage so anybody who's familiar with **ReactJS**/**NextJS**/**Typescript**/**TailwindCSS** can contribute. If you don't feel ready to make a contribution yet, no problem at all. You can also contribute to this `ReadMe` section or the **Documentation** part of our project.
-
-If you are interested to contribute and want to learn more about the technologies that are used in this project, checkout the links below.
-
-- [ReactJS Official Docs](https://reactjs.org/docs/getting-started.html)
-- [NextJS Documentation](https://beta.nextjs.org/docs)
-- [Typescript Documentaion](https://www.typescriptlang.org/docs/)
-- [TailwindCSS Docs](https://tailwindcss.com/docs/installation)
-
-### How to make a Contribution?
-
-Never made an open source contribution before? And wondering how to contribute to this project?
-No worries! Here's a quick guide,
-
-1. Choose any feature/bug you wish to contribute to.
-2. Fork the repository into your own account.
-3. Clone the repo you have forked in your local machine using `git clone https://github.com/<Your-name>/gitopener.vercel.app.git`
-4. Create a new branch for your fix by using the command `git checkout -b YourName-branch-name `
-5. Make the changes you wish to do and stage them using the command `git add files-you-have-changed ` or use `git add .`
-6. Use the command `git commit -m "Short description of the changes"` to describe the changes you have done with a message.
-7. Push the changes to your remote repository using `git push origin your-branch-name`
-8. Submit a PR(pull request) to the upstream repository `pbclife//gitopener.vercel.app` with a title and a small description.
-9. Wait for the pull request to be reviewed by us.
-10. Make appropriate changes if the maintainer recommends you to and submit it.
-11. Await for your contribution to be merged into the repository.
-
-Checkout the [Contributing.md](CONTRIBUTING.md) file before contributing.
-
-
-<!-- ### Where can I go for help? -->
-
-
-## License
-
-[MIT](LICENSE.md)
-
-
-## Thanks to all the Contributors ❤️
-
-<a href = "https://github.com/pbclife//gitopener.vercel.app/graphs/contributors">
-  <img src = "https://contrib.rocks/image?repo=pbclife/gitopener.vercel.app"/>
-</a>
-
-
-## Your Support means a lot
-
-Give a ⭐ to the project if you liked it. :)
+Head over to your repository and branch you want to merge. Click on Contribute and select Open pull request. Fill the form with a title relavant to the changes / additions that you're making, and add a relevant description and create a pull request. Be sure to check out the PR later, as we may request that you do some changes, before we merge the PR. The details of what needs to be changed can be found as comments in the PR. As you update your PR and apply changes, mark each conversation as resolved, or add relavent comments to indicate the changes made. Your PR is merged! Yayyyyy!! Your PR is merged..confetti_ballconfetti_ball Now you can chill out or look for other issues to contribute to!!
