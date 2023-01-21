@@ -1,36 +1,95 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# GitOpener
 
-## Getting Started
+<!-- Descrption -->
 
-First, run the development server:
+Checkout out [contribution guidelines](https://github.com/pbclife/gitopener.vercel.app/blob/main/CONTRIBUTING.md) before you start with contributions
 
-```bash
-npm run dev
-# or
+## Contribution guide
+
+### Installation
+
+> This is a Next.js project bootstrapped with create-next-app
+
+1. Fork the repo into your account
+
+![Fork Image](https://i.imgur.com/mNw6zxu.png)
+
+2. Clone the project into your local machine
+
+```sh
+git clone https://github.com/<Your-GitHub-username>/gitopener.vercel.app.git
+```
+
+3. Navigate the folder
+
+```sh
+cd gitopener.vercel.app
+```
+
+3. Install the dependencies
+
+```sh
+yarn install
+```
+
+4. Run the project on local machine
+
+```sh
 yarn dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+6. Every time you start making changes to your forked repo make sure it's in sync with the original repo
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+## Contributing Guidelines
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+Thank you for considering to contribute to this project.
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+### What do I need to know to contribute?
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+This project is in a very early stage so anybody who's familiar with **ReactJS**/**NextJS**/**Typescript**/**TailwindCSS** can contribute. If you don't feel ready to make a contribution yet, no problem at all. You can also contribute to this `ReadMe` section or the **Documentation** part of our project.
 
-## Learn More
+If you are interested to contribute and want to learn more about the technologies that are used in this project, checkout the links below.
 
-To learn more about Next.js, take a look at the following resources:
+- [ReactJS Official Docs](https://reactjs.org/docs/getting-started.html)
+- [NextJS Documentation](https://beta.nextjs.org/docs)
+- [Typescript Documentaion](https://www.typescriptlang.org/docs/)
+- [TailwindCSS Docs](https://tailwindcss.com/docs/installation)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### How to make a Contribution?
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+Never made an open source contribution before? And wondering how to contribute to this project?
+No worries! Here's a quick guide,
 
-## Deploy on Vercel
+1. Choose any feature/bug you wish to contribute to.
+2. Fork the repository into your own account.
+3. Clone the repo you have forked in your local machine using `git clone https://github.com/<Your-GitHub-username>/gitopener.vercel.app.git`
+4. Create a new branch for your fix by using the command `git checkout -b YourName-branch-name `
+5. Make the changes you wish to do and stage them using the command `git add files-you-have-changed ` or use `git add .`
+6. Use the command `git commit -m "Short description of the changes"` to describe the changes you have done with a message.
+7. Push the changes to your remote repository using `git push origin your-branch-name`
+8. Submit a PR(pull request) to the upstream repository `pbclife/gitopener.vercel.app` with a title and a small description.
+9. Wait for the pull request to be reviewed by us.
+10. Make appropriate changes if the maintainer recommends you to and submit it.
+11. Await for your contribution to be merged into the repository.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Checkout the [Contributing.md](CONTRIBUTING.md) file before contributing.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+<!-- ### Where can I go for help? -->
+
+
+## License
+
+[MIT](LICENSE.md)
+
+
+## Thanks to all the Contributors ❤️
+
+<a href = "https://github.com/pbclife/gitopener.vercel.app/graphs/contributors">
+  <img src = "https://contrib.rocks/image?repo=pbclife/gitopener.vercel.app"/>
+</a>
+
+
+## Your Support means a lot
+
+Give a ⭐ to the project if you liked it. :)
