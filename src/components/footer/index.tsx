@@ -1,9 +1,9 @@
 import { StarIcon } from '@heroicons/react/24/solid';
-import Container from '@layouts/container';
-import Logo from '@utilities/logo';
+import Container from '@layouts/Container';
+import Logo from '@utilities/Logo';
 import colors from 'tailwindcss/colors';
-import Glow from '../utilities/glow';
-import GradientBG from '../utilities/gradient-bg';
+import Glow from '../utilities/Glow';
+import GradientBG from '../utilities/GradientBg';
 import FooterList from './FooterList';
 import Slogun from './Slogun';
 

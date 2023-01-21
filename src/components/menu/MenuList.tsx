@@ -1,10 +1,11 @@
-import { links } from '@/data/menu-links';
+import { links } from '@/data/MenuLinks';
 import useArea from '@/hooks/useArea';
 import SmoothLink from '@utilities/SmoothLink';
-import ToolTip from '@utilities/tooltip';
+import ToolTip from '@utilities/Tooltip';
 import { useRouter } from 'next/router';
+import { FC } from 'react';
 
-export default function MenuList() {
+const MenuList: FC = () => {
   const { pathname } = useRouter();
   const { width } = useArea();
   return (
@@ -67,4 +68,6 @@ export default function MenuList() {
       })}
     </ul>
   );
-}
+};
+
+export default MenuList;

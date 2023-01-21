@@ -1,6 +1,6 @@
 import { useThemeContext } from '@/context/theme-context';
 import { ComputerDesktopIcon } from '@heroicons/react/24/outline';
-import PopButton from '@utilities/pop-button';
+import PopButton from '@utilities/PopButton';
 import { FC } from 'react';
 
 const Themes: FC = () => {

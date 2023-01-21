@@ -1,12 +1,12 @@
 import { useThemeContext } from '@/context/theme-context';
-import React, { useEffect, useId, useState } from 'react';
+import React, { FC, useEffect, useId, useState } from 'react';
 import colors from 'tailwindcss/colors';
 
 interface GlowType {
   className: string;
 }
 
-const Glow: React.FC<GlowType> = ({ className }) => {
+const Glow: FC<GlowType> = ({ className }) => {
   const id = useId();
   const [from, setFrom] = useState<string>(``);
   const [to, setTo] = useState<string>(``);

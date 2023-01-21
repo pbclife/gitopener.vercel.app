@@ -1,4 +1,4 @@
-import TypoComp from '@utilities/typo-component';
+import TypoComp from '@utilities/TypoComponent';
 import { FC } from 'react';
 
 const Slogun: FC = () => {

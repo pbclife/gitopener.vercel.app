@@ -1,5 +1,5 @@
 import Container from '@layouts/container';
-import Layout from '@layouts/main';
+import Layout from '@layouts/Main';
 import RenderMdx from '@utilities/RenderMdx';
 import { getFileContents, getProcessedHtml } from 'lib/read-docs';
 import type { GetStaticProps, NextPage } from 'next';
