@@ -2,8 +2,8 @@ import type { TCont } from '&validation/contributor.validation';
 import { getFormattedDate } from 'lib/date';
 import Image from 'next/image';
 import { ComponentProps, FC } from 'react';
-import GithubIcon from '../icons/github';
-import Glow from '../utilities/glow';
+import GithubIcon from '../icons/Github';
+import Glow from '../utilities/Glow';
 
 type ContributorProps = TCont &
   ComponentProps<'div'> & {

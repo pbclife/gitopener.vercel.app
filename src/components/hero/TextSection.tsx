@@ -1,9 +1,10 @@
 import { useHeaderContext } from '@/context/headerContext';
-import Dot from '@utilities/dot';
-import TypoComp from '@utilities/typo-component';
-import Links from './links';
+import Dot from '@utilities/Dot';
+import TypoComp from '@utilities/TypoComponent';
+import { FC } from 'react';
+import Links from './Links';
 
-export default function TextSection() {
+const TextSection: FC = () => {
   const { contributorsCount } = useHeaderContext();
   return (
     <section className="space-y-6">
@@ -30,4 +31,6 @@ export default function TextSection() {
       <Links />
     </section>
   );
-}
+};
+
+export default TextSection;

@@ -1,6 +1,6 @@
 import { ComponentProps } from 'react';
 import colors from 'tailwindcss/colors';
-import GradientBG from './gradient-bg';
+import GradientBG from './GradientBg';
 
 type UnderlineType = ComponentProps<'span'>;
 export default function Underline({

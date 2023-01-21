@@ -2,14 +2,14 @@ import Footer from '@components/footer';
 import Header from '@components/header';
 import Menu from '@components/menu';
 import Head from 'next/head';
-import React, { ComponentProps } from 'react';
+import { ComponentProps, FC } from 'react';
 
 export type LayoutProps = ComponentProps<'div'> & {
   title?: string;
   description?: string;
 };
 
-const Layout: React.FC<LayoutProps> = ({
+const Layout: FC<LayoutProps> = ({
   title = 'Git Opener',
   description = 'Open source student community to learn and getting started with open-source',
   className,

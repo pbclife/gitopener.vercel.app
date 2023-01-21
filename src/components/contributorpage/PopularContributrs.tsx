@@ -1,5 +1,5 @@
 import { ContributorsProps } from '@/pages/contributors';
-import StarManIcon from '@icons/star-man';
+import StarManIcon from '@icons/StarMan';
 import { FC } from 'react';
 import Represent from '../layouts/represent';
 import RenderContributors from './RenderContributors';

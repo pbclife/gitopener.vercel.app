@@ -1,8 +1,9 @@
 import { useThemeContext } from '@/context/theme-context';
-import ForkAltIcon from '../icons/fork-alt';
-import GithubAltIcon from '../icons/github-alt';
+import { FC } from 'react';
+import ForkAltIcon from '../icons/Fork-alt';
+import GithubAltIcon from '../icons/Github-alt';
 
-export default function LogoSection() {
+const LogoSection: FC = () => {
   const { isDark } = useThemeContext();
   return (
     <section className="relative hidden text-skin-base lg:block">
@@ -18,4 +19,5 @@ export default function LogoSection() {
       />
     </section>
   );
-}
+};
+export default LogoSection;

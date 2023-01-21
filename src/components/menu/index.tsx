@@ -1,10 +1,10 @@
-import Glow from '@utilities/glow';
-import Logo from '@utilities/logo';
-import { AnimatePresence, Variants, motion } from 'framer-motion';
+import Glow from '@utilities/Glow';
+import Logo from '@utilities/Logo';
+import { AnimatePresence, motion, Variants } from 'framer-motion';
 import { FC, useEffect, useState } from 'react';
-import Container from '../layouts/container';
-import ThemeButton from '../navbar/theme-button';
-import MenuList from './menu-list';
+import Container from '../layouts/Container';
+import ThemeButton from '../navbar/ThemeButton';
+import MenuList from './MenuList';
 
 export default function Menu() {
   const [isSticky, setIsSticky] = useState<boolean>(false);

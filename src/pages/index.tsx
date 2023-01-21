@@ -1,4 +1,4 @@
-import Layout from '@layouts/main';
+import Layout from '@layouts/Main';
 import { FC } from 'react';
 
 type HomeProps = {};

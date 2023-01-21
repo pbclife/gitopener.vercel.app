@@ -1,9 +1,10 @@
 import { useThemeContext } from '@/context/theme-context';
 import { MoonIcon, SunIcon } from '@heroicons/react/24/solid';
-import Pop from '@utilities/pop';
-import Themes from './theme';
+import Pop from '@utilities/Pop';
+import { FC } from 'react';
+import Themes from './Theme';
 
-export default function ThemeButton() {
+const ThemeButton: FC = () => {
   const { isDark } = useThemeContext();
   return (
     <div className="">
@@ -12,4 +13,6 @@ export default function ThemeButton() {
       </Pop>
     </div>
   );
-}
+};
+
+export default ThemeButton;

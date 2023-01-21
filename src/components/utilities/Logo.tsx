@@ -1,4 +1,4 @@
-import GitOpenerIcon from '@/components/icons/git-opener';
+import GitOpenerIcon from '@/components/icons/GitOpener';
 
 export default function Logo() {
   function scrollToTop() {
