@@ -27,12 +27,24 @@ cd gitopener.vercel.app
 ```
 
 3. Install the dependencies
+ > As Git Opener uses yarn package manager, it is recommended to use yarn, [install yarn][yarn-website]
 
 ```sh
 yarn install
 ```
 
-4. Run the project on local machine
+4. Make .env.local file in root directory with these variables
+  > This step is optional, Do this step if you want to run complete application with database support
+
+```
+MONGO_URI= 'YOUR MONGODB CONNECTION STRING GOES HERE'
+GITHUB_TOKEN= 'YOUR GITHUB TOKEN GOES HERE'
+```
+
+- Get mongodb connection string here: [MONGODB DOCS][mongodb-docs]
+- Generate github token here: [GITHUB TOKEN][github-token]
+
+5. Run the project on local machine
 
 ```sh
 yarn dev
@@ -93,3 +105,7 @@ Checkout the [Contributing.md](CONTRIBUTING.md) file before contributing.
 ## Your Support means a lot
 
 Give a ⭐ to the project if you liked it. :)
+
+[yarn-website]: https://classic.yarnpkg.com/lang/en/docs/install/#debian-stable
+[mongodb-docs]: https://www.mongodb.com/docs/compass/current/connect
+[github-token]: https://github.com/settings/tokens
