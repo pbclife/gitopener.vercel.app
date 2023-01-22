@@ -199,6 +199,26 @@ module.exports = {
               marginTop: `${20 / 14}em`,
               marginBottom: `${32 / 14}em`,
             },
+            blockquote: {
+              width: 'calc(calc(100%)+1.75)em',
+              maxWidth: theme('maxWidth.xl'),
+              padding: theme('padding.4'),
+              borderWidth: '1px',
+              borderRadius: theme('borderRadius.md'),
+              position: 'relative',
+            },
+            'li > blockquote': {
+              marginLeft: '-1.75em',
+            },
+            'li > blockquote::before': {
+              content: '""',
+              width: '2em',
+              height: '0.125em',
+              position: 'absolute',
+              top: '1em',
+              left: '-2em',
+              borderRadius: '999px',
+            },
             'p + pre': {
               marginTop: `${-4 / 14}em`,
             },
@@ -208,6 +228,7 @@ module.exports = {
             'pre code': {
               flex: 'none',
               minWidth: '100%',
+              backgroundColor: 'transparent',
             },
             'figure figcaption': {
               textAlign: 'center',
