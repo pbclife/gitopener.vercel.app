@@ -4,8 +4,10 @@ import axios from 'config/axios';
 import fs from 'fs';
 import matter from 'gray-matter';
 import path from 'path';
-import { remark } from 'remark';
+import remarkGfm from 'remark-gfm';
 import remarkHtml from 'remark-html';
+import remarkParse from 'remark-parse';
+import { unified } from 'unified';
 
 export type Contribution = {
   content: string;
@@ -116,7 +118,11 @@ export const getContribution = async (
   const file = fs.readFileSync(path.join(fileDir + `/${contId}.mdx`), 'utf8');
 
   const matterResult = matter(file);
-  const content = await remark().use(remarkHtml).process(matterResult.content);
+  const content = await unified()
+    .use(remarkParse)
+    .use(remarkGfm)
+    .use(remarkHtml)
+    .process(matterResult.content);
 
   return {
     content: content.value as string,
