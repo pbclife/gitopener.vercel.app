@@ -3,7 +3,7 @@ import useArea from '@/hooks/useArea';
 import SmoothLink from '@utilities/SmoothLink';
 import ToolTip from '@utilities/Tooltip';
 import { useRouter } from 'next/router';
-import { FC } from 'react';
+import type { FC } from 'react';
 
 const MenuList: FC = () => {
   const { pathname } = useRouter();

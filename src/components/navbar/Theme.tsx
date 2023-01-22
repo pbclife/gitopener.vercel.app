@@ -1,7 +1,7 @@
 import { useThemeContext } from '@/context/theme-context';
 import { ComputerDesktopIcon } from '@heroicons/react/24/outline';
 import PopButton from '@utilities/PopButton';
-import { FC } from 'react';
+import type { FC } from 'react';
 
 const Themes: FC = () => {
   const { setIsThemeChanged } = useThemeContext();

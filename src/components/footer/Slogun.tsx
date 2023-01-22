@@ -1,5 +1,5 @@
 import TypoComp from '@utilities/TypoComponent';
-import { FC } from 'react';
+import type { FC } from 'react';
 
 const Slogun: FC = () => {
   const year = new Date().getFullYear();

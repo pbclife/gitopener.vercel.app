@@ -5,7 +5,7 @@ import {
   getDynamicPaths,
 } from 'lib/contributors';
 import { GetStaticPaths, GetStaticProps } from 'next';
-import { FC } from 'react';
+import type { FC } from 'react';
 
 type SingleContributorProps = {
   contributor: Omit<TContributor, 'isDeleted'> & {

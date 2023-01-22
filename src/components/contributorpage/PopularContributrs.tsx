@@ -1,6 +1,6 @@
 import { ContributorsProps } from '@/pages/contributors';
 import StarManIcon from '@icons/StarMan';
-import { FC } from 'react';
+import type { FC } from 'react';
 import Represent from '../layouts/represent';
 import RenderContributors from './RenderContributors';
 

@@ -1,6 +1,6 @@
 import Container from '@layouts/Container';
 import Logo from '@utilities/Logo';
-import { FC } from 'react';
+import type { FC } from 'react';
 import ThemeButton from './ThemeButton';
 
 const Navbar: FC = () => {

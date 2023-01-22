@@ -1,7 +1,7 @@
 import { useThemeContext } from '@/context/theme-context';
-import { FC } from 'react';
-import ForkAltIcon from '../icons/Fork-alt';
-import GithubAltIcon from '../icons/Github-alt';
+import ForkAltIcon from '@icons/Fork-alt';
+import GithubAltIcon from '@icons/Github-alt';
+import type { FC } from 'react';
 
 const LogoSection: FC = () => {
   const { isDark } = useThemeContext();
