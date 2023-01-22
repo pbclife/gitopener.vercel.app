@@ -13,8 +13,8 @@ type HomeProps = {
 
 const Home: NextPage<HomeProps> = ({ heading, techStack, installation }) => {
   return (
-    <Layout className="relative z-0">
-      <div className="absolute inset-0 bg-square-slate-500/10 [mask-image:linear-gradient(-90deg,white,rgba(255,255,255,0),rgba(255,255,255,0))] " />
+    <Layout className="relative z-0 overflow-hidden ">
+      <div className="absolute inset-0 backdrop-blur-xl bg-square-slate-500/10 [mask-image:linear-gradient(-90deg,rgba(255,255,255,0),white,rgba(255,255,255,0),rgba(255,255,255,0))] " />
       <Container className={`min-h-screen py-8`}>
         <RenderMdx data={heading} />
         <RenderMdx data={techStack} />
