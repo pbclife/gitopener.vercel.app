@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import type { FC } from 'react';
 import colors from 'tailwindcss/colors';
 import Hero from '../hero';
 import Container from '../layouts/Container';

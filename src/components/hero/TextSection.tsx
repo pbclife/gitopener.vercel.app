@@ -1,7 +1,7 @@
 import { useHeaderContext } from '@/context/headerContext';
 import Dot from '@utilities/Dot';
 import TypoComp from '@utilities/TypoComponent';
-import { FC } from 'react';
+import type { FC } from 'react';
 import Links from './Links';
 
 const TextSection: FC = () => {

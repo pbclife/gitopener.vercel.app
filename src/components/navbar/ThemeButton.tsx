@@ -1,7 +1,7 @@
 import { useThemeContext } from '@/context/theme-context';
 import { MoonIcon, SunIcon } from '@heroicons/react/24/solid';
 import Pop from '@utilities/Pop';
-import { FC } from 'react';
+import type { FC } from 'react';
 import Themes from './Theme';
 
 const ThemeButton: FC = () => {

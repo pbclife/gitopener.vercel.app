@@ -1,5 +1,5 @@
 import HeroLinks from '@/data/HeroLinks';
-import { FC } from 'react';
+import type { FC } from 'react';
 const replaceData = ['Create a Copy', 'Go to Repository'];
 
 const HLinks = HeroLinks.map((link, indx) => {

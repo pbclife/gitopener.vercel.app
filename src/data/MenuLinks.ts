@@ -3,7 +3,7 @@ import {
   PuzzlePieceIcon,
   UserGroupIcon,
 } from '@heroicons/react/24/solid';
-import { ComponentProps, FC } from 'react';
+import type { ComponentProps, FC } from 'react';
 
 type MLink = {
   to: string;

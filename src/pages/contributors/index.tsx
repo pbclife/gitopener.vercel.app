@@ -10,7 +10,7 @@ import {
   fetchPopularContributors,
 } from 'lib/contributors';
 import { GetStaticProps } from 'next';
-import { FC } from 'react';
+import type { FC } from 'react';
 
 interface TContributors extends TCont {
   _id: string;

@@ -2,7 +2,7 @@ import Footer from '@components/footer';
 import Header from '@components/header';
 import Menu from '@components/menu';
 import Head from 'next/head';
-import { ComponentProps, FC } from 'react';
+import type { ComponentProps, FC } from 'react';
 
 export type LayoutProps = ComponentProps<'div'> & {
   title?: string;
