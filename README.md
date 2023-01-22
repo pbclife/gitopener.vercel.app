@@ -2,7 +2,7 @@
 
 <!-- Descrption -->
 
-Checkout out [contribution guidelines](https://github.com/pbclife/gitopener.vercel.app/blob/main/CONTRIBUTING.md) before you start with contributions
+Checkout out [contribution guidelines][contributing] before you start with contributions
 
 ## Contribution guide
 
@@ -84,7 +84,7 @@ No worries! Here's a quick guide,
 10. Make appropriate changes if the maintainer recommends you to and submit it.
 11. Await for your contribution to be merged into the repository.
 
-Checkout the [Contributing.md](CONTRIBUTING.md) file before contributing.
+Checkout the [Contributing.md][contributing] file before contributing.
 
 
 <!-- ### Where can I go for help? -->
@@ -92,7 +92,7 @@ Checkout the [Contributing.md](CONTRIBUTING.md) file before contributing.
 
 ## License
 
-[MIT](LICENSE.md)
+[MIT][license]
 
 
 ## Thanks to all the Contributors ❤️
@@ -109,3 +109,5 @@ Give a ⭐ to the project if you liked it. :)
 [yarn-website]: https://classic.yarnpkg.com/lang/en/docs/install/#debian-stable
 [mongodb-docs]: https://www.mongodb.com/docs/compass/current/connect
 [github-token]: https://github.com/settings/tokens
+[contributing]: https://github.com/pbclife/gitopener.vercel.app/blob/main/CONTRIBUTING.md
+[license]:https://github.com/pbclife/gitopener.vercel.app/blob/main/LICENCE
