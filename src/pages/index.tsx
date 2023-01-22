@@ -1,5 +1,9 @@
-import Container from '@layouts/container';
+import Container from '@layouts/Container';
 import Layout from '@layouts/Main';
+import RenderMdx from '@utilities/RenderMdx';
+import type { getFileContents, getProcessedHtml } from 'lib/read-docs';
+import type { GetStaticProps, NextPage } from 'next';
+import type { TFileContent } from 'types/file';
 
 type HomeProps = {
   heading: TFileContent;
@@ -21,6 +25,34 @@ const Home: NextPage<HomeProps> = ({ heading, techStack, installation }) => {
 };
 
 export default Home;
+
+export const getStaticProps: GetStaticProps<HomeProps> = async () => {
+  const heading = await getFileContents('heading');
+  const headingHtml = await getProcessedHtml(heading.content);
+
+  const techStack = await getFileContents('tech-stack');
+  const techStackHtml = await getProcessedHtml(techStack.content);
+
+  const installation = await getFileContents('installation');
+  const installationHtml = await getProcessedHtml(installation.content);
+
+  return {
+    props: {
+      heading: {
+        meta: heading.meta,
+        content: headingHtml,
+      },
+      techStack: {
+        meta: techStack.meta,
+        content: techStackHtml,
+      },
+      installation: {
+        meta: installation.meta,
+        content: installationHtml,
+      },
+    },
+  };
+};
 
 export const getStaticProps: GetStaticProps<HomeProps> = async () => {
   const heading = await getFileContents('heading');
