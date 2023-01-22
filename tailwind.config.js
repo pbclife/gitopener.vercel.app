@@ -105,6 +105,141 @@ module.exports = {
         'poke-left': 'pokeLeft 1s ease-in-out infinite alternate',
         'bg-shift': 'gradient 15s ease infinite alternate',
       },
+      typography: (theme) => ({
+        DEFAULT: {
+          css: {
+            maxWidth: 'none',
+            hr: {
+              marginTop: '3em',
+              marginBottom: '3em',
+            },
+            'h1, h2, h3': {
+              letterSpacing: '-0.025em',
+            },
+            h2: {
+              marginBottom: `${16 / 24}em`,
+            },
+            h3: {
+              marginTop: '2.4em',
+              lineHeight: '1.4',
+            },
+            h4: {
+              marginTop: '2em',
+              fontSize: '1.125em',
+            },
+            'h2 small, h3 small, h4 small': {
+              fontFamily: theme('fontFamily.mono').join(', '),
+              fontWeight: 500,
+            },
+            'h2 small': {
+              fontSize: theme('fontSize.lg')[0],
+              ...theme('fontSize.lg')[1],
+            },
+            'h3 small': {
+              fontSize: theme('fontSize.base')[0],
+              ...theme('fontSize.base')[1],
+            },
+            'h4 small': {
+              fontSize: theme('fontSize.sm')[0],
+              ...theme('fontSize.sm')[1],
+            },
+            'ul, ol': {
+              listStyleType: 'none',
+              paddingLeft: 0,
+            },
+            'ul > li, ol > li': {
+              position: 'relative',
+              paddingLeft: '1.75em',
+            },
+            'ul > li::before, ol>li::before': {
+              content: '""',
+              width: '0.75em',
+              height: '0.125em',
+              position: 'absolute',
+              top: 'calc(0.875em - 0.0625em)',
+              left: 0,
+              borderRadius: '999px',
+            },
+            a: {
+              fontWeight: theme('fontWeight.semibold'),
+              textDecoration: 'none',
+              paddingBottom: '0.25rem',
+            },
+            'a:hover': {
+              borderBottomWidth: '2px',
+            },
+            'a code': {
+              color: 'inherit',
+              fontWeight: 'inherit',
+            },
+            strong: {
+              fontWeight: theme('fontWeight.semibold'),
+            },
+            'a strong': {
+              color: 'inherit',
+              fontWeight: 'inherit',
+            },
+            kbd: {
+              borderWidth: '1px',
+              padding: '0.125em 0.25em',
+              fontWeight: 500,
+              fontSize: '0.875em',
+              fontVariantLigatures: 'none',
+              borderRadius: '4px',
+              margin: '0 1px',
+            },
+            code: {
+              fontWeight: theme('fontWeight.medium'),
+              fontVariantLigatures: 'none',
+            },
+            pre: {
+              borderRadius: theme('borderRadius.xl'),
+              padding: theme('padding.5'),
+              display: 'flex',
+              marginTop: `${20 / 14}em`,
+              marginBottom: `${32 / 14}em`,
+            },
+            blockquote: {
+              width: 'calc(calc(100%)+1.75)em',
+              maxWidth: theme('maxWidth.xl'),
+              padding: theme('padding.4'),
+              borderWidth: '1px',
+              borderRadius: theme('borderRadius.md'),
+              position: 'relative',
+            },
+            'li > blockquote': {
+              marginLeft: '-1.75em',
+            },
+            'li > blockquote::before': {
+              content: '""',
+              width: '2em',
+              height: '0.125em',
+              position: 'absolute',
+              top: '1em',
+              left: '-2em',
+              borderRadius: '999px',
+            },
+            'p + pre': {
+              marginTop: `${-4 / 14}em`,
+            },
+            'pre + pre': {
+              marginTop: `${-16 / 14}em`,
+            },
+            'pre code': {
+              flex: 'none',
+              minWidth: '100%',
+              backgroundColor: 'transparent',
+            },
+            'figure figcaption': {
+              textAlign: 'center',
+              fontStyle: 'italic',
+            },
+            'figure > figcaption': {
+              marginTop: `${12 / 14}em`,
+            },
+          },
+        },
+      }),
     },
   },
   plugins: [
@@ -121,6 +256,19 @@ module.exports = {
           }),
         },
         { values: flattenColorPalette(theme('backgroundColor')), type: 'color' }
+      );
+      matchUtilities(
+        {
+          'bg-square': (value) => ({
+            backgroundImage: `url("${svgToDataUri(
+              `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="64" height="64" fill="none" stroke="${value}"><path d="M0 .5H31.5V32"/></svg>`
+            )}")`,
+          }),
+        },
+        {
+          values: flattenColorPalette(theme('backgroundColor')),
+          type: 'color',
+        }
       );
       matchUtilities(
         {

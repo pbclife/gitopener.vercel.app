@@ -1,0 +1,52 @@
+---
+Edit: https://github.com/pbclife/gitopener.vercel.app/edit/main/docs/installation.mdx
+---
+
+#### Guidelines
+
+# Installation
+
+- [Fork the Repository][fork-link] into your github account
+
+- Clone the project into your local machine by running following comman in console
+
+```bash
+git clone https://github.com/<your-github-username>/gitopener.vercel.app.git
+```
+
+- Navigate to the folder after successful cloning
+
+```bash
+cd gitopener.vercel.app
+```
+
+- Install required dependencies to run this software in your local machine
+  > As Git Opener uses yarn package manager, it is recommended to use yarn, [install yarn][yarn-website]
+
+```bash
+yarn
+```
+
+- Make .env.local file in root directory with these variables
+  > This step is optional, Do this step if you want to run complete application with database support
+
+```
+MONGO_URI= 'YOUR MONGODB CONNECTION STRING GOES HERE'
+GITHUB_TOKEN= 'YOUR GITHUB TOKEN GOES HERE'
+```
+
+- Get mongodb connection string here: [MONGODB DOCS][mongodb-docs]
+- Generate github token here: [GITHUB TOKEN][github-token]
+
+- Run the project on your local machine
+
+```sh
+yarn dev
+```
+
+- Every time you start making changes to your forked repo make sure it's in sync with the original repo
+
+[fork-link]: https://github.com/pbclife/gitopener.vercel.app/fork
+[yarn-website]: https://classic.yarnpkg.com/lang/en/docs/install/#debian-stable
+[mongodb-docs]: https://www.mongodb.com/docs/compass/current/connect
+[github-token]: https://github.com/settings/tokens

@@ -1,14 +1,55 @@
+import Container from '@layouts/container';
 import Layout from '@layouts/main';
-import { FC } from 'react';
+import RenderMdx from '@utilities/RenderMdx';
+import { getFileContents, getProcessedHtml } from 'lib/read-docs';
+import type { GetStaticProps, NextPage } from 'next';
+import type { TFileContent } from 'types/file';
 
-type HomeProps = {};
+type HomeProps = {
+  heading: TFileContent;
+  techStack: TFileContent;
+  installation: TFileContent;
+};
 
-const Home: FC<HomeProps> = () => {
+const Home: NextPage<HomeProps> = ({ heading, techStack, installation }) => {
   return (
-    <Layout>
-      <main className={`min-h-screen bg-skin-base`}></main>
+    <Layout className="relative z-0 overflow-hidden ">
+      <div className="absolute inset-0 backdrop-blur-xl bg-square-slate-500/10 [mask-image:linear-gradient(-90deg,rgba(255,255,255,0),white,rgba(255,255,255,0),rgba(255,255,255,0))] " />
+      <Container className={`min-h-screen py-8`}>
+        <RenderMdx data={heading} />
+        <RenderMdx data={techStack} />
+        <RenderMdx data={installation} />
+      </Container>
     </Layout>
   );
 };
 
 export default Home;
+
+export const getStaticProps: GetStaticProps<HomeProps> = async () => {
+  const heading = await getFileContents('heading');
+  const headingHtml = await getProcessedHtml(heading.content);
+
+  const techStack = await getFileContents('tech-stack');
+  const techStackHtml = await getProcessedHtml(techStack.content);
+
+  const installation = await getFileContents('installation');
+  const installationHtml = await getProcessedHtml(installation.content);
+
+  return {
+    props: {
+      heading: {
+        meta: heading.meta,
+        content: headingHtml,
+      },
+      techStack: {
+        meta: techStack.meta,
+        content: techStackHtml,
+      },
+      installation: {
+        meta: installation.meta,
+        content: installationHtml,
+      },
+    },
+  };
+};
