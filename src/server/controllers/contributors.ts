@@ -2,8 +2,8 @@ import { ERR } from '&/errors';
 import errorHandler from '&/middlewares/errorHandler';
 import Contributor from '&/models/contributors';
 import { assertIsString } from '&/validator/assertionGuards';
-import type { TContributor } from '&validation/contributor.validation';
 import ContV from '&validation/contributor.validation';
+import type { TContributor } from '@/types/server/Contributors';
 import type { NextApiHandler } from 'next';
 
 function setUpdatableProperty<T, Prop extends keyof T>(

@@ -1,9 +1,9 @@
-import type { TContributor } from '&validation/contributor.validation';
 import {
   fetchSingleContributor,
   getContribution,
   getDynamicPaths,
 } from '@/lib/Contributors';
+import type { TContributor } from '@/types/server/Contributors';
 import { GetStaticPaths, GetStaticProps } from 'next';
 import type { FC } from 'react';
 

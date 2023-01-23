@@ -1,5 +1,5 @@
 import { ERR } from '&/errors';
-import { AssertHasProps, AssertIsString } from '@/types/Assertion';
+import { AssertHasProps, AssertIsString } from '@/types/server/Assertion';
 
 export const assertHasProps: AssertHasProps = (value, props) => {
   if (typeof value !== 'object')

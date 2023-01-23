@@ -1,4 +1,4 @@
-import type { TFileContent } from '@/types/FileSystem';
+import type { TFileContent } from '@/types/client/FileSystem';
 import GithubIcon from '@icons/Github';
 import IssueIcon from '@icons/issue';
 import TypoComp from '@utilities/TypoComponent';
