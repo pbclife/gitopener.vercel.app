@@ -1,4 +1,3 @@
-import type { TCont } from '&validation/contributor.validation';
 import NewContributrs from '@/components/contributorpage/NewContributrs';
 import OldContributrs from '@/components/contributorpage/OldContributrs';
 import PopularContributrs from '@/components/contributorpage/PopularContributrs';
@@ -7,6 +6,7 @@ import {
   fetchOldContributors,
   fetchPopularContributors,
 } from '@/lib/Contributors';
+import type { TCont } from '@/types/server/Contributors';
 import Container from '@layouts/Container';
 import Layout from '@layouts/Main';
 import { GetStaticProps } from 'next';

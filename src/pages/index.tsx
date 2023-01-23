@@ -1,5 +1,5 @@
 import { getFileContents, getProcessedHtml } from '@/lib/ReadDocs';
-import type { TFileContent } from '@/types/FileSystem';
+import type { TFileContent } from '@/types/client/FileSystem';
 import Container from '@layouts/Container';
 import Layout from '@layouts/Main';
 import RenderMdx from '@utilities/RenderMdx';

@@ -2,7 +2,7 @@ import type {
   GetFileContents,
   GetProcessedHtml,
   TFileContent,
-} from '@/types/FileSystem';
+} from '@/types/client/FileSystem';
 import { promises as fs } from 'fs';
 import matter from 'gray-matter';
 import path from 'path';

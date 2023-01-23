@@ -1,4 +1,4 @@
-import type { TContributor } from '&validation/contributor.validation';
+import type { TContributor } from '@/types/server/Contributors';
 import type { Model } from 'mongoose';
 import mongoose, { model } from 'mongoose';
 
