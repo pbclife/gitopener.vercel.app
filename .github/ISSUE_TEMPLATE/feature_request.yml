@@ -1,7 +1,7 @@
 name: Feature Request 💡
 description: Have any new idea or new feature for GitOpener? Please suggest!
 title: 'Feat: <Title>'
-labels: ['feat/request']
+labels: ['feat | request']
 body:
   - type: textarea
     id: description
