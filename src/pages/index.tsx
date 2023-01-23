@@ -53,31 +53,3 @@ export const getStaticProps: GetStaticProps<HomeProps> = async () => {
     },
   };
 };
-
-export const getStaticProps: GetStaticProps<HomeProps> = async () => {
-  const heading = await getFileContents('heading');
-  const headingHtml = await getProcessedHtml(heading.content);
-
-  const techStack = await getFileContents('tech-stack');
-  const techStackHtml = await getProcessedHtml(techStack.content);
-
-  const installation = await getFileContents('installation');
-  const installationHtml = await getProcessedHtml(installation.content);
-
-  return {
-    props: {
-      heading: {
-        meta: heading.meta,
-        content: headingHtml,
-      },
-      techStack: {
-        meta: techStack.meta,
-        content: techStackHtml,
-      },
-      installation: {
-        meta: installation.meta,
-        content: installationHtml,
-      },
-    },
-  };
-};
