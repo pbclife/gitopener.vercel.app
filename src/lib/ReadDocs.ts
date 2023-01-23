@@ -1,4 +1,8 @@
-/* eslint-disable no-unused-vars */
+import type {
+  GetFileContents,
+  GetProcessedHtml,
+  TFileContent,
+} from '@/types/FileSystem';
 import { promises as fs } from 'fs';
 import matter from 'gray-matter';
 import path from 'path';
@@ -7,21 +11,18 @@ import rehypeStringify from 'rehype-stringify';
 import remarkGfm from 'remark-gfm';
 import remarkHtml from 'remark-html';
 import remarkParse from 'remark-parse';
-import type { TFileContent } from 'types/file';
 import { unified } from 'unified';
 
 const docsDir = path.join(process.cwd(), 'docs');
-
 type TSuppordedFile = 'heading' | 'installation' | 'tech-stack';
-declare type GetFileContents = (
-  fileName: TSuppordedFile
-) => Promise<TFileContent>;
-declare type GetProcessedHtml = (
-  content: TFileContent['content']
-) => Promise<string>;
 
-export const getFileContents: GetFileContents = async (fileName) => {
-  const file = await fs.readFile(path.join(docsDir, `${fileName}.mdx`), 'utf8');
+export const getFileContents: GetFileContents<TSuppordedFile> = async (
+  fileName
+) => {
+  const file = await fs.readFile(
+    path.join(docsDir, 'home', `${fileName}.mdx`),
+    'utf8'
+  );
   const grayFile = matter(file);
   const content = (
     await unified()
@@ -37,7 +38,9 @@ export const getFileContents: GetFileContents = async (fileName) => {
   };
 };
 
-export const getProcessedHtml: GetProcessedHtml = async (content) => {
+export const getProcessedHtml: GetProcessedHtml<TFileContent> = async (
+  content
+) => {
   const processedHtmlString = (
     await unified()
       .use(rehypeParse, { fragment: true })

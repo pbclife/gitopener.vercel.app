@@ -1,4 +1,4 @@
-import { useThemeContext } from '@/context/theme-context';
+import { useThemeContext } from '@/context/ThemeContext';
 import { ComputerDesktopIcon } from '@heroicons/react/24/outline';
 import PopButton from '@utilities/PopButton';
 import type { FC } from 'react';

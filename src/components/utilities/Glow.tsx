@@ -1,5 +1,5 @@
-import { useThemeContext } from '@/context/theme-context';
-import React, { FC, useEffect, useId, useState } from 'react';
+import { useThemeContext } from '@/context/ThemeContext';
+import { FC, useEffect, useId, useState } from 'react';
 import colors from 'tailwindcss/colors';
 
 interface GlowType {

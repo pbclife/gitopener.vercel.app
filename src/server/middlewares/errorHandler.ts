@@ -1,5 +1,5 @@
 import CustomError from '&/errors/customError';
-import { NextApiHandler, NextApiRequest, NextApiResponse } from 'next';
+import type { NextApiHandler, NextApiRequest, NextApiResponse } from 'next';
 
 export default function errorHandler(handle: NextApiHandler) {
   return async (req: NextApiRequest, res: NextApiResponse) => {

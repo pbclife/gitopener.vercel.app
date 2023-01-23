@@ -1,5 +1,6 @@
-import mongoose, { CallbackError } from 'mongoose';
-import { NextApiHandler, NextApiRequest, NextApiResponse } from 'next';
+import type { CallbackError } from 'mongoose';
+import mongoose from 'mongoose';
+import type { NextApiHandler, NextApiRequest, NextApiResponse } from 'next';
 
 const MONGODB_URI = process.env.MONGO_URI;
 
