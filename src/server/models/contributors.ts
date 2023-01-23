@@ -1,5 +1,6 @@
 import type { TContributor } from '&validation/contributor.validation';
-import mongoose, { Model, model } from 'mongoose';
+import type { Model } from 'mongoose';
+import mongoose, { model } from 'mongoose';
 
 type ContributorModel = Model<TContributor>;
 const contributorSchema = new mongoose.Schema<TContributor, ContributorModel>(

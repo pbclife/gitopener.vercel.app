@@ -1,4 +1,4 @@
-import { useThemeContext } from '@/context/theme-context';
+import { useThemeContext } from '@/context/ThemeContext';
 import { MoonIcon, SunIcon } from '@heroicons/react/24/solid';
 import Pop from '@utilities/Pop';
 import type { FC } from 'react';

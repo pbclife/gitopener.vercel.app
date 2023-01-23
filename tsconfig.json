@@ -18,8 +18,8 @@
     "paths": {
       "@/*": ["src/*"],
       "~/*": ["public/*"],
-      "&/*": ["server/*"],
-      "&validation/*": ["server/models/validation/*"],
+      "&/*": ["src/server/*"],
+      "&validation/*": ["src/server/models/validation/*"],
       "@layouts/*": ["src/components/layouts/*"],
       "@components/*": ["src/components/*"],
       "@utilities/*": ["src/components/utilities/*"],

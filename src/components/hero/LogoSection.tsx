@@ -1,4 +1,4 @@
-import { useThemeContext } from '@/context/theme-context';
+import { useThemeContext } from '@/context/ThemeContext';
 import ForkAltIcon from '@icons/Fork-alt';
 import GithubAltIcon from '@icons/Github-alt';
 import type { FC } from 'react';

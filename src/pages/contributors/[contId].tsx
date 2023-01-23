@@ -3,7 +3,7 @@ import {
   fetchSingleContributor,
   getContribution,
   getDynamicPaths,
-} from 'lib/contributors';
+} from '@/lib/Contributors';
 import { GetStaticPaths, GetStaticProps } from 'next';
 import type { FC } from 'react';
 

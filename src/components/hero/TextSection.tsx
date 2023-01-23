@@ -1,4 +1,4 @@
-import { useHeaderContext } from '@/context/headerContext';
+import { useHeaderContext } from '@/context/HeaderContext';
 import Dot from '@utilities/Dot';
 import TypoComp from '@utilities/TypoComponent';
 import type { FC } from 'react';

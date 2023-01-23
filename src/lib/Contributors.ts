@@ -1,6 +1,9 @@
-import octokit from '&/config/octokit';
-import { TCont, TContributor } from '&validation/contributor.validation';
-import axios from 'config/axios';
+import axios from '@/config/axios';
+import octokit from '@/server/config/octokit';
+import {
+  TCont,
+  TContributor,
+} from '@/server/models/validation/contributor.validation';
 import fs from 'fs';
 import matter from 'gray-matter';
 import path from 'path';
