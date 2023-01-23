@@ -1,8 +1,8 @@
-import GithubIcon from '@icons/github';
+import type { TFileContent } from '@/types/client/FileSystem';
+import GithubIcon from '@icons/Github';
 import IssueIcon from '@icons/issue';
-import TypoComp from '@utilities/typo-component';
+import TypoComp from '@utilities/TypoComponent';
 import type { FC } from 'react';
-import type { TFileContent } from 'types/file';
 
 type RenderMdxProps = {
   data: TFileContent;

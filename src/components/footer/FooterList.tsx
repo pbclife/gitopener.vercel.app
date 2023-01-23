@@ -1,7 +1,7 @@
 import HeroLinks from '@/data/HeroLinks';
-import { links } from '@/data/menu-links';
+import { links } from '@/data/MenuLinks';
 import Link from 'next/link';
-import { FC } from 'react';
+import type { FC } from 'react';
 
 const FooterList: FC = () => {
   return (

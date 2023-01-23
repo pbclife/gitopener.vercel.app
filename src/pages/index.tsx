@@ -1,9 +1,9 @@
-import Container from '@layouts/container';
-import Layout from '@layouts/main';
+import { getFileContents, getProcessedHtml } from '@/lib/ReadDocs';
+import type { TFileContent } from '@/types/client/FileSystem';
+import Container from '@layouts/Container';
+import Layout from '@layouts/Main';
 import RenderMdx from '@utilities/RenderMdx';
-import { getFileContents, getProcessedHtml } from 'lib/read-docs';
 import type { GetStaticProps, NextPage } from 'next';
-import type { TFileContent } from 'types/file';
 
 type HomeProps = {
   heading: TFileContent;

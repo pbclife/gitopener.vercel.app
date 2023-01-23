@@ -1,8 +1,8 @@
 import {
   createContributor,
   getAllContributors,
-} from '&/controllers/contributors';
-import connectDB from '&/db/connectDB';
+} from '@/server/controllers/contributors';
+import connectDB from '@/server/db/connectDB';
 import { NextApiHandler } from 'next';
 
 // end-point: origin/api/v1/contributors

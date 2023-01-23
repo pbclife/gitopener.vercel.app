@@ -1,5 +1,5 @@
-import ForkIcon from '@icons/fork';
-import GithubIcon from '@icons/github';
+import ForkIcon from '@icons/Fork';
+import GithubIcon from '@icons/Github';
 
 const HeroLinks = [
   {

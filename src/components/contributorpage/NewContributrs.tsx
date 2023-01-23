@@ -1,6 +1,6 @@
 import { ContributorsProps } from '@/pages/contributors';
-import FresLeafIcon from '@icons/fresh-leaf';
-import { FC } from 'react';
+import FresLeafIcon from '@icons/FreshLeaf';
+import type { FC } from 'react';
 import Represent from '../layouts/represent';
 import RenderContributors from './RenderContributors';
 

@@ -1,11 +1,13 @@
-import LogoSection from './logo-section';
-import TextSection from './text-section';
+import type { FC } from 'react';
+import LogoSection from './LogoSection';
+import TextSection from './TextSection';
 
-export default function Hero() {
+const Hero: FC = () => {
   return (
     <div className="flex w-full items-center justify-between pb-6">
       <TextSection />
       <LogoSection />
     </div>
   );
-}
+};
+export default Hero;

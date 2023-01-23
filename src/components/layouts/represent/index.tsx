@@ -1,5 +1,5 @@
-import TypoComp from '@utilities/typo-component';
-import { ComponentProps, FC } from 'react';
+import TypoComp from '@utilities/TypoComponent';
+import type { ComponentProps, FC } from 'react';
 
 type RepresentProps = ComponentProps<'div'> & {
   topTitle: string;

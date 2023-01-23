@@ -1,6 +1,6 @@
 import { ContributorsProps } from '@/pages/contributors';
-import EarlyBirdsIcon from '@icons/early-birds';
-import { FC } from 'react';
+import EarlyBirdsIcon from '@icons/EarlyBirds';
+import type { FC } from 'react';
 import Represent from '../layouts/represent';
 import RenderContributors from './RenderContributors';
 

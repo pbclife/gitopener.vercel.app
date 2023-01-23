@@ -1,11 +1,11 @@
-import type { TContributor } from '&validation/contributor.validation';
 import {
   fetchSingleContributor,
   getContribution,
   getDynamicPaths,
-} from 'lib/contributors';
+} from '@/lib/Contributors';
+import type { TContributor } from '@/types/server/Contributors';
 import { GetStaticPaths, GetStaticProps } from 'next';
-import { FC } from 'react';
+import type { FC } from 'react';
 
 type SingleContributorProps = {
   contributor: Omit<TContributor, 'isDeleted'> & {

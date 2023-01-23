@@ -1,8 +1,9 @@
-import Container from '@layouts/container';
-import Logo from '@utilities/logo';
-import ThemeButton from './theme-button';
+import Container from '@layouts/Container';
+import Logo from '@utilities/Logo';
+import type { FC } from 'react';
+import ThemeButton from './ThemeButton';
 
-export default function Navbar() {
+const Navbar: FC = () => {
   return (
     <Container className="z-10 flex items-center justify-between">
       {/* logo */}
@@ -11,4 +12,5 @@ export default function Navbar() {
       <ThemeButton />
     </Container>
   );
-}
+};
+export default Navbar;

@@ -1,6 +1,6 @@
 import { ContributorsProps } from '@/pages/contributors';
 import Link from 'next/link';
-import { FC } from 'react';
+import type { FC } from 'react';
 import ContributorComp from './ContributorComp';
 
 type Props = {

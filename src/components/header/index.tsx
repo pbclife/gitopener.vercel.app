@@ -1,10 +1,11 @@
+import type { FC } from 'react';
 import colors from 'tailwindcss/colors';
 import Hero from '../hero';
-import Container from '../layouts/container';
+import Container from '../layouts/Container';
 import Navbar from '../navbar';
-import GradientBG from '../utilities/gradient-bg';
+import GradientBG from '../utilities/GradientBg';
 
-export default function Header() {
+const Header: FC = () => {
   return (
     <div className="relative overflow-hidden">
       <Navbar />
@@ -26,4 +27,6 @@ export default function Header() {
       </Container>
     </div>
   );
-}
+};
+
+export default Header;

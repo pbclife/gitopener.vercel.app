@@ -1,16 +1,16 @@
-import type { TCont } from '&validation/contributor.validation';
 import NewContributrs from '@/components/contributorpage/NewContributrs';
 import OldContributrs from '@/components/contributorpage/OldContributrs';
 import PopularContributrs from '@/components/contributorpage/PopularContributrs';
-import Container from '@layouts/container';
-import Layout from '@layouts/main';
 import {
   fetchNewContributors,
   fetchOldContributors,
   fetchPopularContributors,
-} from 'lib/contributors';
+} from '@/lib/Contributors';
+import type { TCont } from '@/types/server/Contributors';
+import Container from '@layouts/Container';
+import Layout from '@layouts/Main';
 import { GetStaticProps } from 'next';
-import { FC } from 'react';
+import type { FC } from 'react';
 
 interface TContributors extends TCont {
   _id: string;
