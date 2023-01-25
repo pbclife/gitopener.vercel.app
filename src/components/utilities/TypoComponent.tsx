@@ -1,8 +1,8 @@
-import { ComponentProps } from 'react';
+import type { ComponentProps, FC } from 'react';
 
 type TypoCompType = ComponentProps<'div'>;
 
-export default function TypoComp({ className, ...props }: TypoCompType) {
+const TypoComp: FC<TypoCompType> = ({ className, ...props }) => {
   return (
     <div
       className={` prose max-w-2xl prose-headings:text-skin-base prose-p:font-medium prose-p:text-skin-muted ${
@@ -11,4 +11,6 @@ export default function TypoComp({ className, ...props }: TypoCompType) {
       {...props}
     />
   );
-}
+};
+
+export default TypoComp;
