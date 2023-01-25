@@ -14,6 +14,15 @@ const nextConfig = withMdx({
   images: {
     domains: ['avatars.githubusercontent.com'],
   },
+  async redirects() {
+    return [
+      {
+        source: '/guides',
+        destination: '/guides/starting-contribution/welcome',
+        permanent: true,
+      },
+    ];
+  },
 });
 
 module.exports = nextConfig;

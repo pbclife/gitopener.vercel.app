@@ -20,7 +20,7 @@
       "~/*": ["public/*"],
       "&/*": ["src/server/*"],
       "&validation/*": ["src/server/models/validation/*"],
-      "@layouts/*": ["src/components/layouts/*"],
+      "@layouts/*": ["src/layouts/*"],
       "@components/*": ["src/components/*"],
       "@utilities/*": ["src/components/utilities/*"],
       "@icons/*": ["src/components/icons/*"],
