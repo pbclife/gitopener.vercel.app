@@ -11,8 +11,8 @@ const MenuList: FC = () => {
   return (
     <ul className="flex items-center ">
       {links.map((link, indx) => {
-        const isActive: boolean = pathname === link.to;
-        return isActive ? (
+        const isNormalScroll: boolean = pathname === link.to;
+        return isNormalScroll ? (
           <li
             key={link.title + indx}
             className={`

@@ -24,7 +24,7 @@ export const links: MLink[] = [
     title: `Contributors`,
   },
   {
-    to: `/start-contributing`,
+    to: `/guides/starting-contribution/welcome`,
     icon: PuzzlePieceIcon,
     title: `Start Contributing`,
   },
