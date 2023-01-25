@@ -1,7 +1,7 @@
 import { ContributorsProps } from '@/pages/contributors';
 import FresLeafIcon from '@icons/FreshLeaf';
 import type { FC } from 'react';
-import Represent from '../layouts/represent';
+import Represent from '../../layouts/represent';
 import RenderContributors from './RenderContributors';
 
 type Props = {

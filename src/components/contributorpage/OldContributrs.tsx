@@ -1,7 +1,7 @@
 import { ContributorsProps } from '@/pages/contributors';
 import EarlyBirdsIcon from '@icons/EarlyBirds';
 import type { FC } from 'react';
-import Represent from '../layouts/represent';
+import Represent from '../../layouts/represent';
 import RenderContributors from './RenderContributors';
 
 type Props = {
