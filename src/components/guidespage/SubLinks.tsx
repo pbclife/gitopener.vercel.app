@@ -1,12 +1,16 @@
+import { useDocumentationContext } from '@/context/DocumentationContext';
 import type { PostFile } from '@/types/client/FileSystem';
 import Link from 'next/link';
-import { FC } from 'react';
+import type { FC } from 'react';
 
 type SubLinksProps = {
   fileList: PostFile[];
+  onLinkClick?(): void;
 };
 
-const SubLinks: FC<SubLinksProps> = ({ fileList }) => {
+const SubLinks: FC<SubLinksProps> = ({ fileList, onLinkClick }) => {
+  const { activeLink, setActiveLink } = useDocumentationContext();
+
   fileList = [
     ...fileList.filter((file) => file.name === 'welcome'),
     ...fileList.filter((file) => file.name !== 'welcome'),
@@ -15,16 +19,44 @@ const SubLinks: FC<SubLinksProps> = ({ fileList }) => {
     return str.split('-').join(' ');
   }
 
+  function handleClick(value: PostFile['link']) {
+    if (onLinkClick) {
+      onLinkClick();
+    }
+    setActiveLink(value);
+  }
+
   return (
-    <ol className="my-2 text-sm font-normal text-skin-muted">
-      {fileList.map((file, indx) => (
-        <li
-          key={file.name + indx}
-          className="border-l border-skin-base py-1 pl-4 hover:border-accent"
-        >
-          <Link href={file.link}>{beautify(file.name)}</Link>
-        </li>
-      ))}
+    <ol className="my-2 space-y-2 border-l border-skin-base text-sm font-medium text-skin-muted">
+      {fileList.map((file, indx) => {
+        const isActive = file.link === activeLink;
+        return (
+          <li
+            key={file.name + indx}
+            className={`-ml-px border-l pl-4  hover:border-accent/60
+            ${
+              isActive
+                ? `border-accent font-semibold text-accent`
+                : `border-transparent`
+            }
+          `}
+          >
+            {isActive ? (
+              <button
+                type="button"
+                onClick={() => handleClick(file.link)}
+                className="capitalize outline-none"
+              >
+                {beautify(file.name)}
+              </button>
+            ) : (
+              <Link href={file.link} onClick={() => handleClick(file.link)}>
+                {beautify(file.name)}
+              </Link>
+            )}
+          </li>
+        );
+      })}
     </ol>
   );
 };
