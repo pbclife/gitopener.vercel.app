@@ -3,9 +3,11 @@ import type { MDXRemoteSerializeResult } from 'next-mdx-remote';
 import type { ParsedUrlQuery } from 'querystring';
 
 interface PostMeta {
-  title: string;
+  title?: string;
+  description?: string;
   author?: string;
-  dir?: string;
+  dirName?: string;
+  fileName?: string;
   edit: string;
 }
 
