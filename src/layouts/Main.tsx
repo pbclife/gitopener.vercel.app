@@ -1,7 +1,7 @@
 import Footer from '@components/footer';
 import Header from '@components/header';
 import Menu from '@components/menu';
-import Head from 'next/head';
+import Head from '@utilities/Head';
 import type { ComponentProps, FC } from 'react';
 
 export type LayoutProps = ComponentProps<'div'> & {
@@ -10,19 +10,14 @@ export type LayoutProps = ComponentProps<'div'> & {
 };
 
 const Layout: FC<LayoutProps> = ({
-  title = 'Git Opener',
-  description = 'Open source student community to learn and getting started with open-source',
+  title,
+  description,
   className,
   ...props
 }) => {
   return (
     <>
-      <Head>
-        <title>{title}</title>
-        <meta name="description" content={description} />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+      <Head title={title} description={description} />
       <section className="z-0">
         <Header />
         {/* Menu  */}
