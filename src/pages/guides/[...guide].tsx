@@ -1,17 +1,17 @@
 import TypoComp from '@/components/utilities/TypoComponent';
 import Container from '@/layouts/Container';
-import Docs from '@/layouts/Documentation';
+import DocumentationLayout from '@/layouts/Documentation';
 import {
   getContentsFromSlug,
   getDocumentsMenu,
   getGuidePaths,
-} from '@/lib/Guides';
+} from '@/lib/ReadDocs';
 import type { FolderStructure, Post } from '@/types/client/FileSystem';
 import { MDXProvider } from '@mdx-js/react';
 import type { GetStaticPaths, GetStaticProps, NextPage } from 'next';
 import { MDXRemote } from 'next-mdx-remote';
 import Image from 'next/image';
-import { ComponentProps, FC } from 'react';
+import type { ComponentProps, FC } from 'react';
 
 type MDXComponents = ComponentProps<typeof MDXProvider>['components'];
 type DocsProps = Post & {
@@ -58,13 +58,13 @@ const Guides: NextPage<DocsProps> = ({ menu, meta, source }) => {
   };
 
   return (
-    <Docs menu={menu} dir={meta.dir} className="text-skin-base">
+    <DocumentationLayout menu={menu} meta={meta} className="text-skin-base">
       <Container className="relative py-8">
         <TypoComp>
           <MDXRemote {...source} components={components} />
         </TypoComp>
       </Container>
-    </Docs>
+    </DocumentationLayout>
   );
 };
 
