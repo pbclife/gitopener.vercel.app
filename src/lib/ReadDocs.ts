@@ -7,12 +7,15 @@ import type {
   GetProcessedHtml,
   TFileContent,
 } from '@/types/client/FileSystem';
+import withCodeBlocks from '@/utils/mdx/rehype/withCodeBlocks';
+import withSyntaxHighlighting from '@/utils/mdx/rehype/withSyntaxHighlighting';
 import { promises as fs } from 'fs';
 import matter from 'gray-matter';
 import { serialize } from 'next-mdx-remote/serialize';
 import path from 'path';
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 import rehypeParse from 'rehype-parse';
+import rehypePrism from 'rehype-prism-plus';
 import rehypeSlug from 'rehype-slug';
 import rehypeStringify from 'rehype-stringify';
 import remarkGfm from 'remark-gfm';
@@ -89,6 +92,14 @@ export const getContentsFromSlug: GetContentsFromSlug = async (slug) => {
   const mdxSouce = await serialize(content, {
     mdxOptions: {
       rehypePlugins: [
+        withCodeBlocks,
+        rehypePrism,
+        [
+          withSyntaxHighlighting,
+          {
+            ignoreMissing: true,
+          },
+        ],
         rehypeSlug,
         [rehypeAutolinkHeadings, { behavior: `wrap` }],
         // [toc, { headings: ['h1', 'h2'] }],

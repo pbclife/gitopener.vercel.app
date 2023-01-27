@@ -1,11 +1,11 @@
 import Footer from '@/components/footer';
 import { BreadCrumb, DocList } from '@/components/guidespage';
+import DocEditIcon from '@/components/icons/DocEdit';
 import MenuComp from '@/components/menu';
 import ToolTip from '@/components/utilities/Tooltip';
 import DocumentationProvider from '@/context/DocumentationContext';
 import useArea from '@/hooks/useArea';
 import { FolderStructure, Post } from '@/types/client/FileSystem';
-import { DocumentPlusIcon } from '@heroicons/react/24/outline';
 import Head from '@utilities/Head';
 import type { ComponentProps, FC } from 'react';
 import Container from './Container';
@@ -51,12 +51,15 @@ const DocumentationLayout: FC<DocumentationLayoutProps> = ({
                   </div>
                   <a href={meta.edit}>
                     <ToolTip tip="Edit on Github" direction="button">
-                      <DocumentPlusIcon className="h-6 w-6" />
+                      <DocEditIcon className="h-6 w-6" />
                     </ToolTip>
                   </a>
                 </div>
                 {/* outlet */}
-                <div className={`bg-skin-base ${className || ``}`} {...props} />
+                <div
+                  className={`overflow-hidden bg-skin-base ${className || ``}`}
+                  {...props}
+                />
               </article>
             </div>
           </Container>

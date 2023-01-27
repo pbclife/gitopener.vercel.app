@@ -1,3 +1,4 @@
+import mdxComponents from '@/components/mdxcomponents';
 import TypoComp from '@/components/utilities/TypoComponent';
 import Container from '@/layouts/Container';
 import DocumentationLayout from '@/layouts/Documentation';
@@ -7,61 +8,20 @@ import {
   getGuidePaths,
 } from '@/lib/ReadDocs';
 import type { FolderStructure, Post } from '@/types/client/FileSystem';
-import { MDXProvider } from '@mdx-js/react';
 import type { GetStaticPaths, GetStaticProps, NextPage } from 'next';
 import { MDXRemote } from 'next-mdx-remote';
-import Image from 'next/image';
-import type { ComponentProps, FC } from 'react';
 
-type MDXComponents = ComponentProps<typeof MDXProvider>['components'];
 type DocsProps = Post & {
   menu: FolderStructure;
 };
 
-const ResponsiveImg: FC<{
-  alt: string;
-  src: string;
-  width: number;
-  height: number;
-}> = ({ alt, src, height, width }) => {
-  return (
-    <Image
-      alt={alt}
-      src={src}
-      width={width}
-      height={height}
-      className="mb-16 h-64 w-full rounded-md object-cover object-center"
-    />
-  );
-};
-
-const PreCode: FC<ComponentProps<'pre'>> = ({
-  className,
-  children,
-  ...props
-}) => {
-  return (
-    <pre
-      className={`relative max-w-xs rounded-none ${className || ``}`}
-      {...props}
-    >
-      <span className="absolute inset-0 h-2 w-full bg-sky-500" />
-      {children}
-    </pre>
-  );
-};
-
 const Guides: NextPage<DocsProps> = ({ menu, meta, source }) => {
-  const components: MDXComponents = {
-    pre: PreCode,
-    ResponsiveImg,
-  };
-
   return (
     <DocumentationLayout menu={menu} meta={meta} className="text-skin-base">
-      <Container className="relative py-8">
-        <TypoComp>
-          <MDXRemote {...source} components={components} />
+      <Container className="relative py-4">
+        <TypoComp className="max-w-full text-skin-base prose-h5:font-semibold prose-h5:capitalize prose-h5:text-accent">
+          <h5>{meta.dirName || meta.fileName}</h5>
+          <MDXRemote {...source} components={mdxComponents} />
         </TypoComp>
       </Container>
     </DocumentationLayout>
