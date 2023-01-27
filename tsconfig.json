@@ -27,6 +27,11 @@
       "~/images/*": ["public/images/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    "src/utils/mdx/rehype/withSyntaxHighlighting.js"
+  ],
   "exclude": ["node_modules"]
 }
