@@ -16,9 +16,7 @@ const Logo: FC<LogoProps> = ({ normal = false, small = false }) => {
 
   const content = (
     <>
-      <GitOpenerIcon
-        className={` -rotate-90  ${small ? `h-6 w-6` : `h-8 w-8`}`}
-      />
+      <GitOpenerIcon className={` ${small ? `h-6 w-6` : `h-8 w-8`}`} />
       <span
         className={`font-bold tracking-tight ${small ? `text-xl` : `text-2xl`}`}
       >
@@ -28,16 +26,14 @@ const Logo: FC<LogoProps> = ({ normal = false, small = false }) => {
   );
 
   if (normal) {
-    return (
-      <div className="flex items-center -space-x-[0.38rem]">{content}</div>
-    );
+    return <div className="flex items-center space-x-1">{content}</div>;
   }
 
   return (
     <button
       type="button"
       onClick={scrollToTop}
-      className="flex items-center -space-x-[0.38rem] border-none py-4 text-skin-base outline-none"
+      className="flex items-center space-x-1 border-none py-4 text-skin-base outline-none"
     >
       {content}
     </button>
