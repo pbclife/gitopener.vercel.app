@@ -1,17 +1,18 @@
+import beautify from '@/utils/beautify';
 import { ClipboardIcon } from '@heroicons/react/24/outline';
 import { FC, ReactNode, useEffect, useState } from 'react';
 
 type CodeBlockProps = {
   children: ReactNode;
   fileName: string;
+  toCopy: string;
 };
 
-const CodeBlock: FC<CodeBlockProps> = ({ children, fileName }) => {
-  console.log(fileName);
-
-  const [text, setText] = useState<string>(`copy`);
+const CodeBlock: FC<CodeBlockProps> = ({ children, fileName, toCopy }) => {
+  const [text, setText] = useState<'copy' | 'copied'>(`copy`);
 
   function handleClick() {
+    navigator.clipboard.writeText(toCopy);
     setText(`copied`);
   }
 
@@ -24,27 +25,38 @@ const CodeBlock: FC<CodeBlockProps> = ({ children, fileName }) => {
   }, [text]);
 
   return (
-    <span className="flex flex-col ">
-      <div className="rounded-t-lg rounded-b-none bg-slate-800 py-2">
-        <div className="flex min-h-[2rem] w-full items-center justify-end border-y border-slate-600 bg-slate-700 py-1 px-4">
-          <button
-            onClick={handleClick}
-            className="group relative text-slate-200 outline-none hover:text-white"
-          >
-            <ClipboardIcon className="h-6 w-6" />
-            <div className="absolute -top-full left-1/2 hidden -translate-x-1/2 -translate-y-1/2 rounded-lg bg-accent  px-3 py-0.5 font-medium text-white group-hover:block">
-              {text}
-              <span className="absolute inset-0 top-full left-1/2 -z-10 h-2 w-2 -translate-x-1/2 -translate-y-1/2 rotate-45 bg-accent " />
-            </div>
-          </button>
+    <div className="rounded-lg bg-slate-800 pt-2">
+      <div className="flex bg-slate-700 text-sm font-medium leading-6 text-accent">
+        {fileName && (
+          <div className="flex flex-none items-center border-t border-b border-accent border-t-transparent bg-slate-800 px-4 py-1">
+            {beautify(fileName)}
+          </div>
+        )}
+        <div className="flex flex-auto items-center rounded-t-lg border border-slate-600">
+          <div className="flex flex-auto justify-end space-x-4 ">
+            <button
+              onClick={handleClick}
+              className="group relative mx-4 my-1 text-slate-200 outline-none hover:text-white"
+            >
+              <ClipboardIcon className="h-6 w-6" />
+              <div
+                className={`absolute -top-full left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-lg bg-accent px-3  py-0.5 font-medium capitalize text-white group-hover:block ${
+                  text === 'copied' ? `block` : `hidden`
+                }`}
+              >
+                {text}
+                <span className="absolute inset-0 top-full left-1/2 -z-10 h-2 w-2 -translate-x-1/2 -translate-y-1/2 rotate-45 bg-accent " />
+              </div>
+            </button>
+          </div>
         </div>
       </div>
       <div
-        className={`relative m-0 overflow-auto rounded-t-none rounded-b-lg bg-slate-800 p-0 prose-code:border-none prose-code:bg-transparent prose-code:text-inherit `}
+        className={`overflow-auto rounded-b-lg prose-code:border-none prose-code:bg-transparent prose-code:text-inherit prose-pre:px-2 `}
       >
         {children}
       </div>
-    </span>
+    </div>
   );
 };
 

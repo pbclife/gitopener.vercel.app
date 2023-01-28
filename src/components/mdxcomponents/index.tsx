@@ -10,11 +10,11 @@ import ResponsiveImg from './ResponsiveImage';
 
 type MDXComponents = ComponentProps<typeof MDXProvider>['components'];
 const mdxComponents: MDXComponents = {
-  ResponsiveImg,
   a: Anchor,
-  li: List,
-  code: Code,
   blockquote: BlockQuote,
+  code: Code,
+  li: List,
+  ResponsiveImg,
   CodeBlock,
 };
 
