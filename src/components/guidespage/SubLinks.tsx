@@ -1,5 +1,6 @@
 import { useDocumentationContext } from '@/context/DocumentationContext';
 import type { PostFile } from '@/types/client/FileSystem';
+import beautify from '@/utils/beautify';
 import Link from 'next/link';
 import type { FC } from 'react';
 
@@ -16,9 +17,6 @@ const SubLinks: FC<SubLinksProps> = ({ fileList, onLinkClick }) => {
     ...fileList.filter((file) => file.name === 'welcome'),
     ...fileList.filter((file) => file.name !== 'welcome'),
   ];
-  function beautify(str: string) {
-    return str.split('-').join(' ');
-  }
 
   function handleClick(value: PostFile['link']) {
     if (onLinkClick) {
@@ -28,7 +26,7 @@ const SubLinks: FC<SubLinksProps> = ({ fileList, onLinkClick }) => {
   }
 
   return (
-    <ol className="my-2 space-y-2 border-l border-skin-base text-sm font-medium text-skin-muted">
+    <ol className="my-2 space-y-2 border-l border-skin-base font-medium text-skin-muted">
       {fileList.map((file, indx) => {
         const isActive = file.link === activeLink;
         return (

@@ -1,4 +1,5 @@
 import type { FolderStructure } from '@/types/client/FileSystem';
+import beautify from '@/utils/beautify';
 import type { ComponentProps, FC } from 'react';
 import SubLinks from './SubLinks';
 
@@ -19,10 +20,6 @@ const SidebarLinks: FC<SidebarLinksProps> = ({
     ...Object.keys(data).filter((dir) => dir !== 'starting-contribution'),
   ];
 
-  function beautify(str: string) {
-    return str.split('-').join(' ');
-  }
-
   // JSX
   return (
     <ul
@@ -30,7 +27,7 @@ const SidebarLinks: FC<SidebarLinksProps> = ({
       {...props}
     >
       {folders.map((folder) => (
-        <li key={folder} className="font-medium capitalize">
+        <li key={folder} className="text-lg font-medium capitalize">
           {beautify(folder)}
           <SubLinks onLinkClick={performOnLinkClick} fileList={data[folder]} />
         </li>
