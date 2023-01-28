@@ -1,12 +1,12 @@
 import mdxComponents from '@/components/mdxcomponents';
 import TypoComp from '@/components/utilities/TypoComponent';
 import Container from '@/layouts/Container';
-import DocumentationLayout from '@/layouts/Documentation';
+import DocumentationLayout from '@/layouts/DocumentationLayout';
 import {
   getContentsFromSlug,
   getDocumentsMenu,
   getGuidePaths,
-} from '@/lib/ReadDocs';
+} from '@/lib/readDocs';
 import type { FolderStructure, Post } from '@/types/client/FileSystem';
 import type { GetStaticPaths, GetStaticProps, NextPage } from 'next';
 import { MDXRemote } from 'next-mdx-remote';

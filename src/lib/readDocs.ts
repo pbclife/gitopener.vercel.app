@@ -1,3 +1,10 @@
+import { getMdxContent } from '@/lib/mdx/getMdxContent';
+import {
+  getFilesHasExtension,
+  getFilesOfDir,
+  prepareMeta,
+  removeExtension,
+} from '@/lib/utils';
 import type {
   FolderStructure,
   GetContentsFromSlug,
@@ -7,22 +14,15 @@ import type {
   GetProcessedHtml,
   TFileContent,
 } from '@/types/client/FileSystem';
-import withCodeBlocks from '@/utils/mdx/rehype/withCodeBlocks';
-import withSyntaxHighlighting from '@/utils/mdx/rehype/withSyntaxHighlighting';
 import { promises as fs } from 'fs';
 import matter from 'gray-matter';
-import { serialize } from 'next-mdx-remote/serialize';
 import path from 'path';
-import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 import rehypeParse from 'rehype-parse';
-import rehypePrism from 'rehype-prism-plus';
-import rehypeSlug from 'rehype-slug';
 import rehypeStringify from 'rehype-stringify';
 import remarkGfm from 'remark-gfm';
 import remarkHtml from 'remark-html';
 import remarkParse from 'remark-parse';
 import { unified } from 'unified';
-import { getFilesHasExtension, getFilesOfDir, removeExtension } from './Utils';
 
 type TSuppordedFile = 'heading' | 'installation' | 'tech-stack';
 
@@ -89,45 +89,14 @@ export const getContentsFromSlug: GetContentsFromSlug = async (slug) => {
   const file = await fs.readFile(filePath);
 
   const { data, content } = matter(file);
-  const mdxSouce = await serialize(content, {
-    mdxOptions: {
-      rehypePlugins: [
-        withCodeBlocks,
-        rehypePrism,
-        [
-          withSyntaxHighlighting,
-          {
-            ignoreMissing: true,
-          },
-        ],
-        rehypeSlug,
-        [rehypeAutolinkHeadings, { behavior: `wrap` }],
-        // [toc, { headings: ['h1', 'h2'] }],
-      ],
-    },
-  });
+  const source = await getMdxContent(content);
 
   // Extracting DirName and FileName from catch-all-params
-  const slugArr = slug.split('/');
-  let dirName = ``;
-  let fileName = ``;
-  if (slugArr.length >= 2) {
-    dirName = slugArr[slugArr.length - 2].split('-').join(' ');
-    fileName = slugArr[slugArr.length - 1].split('-').join(' ');
-  } else if (slugArr.length === 1) {
-    fileName = slugArr[slugArr.length - 1].split('-').join(' ');
-  }
+  const meta = prepareMeta(data, slug);
 
   return {
-    meta: {
-      dirName,
-      fileName,
-      title: data?.title ?? null,
-      description: data?.description ?? null,
-      author: data?.author ?? null,
-      edit: process.env.REPO + `/guides/${slug}.mdx`,
-    },
-    source: mdxSouce,
+    meta,
+    source,
   };
 };
 

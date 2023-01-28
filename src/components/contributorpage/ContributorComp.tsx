@@ -1,4 +1,4 @@
-import { getFormattedDate } from '@/lib/Date';
+import { getFormattedDate } from '@/lib/date';
 import type { TCont } from '@/types/server/Contributors';
 import GithubIcon from '@icons/Github';
 import Glow from '@utilities/Glow';

@@ -1,3 +1,5 @@
+import { PrepareMeta } from '@/types/client/FileSystem';
+import beautify from '@/utils/beautify';
 import { promises as fs } from 'fs';
 
 export const getFilesOfDir = async (dirName: string, rem = dirName) => {
@@ -35,4 +37,26 @@ export const getFilesHasExtension = (
     const _ext = getExtension(file);
     return extensions.includes(_ext);
   });
+};
+
+export const prepareMeta: PrepareMeta = (data, slug) => {
+  const slugArr = slug.split('/');
+  let dirName = ``;
+  let fileName = ``;
+  if (slugArr.length >= 2) {
+    dirName = beautify(slugArr[slugArr.length - 2]);
+    fileName = beautify(slugArr[slugArr.length - 1]);
+  } else if (slugArr.length === 1) {
+    fileName = beautify(slugArr[slugArr.length - 1]);
+  }
+  const meta: ReturnType<PrepareMeta> = {
+    dirName,
+    fileName,
+    title: data?.title || ``,
+    description: data?.description || ``,
+    author: data?.author || ``,
+    edit: process.env.REPO + `/guides/${slug}.mdx`,
+  };
+
+  return meta;
 };

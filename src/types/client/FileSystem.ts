@@ -48,3 +48,11 @@ export declare type GetContentsFromSlug = (
 ) => Post | Promise<Post>;
 
 export declare type GetDocumentsMenu = () => Promise<FolderStructure>;
+
+interface StringKeyObject {
+  [key: string]: string | undefined;
+}
+export declare type PrepareMeta = (
+  data: StringKeyObject,
+  slug: string
+) => PostMeta;

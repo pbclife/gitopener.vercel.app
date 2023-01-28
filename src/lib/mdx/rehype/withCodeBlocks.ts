@@ -10,27 +10,21 @@ const withCodeBlocks = () => {
       if (node?.children && node?.children[0]?.tagName !== 'code') return node;
       const code = node.children[0];
 
-      let filename = undefined;
-      if (['RequestExample', 'ResponseExample'].includes(parent.name)) {
-        const parentType = parent.name.slice(0, -7);
-        filename = i === 0 ? parentType : `${parentType} ${i + 1}`;
-        if (!node.children[0]?.data?.meta) {
-          node.children[0].data = {
-            ...node.children[0].data,
-            meta: filename,
-          };
-        }
-      }
-
-      if (code.data?.meta) {
-        filename = code.data.meta;
+      let fileName = undefined;
+      if (code?.data?.meta) {
+        fileName = code.data.meta;
       }
 
       const wrap = {
         type: 'mdxJsxFlowElement',
         name: 'CodeBlock',
         attributes: [
-          { type: 'mdxJsxAttribute', name: 'filename', value: filename ?? '' },
+          { type: 'mdxJsxAttribute', name: 'fileName', value: fileName ?? '' },
+          {
+            type: 'mdxJsxAttribute',
+            name: 'toCopy',
+            value: code?.children[0]?.value ?? '',
+          },
         ],
         data: { _mdxExplicitJsx: true },
       } as any;

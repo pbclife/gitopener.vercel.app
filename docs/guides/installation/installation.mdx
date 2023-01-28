@@ -9,29 +9,29 @@ edit: https://github.com/pbclife/gitopener.vercel.app/edit/main/docs/installatio
 
 - Clone the project into your local machine by running following comman in console
 
-```bash Clone-to-local-machine
+```bash Clone to local machine
 git clone https://github.com/<your-github-username>/gitopener.vercel.app.git
 ```
 
 - Navigate to the folder after successful cloning
 
-```bash
+```bash Change Dir
 cd gitopener.vercel.app
 ```
 
 - Install required dependencies to run this software in your local machine
   > As Git Opener uses yarn package manager, it is recommended to use yarn, [install yarn][yarn-website]
 
-```bash
+```bash Terminal
 yarn
 ```
 
 - Make .env.local file in root directory with these variables
   > This step is optional, Do this step if you want to run complete application with database support
 
-```
-MONGO_URI= 'YOUR MONGODB CONNECTION STRING GOES HERE'
-GITHUB_TOKEN= 'YOUR GITHUB TOKEN GOES HERE'
+```jsx .env.local
+MONGO_URI = 'YOUR MONGODB CONNECTION STRING GOES HERE';
+GITHUB_TOKEN = 'YOUR GITHUB TOKEN GOES HERE';
 ```
 
 - Get mongodb connection string here: [MONGODB DOCS][mongodb-docs]
@@ -39,7 +39,7 @@ GITHUB_TOKEN= 'YOUR GITHUB TOKEN GOES HERE'
 
 - Run the project on your local machine
 
-```sh
+```sh Terminal
 yarn dev
 ```
 
