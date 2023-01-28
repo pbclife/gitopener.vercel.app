@@ -31,7 +31,8 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
-    "src/utils/mdx/rehype/withSyntaxHighlighting.js"
+    "src/utils/mdx/rehype/withSyntaxHighlighting.js",
+    "src/lib/mdx/rehype/withNextLinks.js"
   ],
   "exclude": ["node_modules"]
 }
