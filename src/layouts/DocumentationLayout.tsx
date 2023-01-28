@@ -39,7 +39,7 @@ const DocumentationLayout: FC<DocumentationLayoutProps> = ({
             )}
             <article className="relative z-0 border border-t-0 border-skin-base pb-4 lg:col-span-full lg:col-start-5">
               {/* breadcrumb */}
-              <div className="sticky inset-x-0 top-16 z-10 flex min-h-16 w-full items-center justify-between border-b border-skin-base bg-skin-base px-4 sm:px-8 md:top-20">
+              <div className="sticky inset-x-0 top-16 z-10 flex min-h-16 w-full items-center justify-between border-b border-skin-base bg-skin-base/80 px-4 backdrop-blur-md sm:px-8 md:top-20">
                 <div className="flex items-center gap-x-4">
                   {width < 1024 && <DocList mobile data={menu} />}
                   <BreadCrumb dirName={meta.dirName} fileName={meta.fileName} />
