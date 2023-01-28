@@ -25,15 +25,15 @@ const CodeBlock: FC<CodeBlockProps> = ({ children, fileName, toCopy }) => {
   }, [text]);
 
   return (
-    <div className="rounded-lg bg-slate-800 pt-2">
-      <div className="flex bg-slate-700 text-sm font-medium leading-6 text-accent">
+    <div className="rounded-lg border border-slate-700 bg-slate-800 pt-2">
+      <div className="-mx-px flex text-sm font-medium leading-6 text-accent">
         {fileName && (
           <div className="flex flex-none items-center border-t border-b border-accent border-t-transparent bg-slate-800 px-4 py-1">
             {beautify(fileName)}
           </div>
         )}
-        <div className="flex flex-auto items-center rounded-t-lg border border-slate-600">
-          <div className="flex flex-auto justify-end space-x-4 ">
+        <div className="flex flex-auto items-center rounded-t-md border border-slate-600 bg-slate-700/70">
+          <div className="flex flex-auto items-center justify-end space-x-4 ">
             <button
               onClick={handleClick}
               className="group relative mx-4 my-1 text-slate-200 outline-none hover:text-white"

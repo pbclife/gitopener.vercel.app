@@ -19,3 +19,37 @@ const mdxComponents: MDXComponents = {
 };
 
 export default mdxComponents;
+
+export const allowedComponents = [
+  'CodeBlock',
+  'ResponsiveImage',
+  'a',
+  'b',
+  'br',
+  'button',
+  'blockquote',
+  'div',
+  'form',
+  'h1',
+  'h2',
+  'h3',
+  'h4',
+  'head',
+  'img',
+  'input',
+  'label',
+  'li',
+  'link',
+  'ol',
+  'p',
+  'path',
+  'script',
+  'section',
+  'source',
+  'span',
+  'sub',
+  'sup',
+  'svg',
+  'ul',
+  'video',
+];
