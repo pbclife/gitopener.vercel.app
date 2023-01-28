@@ -197,6 +197,16 @@ module.exports = {
             },
             code: {
               fontVariantLigatures: 'none',
+              fontWeight: theme('fontWeight.medium'),
+              borderRadius: theme('borderRadius.md'),
+              borderWidth: '1px',
+              padding: '0.25rem 0.5rem',
+            },
+            'code::before': {
+              content: '""',
+            },
+            'code::after': {
+              content: '""',
             },
             pre: {
               margin: theme('margin.0'),
@@ -210,21 +220,15 @@ module.exports = {
             },
             'pre + pre': {
               marginTop: `${-16 / 14}em`,
-              padding: theme('padding.0'),
             },
             'pre > code': {
               flex: 'none',
               minWidth: '100%',
+              margin: theme('margin.6'),
               backgroundColor: 'transparent',
               fontSize: theme('fontSize.base'),
-            },
-
-            'figure figcaption': {
-              textAlign: 'center',
-              fontStyle: 'italic',
-            },
-            'figure > figcaption': {
-              marginTop: `${12 / 14}em`,
+              fontWeight: theme('fontWeight.medium'),
+              color: 'inherit',
             },
           },
         },
