@@ -209,8 +209,11 @@ module.exports = {
               content: '""',
             },
             pre: {
-              margin: theme('margin.0'),
-              padding: theme('padding.6'),
+              borderRadius: theme('borderRadius.xl'),
+              padding: theme('padding.5'),
+              boxShadow: theme('boxShadow.md'),
+              display: 'flex',
+              margin: '0px',
             },
             p: {
               fontSize: theme('fontSize.lg'),
@@ -224,7 +227,7 @@ module.exports = {
             'pre > code': {
               flex: 'none',
               minWidth: '100%',
-              margin: theme('margin.6'),
+              padding: '0rem 1rem',
               backgroundColor: 'transparent',
               fontSize: theme('fontSize.base'),
               fontWeight: theme('fontWeight.medium'),

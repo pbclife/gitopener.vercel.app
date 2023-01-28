@@ -52,7 +52,7 @@ const CodeBlock: FC<CodeBlockProps> = ({ children, fileName, toCopy }) => {
         </div>
       </div>
       <div
-        className={`overflow-auto rounded-b-lg prose-code:border-none prose-code:bg-transparent prose-code:text-inherit prose-pre:px-2 `}
+        className={`rounded-b-lg prose-code:border-none prose-code:bg-transparent prose-code:text-inherit prose-pre:px-2 `}
       >
         {children}
       </div>
