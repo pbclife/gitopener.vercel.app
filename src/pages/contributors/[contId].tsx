@@ -2,7 +2,7 @@ import {
   fetchSingleContributor,
   getContribution,
   getDynamicPaths,
-} from '@/lib/Contributors';
+} from '@/lib/contributors';
 import type { TContributor } from '@/types/server/Contributors';
 import { GetStaticPaths, GetStaticProps } from 'next';
 import type { FC } from 'react';

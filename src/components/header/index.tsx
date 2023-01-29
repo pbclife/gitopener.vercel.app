@@ -1,7 +1,7 @@
 import type { FC } from 'react';
 import colors from 'tailwindcss/colors';
+import Container from '../../layouts/Container';
 import Hero from '../hero';
-import Container from '../layouts/Container';
 import Navbar from '../navbar';
 import GradientBG from '../utilities/GradientBg';
 

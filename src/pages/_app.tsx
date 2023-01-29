@@ -1,3 +1,4 @@
+import DocumentationProvider from '@/context/DocumentationContext';
 import HeaderProvider from '@/context/HeaderContext';
 import ThemeProvider from '@/context/ThemeContext';
 import useProgressBar from '@/hooks/useProgressBar';
@@ -30,7 +31,9 @@ export default function App({ Component, pageProps }: AppProps) {
       <main className={`${inter.variable} ${firaCode.variable}`}>
         <ThemeProvider>
           <HeaderProvider>
-            <Component {...pageProps} />
+            <DocumentationProvider>
+              <Component {...pageProps} />
+            </DocumentationProvider>
           </HeaderProvider>
         </ThemeProvider>
       </main>

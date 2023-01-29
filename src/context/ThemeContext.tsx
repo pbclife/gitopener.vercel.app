@@ -9,18 +9,21 @@ import {
   useState,
 } from 'react';
 
+type Mode = 'light' | 'dark';
+
 interface ThemeStateType {
+  mode: Mode;
   setIsThemeChanged: Dispatch<SetStateAction<number>>;
   isDark: boolean;
 }
 
 const ThemeContext = createContext<ThemeStateType>({
+  mode: 'light',
   isDark: false,
   setIsThemeChanged: () => {},
 });
 
 type ThemeProps = ComponentProps<'div'>;
-type Mode = 'light' | 'dark';
 
 const ThemeProvider: FC<ThemeProps> = ({ children, className, ...props }) => {
   const [isDark, setIsDark] = useState<boolean>(false);
@@ -70,6 +73,7 @@ const ThemeProvider: FC<ThemeProps> = ({ children, className, ...props }) => {
   }, [isThemeChanged]);
 
   const value: ThemeStateType = {
+    mode,
     isDark,
     setIsThemeChanged,
   };

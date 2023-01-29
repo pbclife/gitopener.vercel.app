@@ -1,7 +1,7 @@
 import { clsx } from 'clsx';
-import { FC, HTMLAttributes } from 'react';
+import type { ComponentProps, FC } from 'react';
 
-type ContainerProps = HTMLAttributes<HTMLDivElement>;
+type ContainerProps = ComponentProps<'div'>;
 
 const Container: FC<ContainerProps> = ({ className, ...props }) => {
   return (

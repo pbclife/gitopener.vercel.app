@@ -5,7 +5,7 @@ import {
   fetchNewContributors,
   fetchOldContributors,
   fetchPopularContributors,
-} from '@/lib/Contributors';
+} from '@/lib/contributors';
 import type { TCont } from '@/types/server/Contributors';
 import Container from '@layouts/Container';
 import Layout from '@layouts/Main';

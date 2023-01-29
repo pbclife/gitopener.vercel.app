@@ -20,13 +20,19 @@
       "~/*": ["public/*"],
       "&/*": ["src/server/*"],
       "&validation/*": ["src/server/models/validation/*"],
-      "@layouts/*": ["src/components/layouts/*"],
+      "@layouts/*": ["src/layouts/*"],
       "@components/*": ["src/components/*"],
       "@utilities/*": ["src/components/utilities/*"],
       "@icons/*": ["src/components/icons/*"],
       "~/images/*": ["public/images/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    "src/utils/mdx/rehype/withSyntaxHighlighting.js",
+    "src/lib/mdx/remark/withNextLinks.js"
+  ],
   "exclude": ["node_modules"]
 }

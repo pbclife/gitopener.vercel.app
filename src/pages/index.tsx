@@ -1,4 +1,4 @@
-import { getFileContents, getProcessedHtml } from '@/lib/ReadDocs';
+import { getFileContents, getProcessedHtml } from '@/lib/readDocs';
 import type { TFileContent } from '@/types/client/FileSystem';
 import Container from '@layouts/Container';
 import Layout from '@layouts/Main';

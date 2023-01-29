@@ -1,12 +1,17 @@
 import Glow from '@utilities/Glow';
 import Logo from '@utilities/Logo';
+import StarUs from '@utilities/StarUs';
 import { AnimatePresence, motion, Variants } from 'framer-motion';
 import { FC, useEffect, useState } from 'react';
-import Container from '../layouts/Container';
+import Container from '../../layouts/Container';
 import ThemeButton from '../navbar/ThemeButton';
 import MenuList from './MenuList';
 
-export default function Menu() {
+interface TMenu {
+  docs?: boolean;
+}
+
+const Menu: FC<TMenu> = ({ docs = false }) => {
   const [isSticky, setIsSticky] = useState<boolean>(false);
   useEffect(() => {
     function handleScroll() {
@@ -95,16 +100,34 @@ export default function Menu() {
     <div className="relative w-full border-b border-skin-base bg-skin-base text-skin-base ">
       <Glow className="sm:right-0 sm:max-w-3xl " />
       <Container className="relative z-0 flex min-h-[4rem] flex-col items-center  justify-end sm:min-h-[5rem] sm:flex-row sm:justify-between">
-        {/* upper section */}
-        <div className="z-10 flex items-center gap-x-12">
-          {displayLogo}
-          {displayIcon}
-        </div>
-        {/* links section */}
-        <div className="z-0 sm:self-end">
-          <MenuList />
-        </div>
+        {docs ? (
+          <div className="flex w-full items-center justify-between">
+            {/* logo */}
+            <Logo />
+            {/* links section */}
+            <div className="flex items-center gap-x-4">
+              <ThemeButton />
+              <div className="hidden sm:block">
+                <StarUs />
+              </div>
+            </div>
+          </div>
+        ) : (
+          <>
+            {/* upper section */}
+            <div className="z-10 flex items-center gap-x-12">
+              {displayLogo}
+              {displayIcon}
+            </div>
+            {/* links section */}
+            <div className="z-0 sm:self-end">
+              <MenuList />
+            </div>
+          </>
+        )}
       </Container>
     </div>
   );
-}
+};
+
+export default Menu;

@@ -143,15 +143,15 @@ module.exports = {
               fontSize: theme('fontSize.sm')[0],
               ...theme('fontSize.sm')[1],
             },
-            'ul, ol': {
+            ul: {
               listStyleType: 'none',
               paddingLeft: 0,
             },
-            'ul > li, ol > li': {
+            'ul > li': {
               position: 'relative',
               paddingLeft: '1.75em',
             },
-            'ul > li::before, ol>li::before': {
+            'ul > li::before': {
               content: '""',
               width: '0.75em',
               height: '0.125em',
@@ -164,6 +164,22 @@ module.exports = {
               fontWeight: theme('fontWeight.semibold'),
               textDecoration: 'none',
               paddingBottom: '0.25rem',
+            },
+            'h1 a': {
+              fontWeight: theme('fontWeight.extrabold'),
+              fontSize: theme('fontSize.4xl'),
+            },
+            'h2 a': {
+              fontWeight: theme('fontWeight.bold'),
+              fontSize: theme('fontSize.3xl'),
+            },
+            'h3 a': {
+              fontWeight: theme('fontWeight.bold'),
+              fontSize: theme('fontSize.xl'),
+            },
+            'h4 a': {
+              fontWeight: theme('fontWeight.semibold'),
+              fontSize: theme('fontSize.lg'),
             },
             'a:hover': {
               borderBottomWidth: '2px',
@@ -179,45 +195,28 @@ module.exports = {
               color: 'inherit',
               fontWeight: 'inherit',
             },
-            kbd: {
-              borderWidth: '1px',
-              padding: '0.125em 0.25em',
-              fontWeight: 500,
-              fontSize: '0.875em',
-              fontVariantLigatures: 'none',
-              borderRadius: '4px',
-              margin: '0 1px',
-            },
             code: {
-              fontWeight: theme('fontWeight.medium'),
               fontVariantLigatures: 'none',
+              fontWeight: theme('fontWeight.medium'),
+              borderRadius: theme('borderRadius.md'),
+              borderWidth: '1px',
+              padding: '0.25rem 0.5rem',
+            },
+            'code::before': {
+              content: '""',
+            },
+            'code::after': {
+              content: '""',
             },
             pre: {
               borderRadius: theme('borderRadius.xl'),
               padding: theme('padding.5'),
+              boxShadow: theme('boxShadow.md'),
               display: 'flex',
-              marginTop: `${20 / 14}em`,
-              marginBottom: `${32 / 14}em`,
+              margin: '0px',
             },
-            blockquote: {
-              width: 'calc(calc(100%)+1.75)em',
-              maxWidth: theme('maxWidth.xl'),
-              padding: theme('padding.4'),
-              borderWidth: '1px',
-              borderRadius: theme('borderRadius.md'),
-              position: 'relative',
-            },
-            'li > blockquote': {
-              marginLeft: '-1.75em',
-            },
-            'li > blockquote::before': {
-              content: '""',
-              width: '2em',
-              height: '0.125em',
-              position: 'absolute',
-              top: '1em',
-              left: '-2em',
-              borderRadius: '999px',
+            p: {
+              fontSize: theme('fontSize.lg'),
             },
             'p + pre': {
               marginTop: `${-4 / 14}em`,
@@ -225,17 +224,14 @@ module.exports = {
             'pre + pre': {
               marginTop: `${-16 / 14}em`,
             },
-            'pre code': {
+            'pre > code': {
               flex: 'none',
               minWidth: '100%',
+              padding: '0rem 1rem',
               backgroundColor: 'transparent',
-            },
-            'figure figcaption': {
-              textAlign: 'center',
-              fontStyle: 'italic',
-            },
-            'figure > figcaption': {
-              marginTop: `${12 / 14}em`,
+              fontSize: theme('fontSize.base'),
+              fontWeight: theme('fontWeight.medium'),
+              color: 'inherit',
             },
           },
         },
