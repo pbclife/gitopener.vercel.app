@@ -44,7 +44,8 @@ const DocumentationLayout: FC<DocumentationLayoutProps> = ({
                   {width < 1024 && <DocList mobile data={menu} />}
                   <BreadCrumb dirName={meta.dirName} fileName={meta.fileName} />
                 </div>
-                <a href={meta.edit}>
+                {/* edit on github */}
+                <a href={meta.edit} target="_blank" rel="noreferrer">
                   <ToolTip tip="Edit on Github" direction="button">
                     <DocEditIcon className="h-6 w-6" />
                   </ToolTip>

@@ -11,7 +11,6 @@ type SubLinksProps = {
 
 const SubLinks: FC<SubLinksProps> = ({ fileList, onLinkClick }) => {
   const { activeLink, setActiveLink } = useDocumentationContext();
-  console.log(activeLink);
 
   fileList = [
     ...fileList.filter((file) => file.name === 'welcome'),
