@@ -32,7 +32,7 @@ const SubLinks: FC<SubLinksProps> = ({ fileList, onLinkClick }) => {
         return (
           <li
             key={file.name + indx}
-            className={`-ml-px border-l pl-4  hover:border-accent/60
+            className={`-ml-px border-l pl-4 hover:border-accent/60
             ${
               isActive
                 ? `border-accent font-semibold text-accent`
