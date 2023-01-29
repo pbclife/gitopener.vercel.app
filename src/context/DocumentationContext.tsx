@@ -7,7 +7,6 @@ import {
   SetStateAction,
   createContext,
   useContext,
-  useEffect,
   useState,
 } from 'react';
 
@@ -36,12 +35,7 @@ type DocumentationProps = {
 // Context Provider
 const DocumentationProvider: FC<DocumentationProps> = ({ children }) => {
   const [isSidebarOpen, setIsSidebarOpen] = useState<boolean>(false);
-  const [activeLink, setActiveLink] = useState<PostFile['link']>(``);
-
-  useEffect(() => {
-    setActiveLink(links[2].to);
-    return () => setActiveLink(``);
-  }, []);
+  const [activeLink, setActiveLink] = useState<PostFile['link']>(links[2].to);
 
   // Functions...
   function openSidebar() {
