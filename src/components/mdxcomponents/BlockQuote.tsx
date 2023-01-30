@@ -1,4 +1,4 @@
-import { LightBulbIcon } from '@heroicons/react/24/solid';
+import QuoteIcon from '@icons/Quote';
 import type { ComponentProps, FC } from 'react';
 
 type BlockQuoteProps = ComponentProps<'blockquote'>;
@@ -6,16 +6,17 @@ type BlockQuoteProps = ComponentProps<'blockquote'>;
 const BlockQuote: FC<BlockQuoteProps> = ({ className, children, ...props }) => {
   return (
     <blockquote
-      className={`-ml-[1.75em] rounded-md border border-accent bg-accent/10 p-4 prose-p:text-base prose-p:font-medium prose-p:not-italic prose-p:before:hidden prose-p:after:hidden prose-a:text-accent ${
+      className={`-ml-[1.75rem] overflow-hidden border-sky-500/20 bg-sky-50/50 not-italic prose-p:before:hidden prose-p:after:hidden dark:border-sky-500/30 dark:bg-sky-500/10 ${
         className || ``
       }`}
       {...props}
     >
-      <span className="my-0 flex items-center gap-x-2 text-xl font-semibold not-italic text-accent">
-        <LightBulbIcon className="h-6 w-6 " />
-        Note
-      </span>
-      {children}
+      <div className="flex items-start gap-x-3 prose-p:text-sm prose-p:font-normal prose-p:text-sky-900 prose-a:border-sky-500 prose-a:text-sky-600 dark:prose-p:text-sky-200">
+        <span className="my-2">
+          <QuoteIcon className="h-7 w-7 text-sky-600 dark:text-sky-400/80" />
+        </span>
+        {children}
+      </div>
     </blockquote>
   );
 };

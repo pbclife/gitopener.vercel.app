@@ -1,12 +1,14 @@
 import { MDXProvider } from '@mdx-js/react';
 import type { ComponentProps } from 'react';
 
+import Alert from './Alert';
 import Anchor from './Anchor';
 import BlockQuote from './BlockQuote';
 import Code from './Code';
 import CodeBlock from './CodeBlock';
 import List from './List';
-import ResponsiveImg from './ResponsiveImage';
+import NextImage from './NextImage';
+import Tip from './Tip';
 
 type MDXComponents = ComponentProps<typeof MDXProvider>['components'];
 const mdxComponents: MDXComponents = {
@@ -14,15 +16,19 @@ const mdxComponents: MDXComponents = {
   blockquote: BlockQuote,
   code: Code,
   li: List,
-  ResponsiveImg,
+  Alert,
   CodeBlock,
+  NextImage,
+  Tip,
 };
 
 export default mdxComponents;
 
 export const allowedComponents = [
+  'Alert',
   'CodeBlock',
-  'ResponsiveImage',
+  'NextImage',
+  'Tip',
   'a',
   'b',
   'br',
