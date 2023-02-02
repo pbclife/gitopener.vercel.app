@@ -4,11 +4,17 @@ import type { ComponentProps } from 'react';
 import Alert from './Alert';
 import Anchor from './Anchor';
 import BlockQuote from './BlockQuote';
+import Card from './Card';
 import Code from './Code';
 import CodeBlock from './CodeBlock';
+import Grid from './Grid';
 import List from './List';
 import NextImage from './NextImage';
 import Tip from './Tip';
+
+import Github from './cards/GithubCard';
+import LinkedIn from './cards/LinkedInCard';
+import Twitter from './cards/TwitterCard';
 
 type MDXComponents = ComponentProps<typeof MDXProvider>['components'];
 const mdxComponents: MDXComponents = {
@@ -18,8 +24,13 @@ const mdxComponents: MDXComponents = {
   li: List,
   Alert,
   CodeBlock,
+  Card,
+  Github,
+  Grid,
+  LinkedIn,
   NextImage,
   Tip,
+  Twitter,
 };
 
 export default mdxComponents;
@@ -27,8 +38,13 @@ export default mdxComponents;
 export const allowedComponents = [
   'Alert',
   'CodeBlock',
+  'Card',
+  'Github',
+  'Grid',
   'NextImage',
+  'LinkedIn',
   'Tip',
+  'Twitter',
   'a',
   'b',
   'br',
