@@ -195,10 +195,13 @@ module.exports = {
               fontWeight: 'inherit',
             },
             blockquote: {
-              padding: '0.5rem 1.25rem',
+              padding: '0rem 1.25rem',
               borderRadius: theme('borderRadius.xl'),
               marginBottom: '1rem',
               borderWidth: '1px',
+            },
+            'li > blockquote': {
+              marginLeft: '-1.75rem',
             },
             code: {
               fontVariantLigatures: 'none',
