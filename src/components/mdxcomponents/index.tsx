@@ -12,9 +12,9 @@ import List from './List';
 import NextImage from './NextImage';
 import Tip from './Tip';
 
-import Github from './cards/GithubCard';
-import LinkedIn from './cards/LinkedInCard';
-import Twitter from './cards/TwitterCard';
+import Github from './socialCards/GithubCard';
+import LinkedIn from './socialCards/LinkedInCard';
+import Twitter from './socialCards/TwitterCard';
 
 type MDXComponents = ComponentProps<typeof MDXProvider>['components'];
 const mdxComponents: MDXComponents = {
