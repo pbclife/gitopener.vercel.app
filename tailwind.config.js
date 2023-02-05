@@ -164,6 +164,7 @@ module.exports = {
               fontWeight: theme('fontWeight.semibold'),
               textDecoration: 'none',
               paddingBottom: '0.25rem',
+              color: 'inherit',
             },
             'h1 a': {
               fontWeight: theme('fontWeight.extrabold'),

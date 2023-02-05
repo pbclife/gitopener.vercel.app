@@ -3,4 +3,7 @@
   .rounded-btn {
     @apply rounded-full px-6 py-3 outline-none;
   }
+  .bg-squares {
+    @apply pointer-events-none absolute inset-0 -z-10 bg-square-slate-500/10 [mask-image:linear-gradient(-90deg,rgba(255,255,255,0),white,rgba(255,255,255,0),rgba(255,255,255,0))];
+  }
 }
