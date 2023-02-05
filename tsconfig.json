@@ -32,7 +32,8 @@
     "**/*.ts",
     "**/*.tsx",
     "src/utils/mdx/rehype/withSyntaxHighlighting.js",
-    "src/lib/mdx/remark/withNextLinks.js"
+    "src/lib/mdx/remark/withNextLinks.js",
+    ".bin/Heading.tsx"
   ],
   "exclude": ["node_modules"]
 }
