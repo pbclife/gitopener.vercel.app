@@ -1,3 +1,5 @@
+import type { PluggableList } from 'unified';
+
 import { serialize } from 'next-mdx-remote/serialize';
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 import rehypePrism from 'rehype-prism-plus';
@@ -8,7 +10,10 @@ import withCodeBlocks from './rehype/withCodeBlocks';
 import withNextLinks from './remark/withNextLinks';
 
 // Get contents from slug
-export const getMdxContent = async (content: string) => {
+export const getMdxContent = async (
+  content: string,
+  ...rehypePlugins: PluggableList
+) => {
   const mdxSouce = await serialize(content, {
     mdxOptions: {
       remarkPlugins: [remarkGfm, withNextLinks],
@@ -17,6 +22,7 @@ export const getMdxContent = async (content: string) => {
         withCodeBlocks,
         rehypePrism,
         rehypeSlug,
+        ...rehypePlugins,
         [rehypeAutolinkHeadings, { behavior: `wrap` }],
       ],
     },
