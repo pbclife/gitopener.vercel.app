@@ -1,21 +1,27 @@
-import { MDXProvider } from '@mdx-js/react';
-import type { ComponentProps } from 'react';
+import type { MDXComponents } from '@/types/client/mdxComponents';
 
-import Anchor from './Anchor';
+import {
+  Introduction,
+  Projects,
+  Skill,
+  Skills,
+  Socials,
+} from '@/components/contributorProfilePage';
 import BlockQuote from './BlockQuote';
 import Code from './Code';
 import CodeBlock from './CodeBlock';
-import List from './List';
 import ResponsiveImg from './ResponsiveImage';
 
-type MDXComponents = ComponentProps<typeof MDXProvider>['components'];
 const mdxComponents: MDXComponents = {
-  a: Anchor,
   blockquote: BlockQuote,
   code: Code,
-  li: List,
   ResponsiveImg,
   CodeBlock,
+  Skill,
+  Skills,
+  Introduction,
+  Projects,
+  Socials,
 };
 
 export default mdxComponents;
@@ -23,6 +29,11 @@ export default mdxComponents;
 export const allowedComponents = [
   'CodeBlock',
   'ResponsiveImage',
+  'Skill',
+  'Skills',
+  'Introduction',
+  'Projects',
+  'Socials',
   'a',
   'b',
   'br',
