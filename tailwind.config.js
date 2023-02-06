@@ -17,6 +17,7 @@ const {
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: ['./src/**/*.{js,jsx,ts,tsx}'],
+  darkMode: 'class',
   theme: {
     extend: {
       colors: {
@@ -188,12 +189,19 @@ module.exports = {
               color: 'inherit',
               fontWeight: 'inherit',
             },
-            strong: {
-              fontWeight: theme('fontWeight.semibold'),
-            },
+
             'a strong': {
               color: 'inherit',
               fontWeight: 'inherit',
+            },
+            blockquote: {
+              padding: '0rem 1.25rem',
+              borderRadius: theme('borderRadius.xl'),
+              marginBottom: '1rem',
+              borderWidth: '1px',
+            },
+            'li > blockquote': {
+              marginLeft: '-1.75rem',
             },
             code: {
               fontVariantLigatures: 'none',
@@ -216,7 +224,7 @@ module.exports = {
               margin: '0px',
             },
             p: {
-              fontSize: theme('fontSize.lg'),
+              fontSize: theme('fontSize.base'),
             },
             'p + pre': {
               marginTop: `${-4 / 14}em`,
@@ -232,6 +240,9 @@ module.exports = {
               fontSize: theme('fontSize.base'),
               fontWeight: theme('fontWeight.medium'),
               color: 'inherit',
+            },
+            strong: {
+              fontWeight: theme('fontWeight.semibold'),
             },
           },
         },

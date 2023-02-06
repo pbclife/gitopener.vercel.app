@@ -4,16 +4,14 @@ import type { FC } from 'react';
 const ResponsiveImg: FC<{
   alt: string;
   src: string;
-  width: number;
-  height: number;
-}> = ({ alt, src, height, width }) => {
+}> = ({ alt, src }) => {
   return (
     <Image
       alt={alt}
       src={src}
-      width={width}
-      height={height}
-      className="mb-16 h-64 w-full rounded-md object-cover object-center"
+      width={1280}
+      height={720}
+      className="mb-16 aspect-video w-full rounded-md object-cover object-center"
     />
   );
 };

@@ -29,9 +29,9 @@ yarn
 - Make .env.local file in root directory with these variables
   > This step is optional, Do this step if you want to run complete application with database support
 
-```jsx .env.local
-MONGO_URI = 'YOUR MONGODB CONNECTION STRING GOES HERE';
-GITHUB_TOKEN = 'YOUR GITHUB TOKEN GOES HERE';
+```bash .env.local
+MONGO_URI=<YOUR MONGODB CONNECTION STRING GOES HERE>
+GITHUB_TOKEN=<YOUR GITHUB TOKEN GOES HERE>
 ```
 
 - Get mongodb connection string here: [MONGODB DOCS][mongodb-docs]
@@ -45,7 +45,37 @@ yarn dev
 
 - Every time you start making changes to your forked repo make sure it's in sync with the original repo
 
-<ResponsiveImg alt="image" src="/images/gradbg.jpg" width={1280} height={720} />
+<NextImage alt="image" src="/images/gradbg.jpg" />
+
+<Tip>
+  Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis, quas!
+</Tip>
+
+<Alert>
+  Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis, quas!
+</Alert>
+
+> Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis, quas!
+
+<Grid>
+  <Github
+    name="Sagar Bera"
+    username="sboy99"
+    activeHere
+    href="https://github.com/sboy99"
+  >
+    dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet
+    consectetur adipisicing elit. Nostrum odio ab asperiores!
+  </Github>
+
+  <Twitter name="Aadarsh Thakur" username="sboy99" href="Github Star">
+    dolor sit amet consectetur adipisicing elit.
+  </Twitter>
+  
+  <LinkedIn name="Thakur" username="sboy99" href="Github Star">
+    dolor sit amet consectetur adipisicing elit.
+  </LinkedIn>
+</Grid>
 
 [fork-link]: https://github.com/pbclife/gitopener.vercel.app/fork
 [yarn-website]: https://classic.yarnpkg.com/lang/en/docs/install/#debian-stable
