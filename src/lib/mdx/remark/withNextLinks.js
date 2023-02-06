@@ -7,7 +7,7 @@ const withNextLinks = () => (tree) => {
     const props = data.hProperties || (data.hProperties = {});
     const url = node.url;
 
-    if (url.startsWith('/') || url.includes('gitopener.vercel.app')) {
+    if (url.startsWith('/') || url.startsWith('#')) {
       const newLinkNode = [
         { type: 'jsx', value: `<${Link} href="${url}" passHref>` },
         ...node.children,
