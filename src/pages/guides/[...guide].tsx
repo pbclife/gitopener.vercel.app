@@ -57,7 +57,6 @@ export const getStaticProps: GetStaticProps<DocsProps> = async ({ params }) => {
     const menu = await getDocumentsMenu();
 
     const { guide } = params as { guide: string[] };
-    const processedGuide = guide.map((str) => str.slice(2));
     const activeLink = guide.join('/');
     const { meta, source } = await getContentsFromSlug(activeLink);
 
