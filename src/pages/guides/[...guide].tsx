@@ -1,3 +1,4 @@
+import NavigationButton from '@/components/guidespage/NavigationButton';
 import mdxComponents from '@/components/mdxcomponents';
 import TypoComp from '@/components/utilities/TypoComponent';
 import { useDocumentationContext } from '@/context/DocumentationContext';
@@ -33,6 +34,7 @@ const Guides: NextPage<DocsProps> = ({ activeLink, menu, meta, source }) => {
         <TypoComp className="max-w-full text-skin-base prose-h5:font-semibold prose-h5:capitalize prose-h5:text-accent">
           <h5>{meta.dirName || meta.fileName}</h5>
           <MDXRemote {...source} components={mdxComponents} />
+          <NavigationButton menu={menu} activeLink={activeLink} />
         </TypoComp>
       </Container>
     </DocumentationLayout>
@@ -55,6 +57,7 @@ export const getStaticProps: GetStaticProps<DocsProps> = async ({ params }) => {
     const menu = await getDocumentsMenu();
 
     const { guide } = params as { guide: string[] };
+    const processedGuide = guide.map((str) => str.slice(2));
     const activeLink = guide.join('/');
     const { meta, source } = await getContentsFromSlug(activeLink);
 
