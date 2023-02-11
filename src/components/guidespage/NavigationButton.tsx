@@ -1,4 +1,6 @@
 import type { FolderStructure } from '@/types/client/FileSystem';
+import NextIcon from '@icons/NextIcon';
+import PrevIcon from '@icons/PrevIcon';
 import { useRouter } from 'next/router';
 import type { FC } from 'react';
 
@@ -6,8 +8,6 @@ interface NavigationButtonProps {
   menu: FolderStructure;
   activeLink: string;
 }
-
-const disabledLink = `bg-gray-600 cursor-not-allowed `;
 
 const NavigationButton: FC<NavigationButtonProps> = ({ menu, activeLink }) => {
   const router = useRouter();
@@ -40,6 +40,11 @@ const NavigationButton: FC<NavigationButtonProps> = ({ menu, activeLink }) => {
     currentRoute = router.query.guide.join('/');
   }
   const route = links.findIndex((link) => link?.endsWith(currentRoute));
+  const prevRoute =
+    route > 0 && links[route - 1]?.split('/').pop()?.split('-').join(' ');
+  const nextRoute =
+    route < links.length - 1 &&
+    links[route + 1]?.split('/').pop()?.split('-').join(' ');
 
   const handlePrevClick = () => {
     if (route === 0) return;
@@ -52,23 +57,29 @@ const NavigationButton: FC<NavigationButtonProps> = ({ menu, activeLink }) => {
   };
 
   return (
-    <div className="mt-6 flex w-full items-center justify-between">
-      <button
-        onClick={handlePrevClick}
-        className={`w-fit rounded-md border border-skin-base bg-white px-6 py-1 capitalize text-neutral-800 ${
-          route === 0 && disabledLink
-        }`}
-      >
-        Prev
-      </button>
-      <button
-        onClick={handleNextClick}
-        className={`w-fit rounded-md border border-skin-base bg-white px-6 py-1 capitalize text-neutral-800  ${
-          route === links.length - 1 && disabledLink
-        }`}
-      >
-        Next
-      </button>
+    <div
+      className={`mt-6 flex w-full items-center  ${
+        !prevRoute ? 'justify-end' : 'justify-between'
+      }`}
+    >
+      {prevRoute && (
+        <button
+          onClick={handlePrevClick}
+          className={`flex items-center gap-2 self-start text-lg font-medium capitalize text-white`}
+        >
+          <PrevIcon className="h-5 w-5 text-skin-base" />
+          {prevRoute}
+        </button>
+      )}
+      {nextRoute && (
+        <button
+          onClick={handleNextClick}
+          className={`flex items-center gap-2 self-end text-lg font-medium capitalize text-white`}
+        >
+          {nextRoute}
+          <NextIcon className="h-5 w-5 text-skin-base" />
+        </button>
+      )}
     </div>
   );
 };
