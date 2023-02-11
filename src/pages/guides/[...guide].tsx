@@ -30,8 +30,8 @@ const Guides: NextPage<DocsProps> = ({ activeLink, menu, meta, source }) => {
 
   return (
     <DocumentationLayout menu={menu} meta={meta} className="text-skin-base">
-      <Container className="relative py-4">
-        <TypoComp className="max-w-full text-skin-base prose-h5:font-semibold prose-h5:capitalize prose-h5:text-accent">
+      <Container className="relative">
+        <TypoComp className="min-h-screen-50 max-w-full py-4 text-skin-base prose-h5:font-semibold prose-h5:capitalize prose-h5:text-accent">
           <h5>{meta.dirName || meta.fileName}</h5>
           <MDXRemote {...source} components={mdxComponents} />
         </TypoComp>
