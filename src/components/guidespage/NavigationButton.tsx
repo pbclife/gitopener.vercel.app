@@ -1,6 +1,5 @@
 import type { FolderStructure } from '@/types/client/FileSystem';
-import NextIcon from '@icons/NextIcon';
-import PrevIcon from '@icons/PrevIcon';
+import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/20/solid';
 import { useRouter } from 'next/router';
 import type { FC } from 'react';
 
@@ -9,13 +8,8 @@ interface NavigationButtonProps {
   activeLink: string;
 }
 
-const NavigationButton: FC<NavigationButtonProps> = ({ menu, activeLink }) => {
+const NavigationButton: FC<NavigationButtonProps> = ({ menu }) => {
   const router = useRouter();
-
-  const folders = [
-    'starting-contribution',
-    ...Object.keys(menu).filter((dir) => dir !== 'starting-contribution'),
-  ];
 
   const links = Object.entries(menu)
     .sort((a, b) =>
@@ -57,29 +51,29 @@ const NavigationButton: FC<NavigationButtonProps> = ({ menu, activeLink }) => {
   };
 
   return (
-    <div
-      className={`mt-6 flex w-full items-center  ${
-        !prevRoute ? 'justify-end' : 'justify-between'
-      }`}
-    >
-      {prevRoute && (
-        <button
-          onClick={handlePrevClick}
-          className={`flex items-center gap-2 self-start text-lg font-medium capitalize text-white`}
-        >
-          <PrevIcon className="h-5 w-5 text-skin-base" />
-          {prevRoute}
-        </button>
-      )}
-      {nextRoute && (
-        <button
-          onClick={handleNextClick}
-          className={`flex items-center gap-2 self-end text-lg font-medium capitalize text-white`}
-        >
-          {nextRoute}
-          <NextIcon className="h-5 w-5 text-skin-base" />
-        </button>
-      )}
+    <div className={`mt-16 flex w-full items-center justify-between`}>
+      <div className="">
+        {prevRoute && (
+          <button
+            onClick={handlePrevClick}
+            className={`flex items-center gap-1 font-semibold capitalize text-skin-base transition-all duration-300 ease-in-out hover:text-accent`}
+          >
+            <ChevronLeftIcon className="h-4 w-4 " />
+            {prevRoute}
+          </button>
+        )}
+      </div>
+      <div className="">
+        {nextRoute && (
+          <button
+            onClick={handleNextClick}
+            className={`flex items-center gap-1 font-medium capitalize text-skin-base transition-all duration-300 ease-in-out hover:text-accent`}
+          >
+            {nextRoute}
+            <ChevronRightIcon className="h-4 w-4 " />
+          </button>
+        )}
+      </div>
     </div>
   );
 };

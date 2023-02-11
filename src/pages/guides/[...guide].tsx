@@ -34,8 +34,8 @@ const Guides: NextPage<DocsProps> = ({ activeLink, menu, meta, source }) => {
         <TypoComp className="max-w-full text-skin-base prose-h5:font-semibold prose-h5:capitalize prose-h5:text-accent">
           <h5>{meta.dirName || meta.fileName}</h5>
           <MDXRemote {...source} components={mdxComponents} />
-          <NavigationButton menu={menu} activeLink={activeLink} />
         </TypoComp>
+        <NavigationButton menu={menu} activeLink={activeLink} />
       </Container>
     </DocumentationLayout>
   );
