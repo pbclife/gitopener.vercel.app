@@ -2,6 +2,7 @@
 
 <img src="https://github.com/pbclife/gitopener.vercel.app/blob/main/public/images/readme/landingPage.png" alt="GitOpener Landing Page" style="border-radius: 10px"/>
 
+
 Great Place To Start Open-Source Journey. Contribute Today
 
 #### What is GitOpener?

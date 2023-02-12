@@ -1,4 +1,5 @@
 import GitOpenerIcon from '@/components/icons/GitOpener';
+import Link from 'next/link';
 import type { FC } from 'react';
 
 type LogoProps = {
@@ -17,11 +18,12 @@ const Logo: FC<LogoProps> = ({ normal = false, small = false }) => {
   const content = (
     <>
       <GitOpenerIcon className={` ${small ? `h-6 w-6` : `h-8 w-8`}`} />
-      <span
+      <Link
+        href="/"
         className={`font-bold tracking-tight ${small ? `text-xl` : `text-2xl`}`}
       >
         Git Opener
-      </span>
+      </Link>
     </>
   );
 
