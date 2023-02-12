@@ -1,5 +1,39 @@
 # GitOpener
 
+<img src="/public/images/readme/landingPage.png" alt="GitOpener Landing Page" style="border-radius: 10px"/>
+
+
+Great Place To Start Open-Source Journey. Contribute Today
+
+#### What is GitOpener?
+
+Git Opener is a open source project for everyone. If you are looking for a good project to get started with open source and you want to see your code in action then you are in the right place.
+
+#### Learn Contributing
+
+From creating an issue to to open a pull request, everything got covered. The basic things you need to know is the terminologies. If you are curious you definately checkout these
+
+<img src="/public/images/readme/guidesPage.png" alt="GitOpener Guides Page" style="border-radius: 10px"/>
+
+#### Become Contributor
+
+<!--  -->
+
+<img src="/public/images/readme/contributorsPage.png" alt="GitOpener Contributors Page" style="border-radius: 10px"/>
+
+#### How it works
+
+Based on your contribution file `your-github-username.mdx` GitOpener authenticates you.
+
+<img src="/public/images/readme/profilePage.png" alt="GitOpener Profile Page" style="border-radius: 10px"/>
+
+
+#### How to create your profile
+
+Let's start with the installation
+
+Or If you wanna skip the installation and create your profile directly, head over to [docs](docs/guides/starting-contribution/getting-started.mdx)
+
 <!-- Descrption -->
 
 Checkout out [contribution guidelines][contributing] before you start with contributions
@@ -27,14 +61,14 @@ cd gitopener.vercel.app
 ```
 
 3. Install the dependencies
- > As Git Opener uses yarn package manager, it is recommended to use yarn, [install yarn][yarn-website]
+   > As Git Opener uses yarn package manager, it is recommended to use yarn, [install yarn][yarn-website]
 
 ```sh
 yarn install
 ```
 
 4. Make .env.local file in root directory with these variables
-  > This step is optional, Do this step if you want to run complete application with database support
+   > This step is optional, Do this step if you want to run complete application with database support
 
 ```
 MONGO_URI= 'YOUR MONGODB CONNECTION STRING GOES HERE'
@@ -86,21 +120,17 @@ No worries! Here's a quick guide,
 
 Checkout the [Contributing.md][contributing] file before contributing.
 
-
 <!-- ### Where can I go for help? -->
-
 
 ## License
 
 [MIT][license]
-
 
 ## Thanks to all the Contributors ❤️
 
 <a href = "https://github.com/pbclife/gitopener.vercel.app/graphs/contributors">
   <img src = "https://contrib.rocks/image?repo=pbclife/gitopener.vercel.app"/>
 </a>
-
 
 ## Your Support means a lot
 
@@ -110,4 +140,4 @@ Give a ⭐ to the project if you liked it. :)
 [mongodb-docs]: https://www.mongodb.com/docs/compass/current/connect
 [github-token]: https://github.com/settings/tokens
 [contributing]: https://github.com/pbclife/gitopener.vercel.app/blob/main/CONTRIBUTING.md
-[license]:https://github.com/pbclife/gitopener.vercel.app/blob/main/LICENCE
+[license]: https://github.com/pbclife/gitopener.vercel.app/blob/main/LICENCE
