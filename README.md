@@ -1,6 +1,6 @@
 # GitOpener
 
-<img src="/public/images/readme/landingPage.png" alt="GitOpener Landing Page" style="border-radius: 10px"/>
+<img src="https://github.com/pbclife/gitopener.vercel.app/blob/main/public/images/readme/landingPage.png" alt="GitOpener Landing Page" style="border-radius: 10px"/>
 
 Great Place To Start Open-Source Journey. Contribute Today
 
@@ -12,19 +12,19 @@ Git Opener is a open source project for everyone. If you are looking for a good 
 
 From creating an issue to to open a pull request, everything got covered. The basic things you need to know is the terminologies. If you are curious you definately checkout these
 
-<img src="/public/images/readme/guidesPage.png" alt="GitOpener Guides Page" style="border-radius: 10px"/>
+<img src="https://github.com/pbclife/gitopener.vercel.app/blob/main/public/images/readme/guidesPage.png" alt="GitOpener Guides Page" style="border-radius: 10px"/>
 
 #### Become Contributor
 
 <!--  -->
 
-<img src="/public/images/readme/contributorsPage.png" alt="GitOpener Contributors Page" style="border-radius: 10px"/>
+<img src="https://github.com/pbclife/gitopener.vercel.app/blob/main/public/images/readme/contributorsPage.png" alt="GitOpener Contributors Page" style="border-radius: 10px"/>
 
 #### How it works
 
 Based on your contribution file `your-github-username.mdx` GitOpener authenticates you.
 
-<img src="/public/images/readme/profilePage.png" alt="GitOpener Profile Page" style="border-radius: 10px"/>
+<img src="https://github.com/pbclife/gitopener.vercel.app/blob/main/public/images/readme/profilePage.png" alt="GitOpener Profile Page" style="border-radius: 10px"/>
 
 #### How to create your profile
 
