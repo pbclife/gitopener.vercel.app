@@ -1,6 +1,6 @@
 # GitOpener
 
-<img src="/public/images/readme/landingPage.png" alt="GitOpener Landing Page" style="border-radius: 10px"/>
+![landingPage](https://user-images.githubusercontent.com/95094057/218668398-2e6bbe3c-c4d1-41c4-a1f3-184c94836ac4.png)
 
 Start your Open Source Journey!
 Contribute Today!
@@ -13,20 +13,20 @@ Git Opener is a beginner friendly open source project. This project serves as a 
 
 Everything you need to know to contribute to open source can be found here, from creating an issue to to opening a pull request. Basic terminology can be found here!
 
-<img src="/public/images/readme/guidesPage.png" alt="GitOpener Guides Page" style="border-radius: 10px"/>
+![guidesPage](https://user-images.githubusercontent.com/95094057/218668538-6daab985-cba0-4c4f-8bdd-7671cab71745.png)
 
 ## Become Contributor
 
 Contributors are featured on the web app.
 <!--  -->
 
-<img src="/public/images/readme/contributorsPage.png" alt="GitOpener Contributors Page" style="border-radius: 10px"/>
+![contributorsPage](https://user-images.githubusercontent.com/95094057/218668561-5c40bd8b-739b-411c-8edf-feb7fbfb18f8.png)
 
 ## How it works
 
 Based on your contribution file `your-github-username.mdx`, GitOpener will authenticate you.
 
-<img src="/public/images/readme/profilePage.png" alt="GitOpener Profile Page" style="border-radius: 10px"/>
+![profilePage](https://user-images.githubusercontent.com/95094057/218668593-71b5646b-f973-461e-ac78-f12ec97be11f.png)
 
 ## How to create your profile
 
