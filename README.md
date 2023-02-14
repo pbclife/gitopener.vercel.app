@@ -132,6 +132,7 @@ Checkout the [Contributing.md][contributing] file before contributing.
 ## Your Support means a lot
 
 Give a ⭐ to the project if you liked it. :)
+
 [yarn-website]: https://classic.yarnpkg.com/lang/en/docs/install/#debian-stable
 [mongodb-docs]: https://www.mongodb.com/docs/compass/current/connect
 [github-token]: https://github.com/settings/tokens
