@@ -1,40 +1,42 @@
 # GitOpener
 
-<img src="/public/images/readme/landingPage.png" alt="GitOpener Landing Page" style="border-radius: 10px"/>
+![landingPage](https://user-images.githubusercontent.com/95094057/218668398-2e6bbe3c-c4d1-41c4-a1f3-184c94836ac4.png)
 
-Great Place To Start Open-Source Journey. Contribute Today
+Start your Open Source Journey!
+Contribute Today!
 
-#### What is GitOpener?
+## What is GitOpener?
 
-Git Opener is a open source project for everyone. If you are looking for a good project to get started with open source and you want to see your code in action then you are in the right place.
+Git Opener is a beginner friendly open source project. This project serves as a guide to open source, with step by step information on how you can contribute. If you want to see your code in action, you're in the right place! 
 
-#### Learn Contributing
+## Learn Contributing
 
-From creating an issue to to open a pull request, everything got covered. The basic things you need to know is the terminologies. If you are curious you definately checkout these
+Everything you need to know to contribute to open source can be found here, from creating an issue to to opening a pull request. Basic terminology can be found here!
 
-<img src="/public/images/readme/guidesPage.png" alt="GitOpener Guides Page" style="border-radius: 10px"/>
+![guidesPage](https://user-images.githubusercontent.com/95094057/218668538-6daab985-cba0-4c4f-8bdd-7671cab71745.png)
 
-#### Become Contributor
+## Become Contributor
 
+Contributors are featured on the web app.
 <!--  -->
 
-<img src="/public/images/readme/contributorsPage.png" alt="GitOpener Contributors Page" style="border-radius: 10px"/>
+![contributorsPage](https://user-images.githubusercontent.com/95094057/218668561-5c40bd8b-739b-411c-8edf-feb7fbfb18f8.png)
 
-#### How it works
+## How it works
 
-Based on your contribution file `your-github-username.mdx` GitOpener authenticates you.
+Based on your contribution file `your-github-username.mdx`, GitOpener will authenticate you.
 
-<img src="/public/images/readme/profilePage.png" alt="GitOpener Profile Page" style="border-radius: 10px"/>
+![profilePage](https://user-images.githubusercontent.com/95094057/218668593-71b5646b-f973-461e-ac78-f12ec97be11f.png)
 
-#### How to create your profile
+## How to create your profile
 
-Let's start with the installation
+Installation steps are featured [here](#installation).
 
-Or If you wanna skip the installation and create your profile directly, head over to [docs](docs/guides/starting-contribution/getting-started.mdx)
+If you want to skip the installation and create your profile directly, head over to [docs](docs/guides/starting-contribution/getting-started.mdx).
 
 <!-- Descrption -->
 
-Checkout out [contribution guidelines][contributing] before you start with contributions
+Check out the [contribution guidelines](#contributing-guidelines) before contributing.
 
 ## Contribution guide
 
@@ -130,6 +132,7 @@ Checkout the [Contributing.md][contributing] file before contributing.
 ## Your Support means a lot
 
 Give a ⭐ to the project if you liked it. :)
+
 [yarn-website]: https://classic.yarnpkg.com/lang/en/docs/install/#debian-stable
 [mongodb-docs]: https://www.mongodb.com/docs/compass/current/connect
 [github-token]: https://github.com/settings/tokens
