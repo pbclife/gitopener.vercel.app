@@ -13,7 +13,7 @@ export type ProfileProps = {
 
 const Profile: FC<ProfileProps> = ({ meta, contributor }) => {
   return (
-    <div className="relative z-0 min-h-[35vh]">
+    <div className="relative z-0 pb-12">
       <div className="bg-squares -mt-4"></div>
       {/* profile Image */}
       <div className="absolute inset-x-0 -top-16 w-fit rounded-full border-2 border-accent bg-skin-base p-0.5 sm:-top-20">
