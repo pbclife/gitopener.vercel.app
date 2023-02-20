@@ -2,6 +2,7 @@ import type { MDXComponents } from '@/types/client/mdxComponents';
 
 import {
   Introduction,
+  Project,
   Projects,
   Skill,
   Skills,
@@ -14,6 +15,8 @@ import Code from './Code';
 import CodeBlock from './CodeBlock';
 import Grid from './Grid';
 import NextImage from './NextImage';
+import Tab from './Tab';
+import Tabs from './Tabs';
 import Tip from './Tip';
 
 import Github from './socialCards/GithubCard';
@@ -30,12 +33,15 @@ const mdxComponents: MDXComponents = {
   Grid,
   LinkedIn,
   NextImage,
+  Projects,
+  Project,
+  Tabs,
+  Tab,
   Tip,
   Twitter,
   Skill,
   Skills,
   Introduction,
-  Projects,
   Socials,
 };
 
@@ -49,11 +55,14 @@ export const allowedComponents = [
   'Grid',
   'NextImage',
   'LinkedIn',
+  'Tabs',
+  'Tab',
   'Tip',
   'Twitter',
   'Skill',
   'Skills',
   'Introduction',
+  'Project',
   'Projects',
   'Socials',
   'a',
