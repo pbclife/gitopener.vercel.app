@@ -28,7 +28,7 @@ const ContributorProfilePageLayout: NextPage<
       />
       <div className="h-64 w-full bg-gradient-to-t from-primary via-primary/70 to-primary/30"></div>
       <div className="relative border-t border-skin-base bg-skin-base py-4 text-skin-base">
-        <Container className={clsx(className, `relative`)}>
+        <Container className={clsx(className, `relative pb-8`)}>
           <Profile meta={meta} contributor={contributor} />
           <Socials />
           {children}
