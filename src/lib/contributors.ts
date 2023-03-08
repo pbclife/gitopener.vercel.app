@@ -1,20 +1,13 @@
 import axios from '@/config/axios';
+import { getMdxContent } from '@/lib/mdx/getMdxContent';
 import octokit from '@/server/config/octokit';
+import type { Contribution } from '@/types/client/Contributors';
 import { TCont, TContributor } from '@/types/server/Contributors';
-import fs from 'fs';
+import { promises as fs } from 'fs';
 import matter from 'gray-matter';
 import path from 'path';
-import remarkGfm from 'remark-gfm';
-import remarkHtml from 'remark-html';
-import remarkParse from 'remark-parse';
-import { unified } from 'unified';
-
-export type Contribution = {
-  content: string;
-  meta: {
-    [key: string]: string | number;
-  };
-};
+import withHobbyLi from './mdx/rehype/withHobbyLi';
+import { assertHasContributionProps } from './utils';
 
 const fileDir = path.join(process.cwd() + '/contribution');
 
@@ -64,26 +57,18 @@ export const fetchPopularContributors = async (
 };
 
 export const fetchSingleContributor = async (
-  contId: string,
-  contribution: Contribution
-): Promise<Omit<TContributor, 'isDeleted'>> => {
-  // authentication & automatically throws error if no file found
-  const file = fs.readFileSync(path.join(fileDir + `/${contId}.mdx`), 'utf8');
-  const contFile = matter(file);
-  const userName = contFile.data.github_username;
+  meta: Contribution['meta']
+): Promise<TContributor> => {
+  const username = meta.github_username;
   // searching for the user if user is not found then create user
   try {
-    const {
-      // eslint-disable-next-line no-unused-vars
-      data: { isDeleted, ...contributor },
-    } = await axios.get(`/contributors/${userName}`);
-
-    return contributor;
+    const { data } = await axios.get(`/contributors/${username}`);
+    return data;
     // if not found
   } catch (error) {
     // fetching github user
     const { data: gh_user } = await octokit.request('GET /users/{username}', {
-      username: userName,
+      username,
     });
     // creating payload for new contributor
     const contPayload: Omit<
@@ -92,48 +77,39 @@ export const fetchSingleContributor = async (
     > = {
       avatar_url: gh_user.avatar_url,
       bio: gh_user.bio,
-      content: contribution.content,
       email: gh_user.email,
       gh_username: gh_user.login,
       ghid: gh_user.id,
       html_url: gh_user.html_url,
-      name: contribution.meta.author as string,
-      occupation: contribution.meta.occupation as string,
+      name: meta.author,
+      occupation: meta.occupation,
       location: gh_user.location,
       followers: gh_user.followers,
       following: gh_user.following,
     };
 
-    const {
-      // eslint-disable-next-line no-unused-vars
-      data: { isDeleted, ...contributor },
-    } = await axios.post(`/contributors`, contPayload);
-    return contributor;
+    const { data } = await axios.post(`/contributors`, contPayload);
+    return data;
   }
 };
 
 export const getContribution = async (
   contId: string
 ): Promise<Contribution> => {
-  const file = fs.readFileSync(path.join(fileDir + `/${contId}.mdx`), 'utf8');
-
-  const matterResult = matter(file);
-  const content = await unified()
-    .use(remarkParse)
-    .use(remarkGfm)
-    .use(remarkHtml)
-    .process(matterResult.content);
-
+  const file = await fs.readFile(path.join(fileDir + `/${contId}.mdx`), 'utf8');
+  const { data, content } = matter(file);
+  assertHasContributionProps(data);
+  const source = await getMdxContent(content, withHobbyLi);
   return {
-    content: content.value as string,
-    meta: matterResult.data,
+    source,
+    meta: data,
   };
 };
 
 export const getDynamicPaths = async () => {
   const {
     data: { contributors },
-  } = await axios.get('/contributors?select=gh_username&limit=5');
+  } = await axios.get('/contributors?select=gh_username&limit=1');
 
   asserHasPropertyArray(contributors);
   return contributors.map((obj) => {

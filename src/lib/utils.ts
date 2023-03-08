@@ -1,3 +1,4 @@
+import { Contribution } from '@/types/client/Contributors';
 import { PrepareMeta } from '@/types/client/FileSystem';
 import beautify from '@/utils/beautify';
 import { promises as fs } from 'fs';
@@ -60,3 +61,18 @@ export const prepareMeta: PrepareMeta = (data, slug) => {
 
   return meta;
 };
+
+interface StringKeyedObj {
+  [key: string]: any;
+}
+export function assertHasContributionProps(
+  data: StringKeyedObj
+): asserts data is Contribution['meta'] {
+  const mustHaveProps = ['author', 'github_username', 'occupation'];
+  const dataKeys = Object.keys(data);
+  for (const prop of mustHaveProps) {
+    if (!dataKeys.includes(prop)) {
+      throw new Error(`Data does not contain ${prop} property`);
+    }
+  }
+}

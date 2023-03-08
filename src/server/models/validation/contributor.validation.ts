@@ -10,7 +10,6 @@ const ContV = z.object({
   location: z.string().nullable(),
   occupation: z.string(),
   bio: z.string().nullable(),
-  content: z.string(),
   profile_views: z.number().default(0),
   isDeleted: z.boolean().default(false),
   createdAt: z.date().optional().default(new Date(Date.now())),

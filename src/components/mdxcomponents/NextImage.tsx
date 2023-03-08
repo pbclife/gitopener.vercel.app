@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import type { FC } from 'react';
 
-const ResponsiveImg: FC<{
+const NextImage: FC<{
   alt: string;
   src: string;
 }> = ({ alt, src }) => {
@@ -16,4 +16,4 @@ const ResponsiveImg: FC<{
   );
 };
 
-export default ResponsiveImg;
+export default NextImage;

@@ -1,27 +1,31 @@
-import { MDXProvider } from '@mdx-js/react';
-import type { ComponentProps } from 'react';
+import type { MDXComponents } from '@/types/client/mdxComponents';
 
+import {
+  Introduction,
+  Project,
+  Projects,
+  Skill,
+  Skills,
+  Socials,
+} from '@/components/contributorProfilePage';
 import Alert from './Alert';
-import Anchor from './Anchor';
 import BlockQuote from './BlockQuote';
 import Card from './Card';
 import Code from './Code';
 import CodeBlock from './CodeBlock';
 import Grid from './Grid';
-import List from './List';
 import NextImage from './NextImage';
+import Tab from './Tab';
+import Tabs from './Tabs';
 import Tip from './Tip';
 
 import Github from './socialCards/GithubCard';
 import LinkedIn from './socialCards/LinkedInCard';
 import Twitter from './socialCards/TwitterCard';
 
-type MDXComponents = ComponentProps<typeof MDXProvider>['components'];
 const mdxComponents: MDXComponents = {
-  a: Anchor,
   blockquote: BlockQuote,
   code: Code,
-  li: List,
   Alert,
   CodeBlock,
   Card,
@@ -29,8 +33,16 @@ const mdxComponents: MDXComponents = {
   Grid,
   LinkedIn,
   NextImage,
+  Projects,
+  Project,
+  Tabs,
+  Tab,
   Tip,
   Twitter,
+  Skill,
+  Skills,
+  Introduction,
+  Socials,
 };
 
 export default mdxComponents;
@@ -43,8 +55,16 @@ export const allowedComponents = [
   'Grid',
   'NextImage',
   'LinkedIn',
+  'Tabs',
+  'Tab',
   'Tip',
   'Twitter',
+  'Skill',
+  'Skills',
+  'Introduction',
+  'Project',
+  'Projects',
+  'Socials',
   'a',
   'b',
   'br',

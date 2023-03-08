@@ -23,6 +23,7 @@ import remarkGfm from 'remark-gfm';
 import remarkHtml from 'remark-html';
 import remarkParse from 'remark-parse';
 import { unified } from 'unified';
+import withStyledLi from './mdx/rehype/withStyledLi';
 
 type TSuppordedFile = 'heading' | 'installation' | 'tech-stack';
 
@@ -89,7 +90,7 @@ export const getContentsFromSlug: GetContentsFromSlug = async (slug) => {
   const file = await fs.readFile(filePath);
 
   const { data, content } = matter(file);
-  const source = await getMdxContent(content);
+  const source = await getMdxContent(content, withStyledLi);
 
   // Extracting DirName and FileName from catch-all-params
   const meta = prepareMeta(data, slug);

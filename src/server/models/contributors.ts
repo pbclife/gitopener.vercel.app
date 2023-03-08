@@ -39,10 +39,6 @@ const contributorSchema = new mongoose.Schema<TContributor, ContributorModel>(
     bio: {
       type: String,
     },
-    content: {
-      type: String,
-      required: true,
-    },
     followers: {
       type: Number,
       default: 0,
