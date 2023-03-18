@@ -1,16 +1,12 @@
-name: Release
+name: Workflow Dispatch
 on:
- pull_request:
-    branches:
-      - main
-
-
+  workflow_dispatch:
 jobs:
   release:
-     permissions:
-       contents: write
-       issue: write
-       pull-request: write
+    permissions:
+      contents: write
+      issue: write
+      pull-request: write
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -19,6 +15,6 @@ jobs:
           node-version: 16
       - run: yarn 
       - run: yarn build --if-present
-      - run : yarn semantic-release 
+      - run: yarn semantic-release 
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
