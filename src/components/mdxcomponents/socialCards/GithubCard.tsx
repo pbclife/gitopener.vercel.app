@@ -1,5 +1,5 @@
+import GithubIcon from '@/components/icons/socials/Github';
 import type { SocialCard } from '@/types/client/SocialCards';
-import GithubIcon from '@icons/Github';
 import type { FC } from 'react';
 import Card from '../Card';
 

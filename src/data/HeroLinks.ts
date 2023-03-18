@@ -1,5 +1,5 @@
+import GithubIcon from '@/components/icons/socials/Github';
 import ForkIcon from '@icons/Fork';
-import GithubIcon from '@icons/Github';
 
 const HeroLinks = [
   {

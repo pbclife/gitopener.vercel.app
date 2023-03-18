@@ -1,5 +1,5 @@
+import TwitterIcon from '@/components/icons/socials/Twitter';
 import type { SocialCard } from '@/types/client/SocialCards';
-import TwitterIcon from '@icons/Twitter';
 import type { FC } from 'react';
 import Card from '../Card';
 

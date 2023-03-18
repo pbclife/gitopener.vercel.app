@@ -14,7 +14,7 @@ const ProjectDetails: FC<ProjectDetailsProps> = ({ children }) => {
     <div className="text-skin-base">
       <div className="space-y-4">
         {tldr && <strong className="!text-accent">{tldr}</strong>}
-        <h1 className="mb-8 text-5xl font-extrabold tracking-tight sm:text-6xl">
+        <h1 className="mb-8 break-words text-5xl font-extrabold tracking-tight sm:text-6xl">
           {name}
         </h1>
         {content}

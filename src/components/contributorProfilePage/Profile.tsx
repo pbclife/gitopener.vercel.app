@@ -28,14 +28,13 @@ const Profile: FC<ProfileProps> = ({ meta, contributor }) => {
         {/* Name */} {/* occupation */}
         <h1>
           {meta.author}{' '}
-          <span className="text-base font-semibold text-skin-muted">
-            He | Him
-          </span>
+          {meta.pronouns && (
+            <span className="text-base font-semibold text-skin-muted">
+              {meta.pronouns}
+            </span>
+          )}
         </h1>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos
-          asperiores fuga molestiae autem esse velit.
-        </p>
+        <p>{contributor.bio ? contributor.bio : `${meta.author}'s bio`}</p>
         <div className="not-prose flex flex-wrap items-center gap-x-6 gap-y-2 text-skin-muted xs:prose">
           {/* location */}
           <div className="flex items-center gap-x-2">
