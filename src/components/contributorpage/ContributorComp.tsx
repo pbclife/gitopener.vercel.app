@@ -1,6 +1,6 @@
+import GithubIcon from '@/components/icons/socials/Github';
 import { getFormattedDate } from '@/lib/date';
 import type { TCont } from '@/types/server/Contributors';
-import GithubIcon from '@icons/Github';
 import Glow from '@utilities/Glow';
 import Image from 'next/image';
 import type { ComponentProps, FC } from 'react';

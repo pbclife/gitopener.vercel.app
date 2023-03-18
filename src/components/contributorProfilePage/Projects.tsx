@@ -48,6 +48,8 @@ const Projects: FC<ProjectsProps> = ({ children }) => {
                 className="aspect-video flex-auto rounded-xl bg-white text-skin-base"
                 src={activePtojectProps?.image}
                 alt={activePtojectProps?.name}
+                width={1280}
+                height={720}
               />
             ) : (
               // eslint-disable-next-line @next/next/no-img-element

@@ -1,5 +1,5 @@
+import LinkedInIcon from '@/components/icons/socials/LinkedIn';
 import type { SocialCard } from '@/types/client/SocialCards';
-import LinkedInIcon from '@icons/LinkedIn';
 import type { FC } from 'react';
 import Card from '../Card';
 

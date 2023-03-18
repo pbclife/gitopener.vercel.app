@@ -4,6 +4,9 @@
   .gradient-text {
     @apply bg-gradient-to-r from-sky-500 via-pink-600 to-fuchsia-600 bg-clip-text !text-transparent;
   }
+  .social-icon {
+    @apply h-6 w-6 sm:h-7 sm:w-7;
+  }
 }
 
 .bg-checkered {

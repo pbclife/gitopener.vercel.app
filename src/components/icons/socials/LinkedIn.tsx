@@ -2,7 +2,7 @@ import { ComponentProps } from 'react';
 
 type Props = ComponentProps<'svg'>;
 
-const TwitterIcon = (props: Props) => {
+const LinkedInIcon = (props: Props) => {
   return (
     <svg
       role="img"
@@ -17,4 +17,4 @@ const TwitterIcon = (props: Props) => {
   );
 };
 
-export default TwitterIcon;
+export default LinkedInIcon;
