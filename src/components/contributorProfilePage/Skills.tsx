@@ -10,7 +10,7 @@ const Skills: FC<SkillsProps> = ({ children, title, desc }) => {
   return (
     <>
       {title && (
-        <div className="prose mb-4 max-w-lg ">
+        <div className="prose my-4 mb-4 max-w-lg">
           <h3>{title}</h3>
           {desc && <p>{desc}</p>}
         </div>

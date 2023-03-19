@@ -27,7 +27,7 @@ export const getMdxContent = async (
         rehypePrism,
         rehypeSlug,
         ...rehypePlugins,
-        [rehypeAutolinkHeadings, { behavior: `wrap` }],
+        [rehypeAutolinkHeadings, { behavior: `wrap`, test: ['h1', 'h2'] }],
       ],
     },
   });
