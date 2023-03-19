@@ -125,7 +125,7 @@ function arrangeSocialLinks(
 
       if (tLink) {
         tLink.to = social[link] as string;
-        if (featuredLinks.length <= 2) featuredLinks.push(tLink);
+        if (featuredLinks.length < 3) featuredLinks.push(tLink);
         else otherLinks.push(tLink);
       }
       count++;
