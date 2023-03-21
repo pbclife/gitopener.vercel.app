@@ -16,7 +16,7 @@ const TextSection: FC = () => {
         <Dot />
         Student community
       </div>
-      <TypoComp className="prose-sm prose-h1:capitalize xs:prose-base">
+      <TypoComp className="prose-sm xs:prose-base prose-h1:capitalize">
         <h1>
           Great place to start <span className="text-accent">Open-Source</span>{' '}
           Journey. Contribute today
