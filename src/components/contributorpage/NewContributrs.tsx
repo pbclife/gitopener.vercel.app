@@ -11,7 +11,7 @@ type Props = {
 const NewContributrs: FC<Props> = ({ contributors }) => {
   return (
     <Represent
-      about="Lorem ipsum dolor sit amet consectetur adipisicing elit. In modi aliquid sapiente dicta ab accusamus id."
+      about="Meet our Fresh Contributors - a group of talented individuals who are new to our community/organization and are eager to make a meaningful contribution."
       mainTitle="Fresh Contributors"
       topTitle="Welcome"
       TopIcon={FresLeafIcon}
