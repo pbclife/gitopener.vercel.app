@@ -11,7 +11,7 @@ type Props = {
 const PopularContributrs: FC<Props> = ({ contributors }) => {
   return (
     <Represent
-      about="Lorem ipsum dolor sit amet consectetur adipisicing elit. In modi aliquid sapiente dicta ab accusamus id."
+      about="Say hello to our Popular Contributors - a group of talented and influential individuals who have made a significant impact on our community/organization. "
       mainTitle="Popular Contributors"
       topTitle="Star Men"
       TopIcon={StarManIcon}

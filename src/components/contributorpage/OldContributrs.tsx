@@ -11,7 +11,7 @@ type Props = {
 const OldContributrs: FC<Props> = ({ contributors }) => {
   return (
     <Represent
-      about="Lorem ipsum dolor sit amet consectetur adipisicing elit. In modi aliquid sapiente dicta ab accusamus id."
+      about="Introducing our Early Bird Contributors - a dedicated group of individuals who are always the first to arrive and get to work. "
       mainTitle="Our Early Birds"
       topTitle="Had Contributed First"
       TopIcon={EarlyBirdsIcon}
