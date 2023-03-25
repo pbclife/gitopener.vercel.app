@@ -3,8 +3,8 @@ import HeaderProvider from '@/context/HeaderContext';
 import ThemeProvider from '@/context/ThemeContext';
 import useProgressBar from '@/hooks/useProgressBar';
 import '@/styles/globals.css';
-import { Fira_Code, Inter } from '@next/font/google';
 import type { AppProps } from 'next/app';
+import { Fira_Code, Inter } from 'next/font/google';
 
 const inter = Inter({
   display: 'block',
