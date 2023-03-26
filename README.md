@@ -2,7 +2,7 @@
 
 [![Open in GitPod](https://img.shields.io/badge/Gitpod-Ready--to--Code-blue?logo=gitpod)](https://gitpod.io/#https://github.com/pbclife/gitopener.vercel.app)
 
-![landingPage](https://user-images.githubusercontent.com/95094057/gitopener.vercel.app/public/images/readme/landingPage.png)
+![landingPage](https://user-images.githubusercontent.com/71945723/227792530-993f74ab-7c78-4e46-a3f6-69de0af9c597.jpg)
 
 
 🚀 Start your Open Source Journey! Contribute Today! 🤝
@@ -26,22 +26,22 @@ Git Opener is a beginner friendly open source project. This project serves as a 
 
 Everything you need to know to contribute to open source can be found here, from creating an issue to opening a pull request. Basic terminology can be found here! 📚
 
-![guidesPage](https://user-images.githubusercontent.com/95094057/gitopener.vercel.app/public/images/readme/guidesPage.png)
+![guidesPage](https://user-images.githubusercontent.com/71945723/227792563-8ab9c59b-8187-4108-93cd-4157d97fe687.png)
 
 
 ## Become Contributor 👥
 
 Contributors are featured on the web app. 👨‍💻👩‍💻
 
-![contributorsPage](https://user-images.githubusercontent.com/95094057/gitopener.vercel.app/public/images/readme/contributorsPage.png)
+![contributorsPage](https://user-images.githubusercontent.com/71945723/227792580-531716bd-8404-4472-bb21-601d8ca62ce5.png)
 
 
 ## How it works 🛠️
 
 Based on your contribution file `your-github-username.mdx`, GitOpener will authenticate you.
 
-![profilePage-part1](https://user-images.githubusercontent.com/95094057/gitopener.vercel.app/public/images/readme/contributorsPage.png)  
-![profilePage-part2](https://user-images.githubusercontent.com/95094057/gitopener.vercel.app/public/images/readme/contributorsPage2.png)
+![profilePage](https://user-images.githubusercontent.com/71945723/227792597-05eb9130-3c99-4682-a1f1-8237a8c33efa.png)
+![profilePage2](https://user-images.githubusercontent.com/71945723/227792601-5764ceaa-c289-41f4-b126-3b1d44a6eac4.png)
 
 
 ## How to create your profile 📝
