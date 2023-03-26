@@ -2,12 +2,13 @@
 
 [![Open in GitPod](https://img.shields.io/badge/Gitpod-Ready--to--Code-blue?logo=gitpod)](https://gitpod.io/#https://github.com/pbclife/gitopener.vercel.app)
 
-![landingPage](https://user-images.githubusercontent.com/95094057/218668398-2e6bbe3c-c4d1-41c4-a1f3-184c94836ac4.png)
+![landingPage](https://user-images.githubusercontent.com/95094057/gitopener.vercel.app/public/images/readme/landingPage.png)
+
 
 🚀 Start your Open Source Journey! Contribute Today! 🤝
 
 ## Table of Contents
-- [What is GitOpener?](#what-is-gitopener-🤔)
+- [What is GitOpener?](#what-is-gitopener)
 - [Learn Contributing 📖](#learn-contributing-📖)
 - [Become Contributor 👥](#become-contributor-👥)
 - [How it works 🛠️](#how-it-works-🛠️)
@@ -17,7 +18,7 @@
   - [Contributing Guidelines 📜](#contributing-guidelines-📜)
 - [📝 License](#📝-license)
 
-## What is GitOpener? 🤔
+## What is GitOpener?
 
 Git Opener is a beginner friendly open source project. This project serves as a guide to open source, with step by step information on how you can contribute. If you want to see your code in action, you're in the right place! 💻
 
@@ -25,19 +26,23 @@ Git Opener is a beginner friendly open source project. This project serves as a 
 
 Everything you need to know to contribute to open source can be found here, from creating an issue to opening a pull request. Basic terminology can be found here! 📚
 
-![guidesPage](https://user-images.githubusercontent.com/95094057/218668538-6daab985-cba0-4c4f-8bdd-7671cab71745.png)
+![guidesPage](https://user-images.githubusercontent.com/95094057/gitopener.vercel.app/public/images/readme/guidesPage.png)
+
 
 ## Become Contributor 👥
 
 Contributors are featured on the web app. 👨‍💻👩‍💻
 
-![contributorsPage](https://user-images.githubusercontent.com/95094057/218668561-5c40bd8b-739b-411c-8edf-feb7fbfb18f8.png)
+![contributorsPage](https://user-images.githubusercontent.com/95094057/gitopener.vercel.app/public/images/readme/contributorsPage.png)
+
 
 ## How it works 🛠️
 
 Based on your contribution file `your-github-username.mdx`, GitOpener will authenticate you.
 
-![profilePage](https://user-images.githubusercontent.com/95094057/218668593-71b5646b-f973-461e-ac78-f12ec97be11f.png)
+![profilePage-part1](https://user-images.githubusercontent.com/95094057/gitopener.vercel.app/public/images/readme/contributorsPage.png)  
+![profilePage-part2](https://user-images.githubusercontent.com/95094057/gitopener.vercel.app/public/images/readme/contributorsPage2.png)
+
 
 ## How to create your profile 📝
 
