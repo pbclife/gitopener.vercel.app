@@ -6,6 +6,17 @@
 
 🚀 Start your Open Source Journey! Contribute Today! 🤝
 
+## Table of Contents
+- [What is GitOpener?](#what-is-gitopener-🤔)
+- [Learn Contributing 📖](#learn-contributing-📖)
+- [Become Contributor 👥](#become-contributor-👥)
+- [How it works 🛠️](#how-it-works-🛠️)
+- [How to create your profile 📝](#how-to-create-your-profile-📝)
+- [Contribution guide 🤝](#contribution-guide-🤝)
+  - [Installation 🚧](#installation-🚧)
+  - [Contributing Guidelines 📜](#contributing-guidelines-📜)
+- [📝 License](#📝-license)
+
 ## What is GitOpener? 🤔
 
 Git Opener is a beginner friendly open source project. This project serves as a guide to open source, with step by step information on how you can contribute. If you want to see your code in action, you're in the right place! 💻
@@ -138,7 +149,7 @@ The MIT license includes a disclaimer of liability, meaning that the project's c
 
 ## Your Support means a lot
 
-Give a ⭐ to the project if you liked it. :)
+Give a ⭐ to the project if you liked it. 😊
 
 [yarn-website]: https://classic.yarnpkg.com/lang/en/docs/install/#debian-stable
 [mongodb-docs]: https://www.mongodb.com/docs/compass/current/connect
