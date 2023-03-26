@@ -134,7 +134,6 @@ Never made an open source contribution before? And wondering how to contribute t
 
 Checkout the [Contributing.md][contributing] file before contributing. 📖
 
-<!-- ### Where can I go for help? --> 
 
 <!-- ### Where can I go for help? -->
 
