@@ -1,7 +1,6 @@
 import { faChevronUp } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { FC, useEffect, useState } from 'react';
-import styled from 'styled-components';
 
 const GoToTop: FC = () => {
   const [isVisible, setIsVisible] = useState(false)
@@ -25,46 +24,14 @@ const GoToTop: FC = () => {
   }, [])
 
   return (
-
-    <Wrapper>
+    <>
       {isVisible && (
-        <div className='top-btn' onClick={GoToBtn}>
+        <div className='top-btn fixed flex justify-center items-center text-2xl font-normal w-12 h-12 text-white bg-[#DC4A78] rounded-full bottom-12 right-20 z-[999] cursor-pointer md: bottom-4 right-4' onClick={GoToBtn}>
           <FontAwesomeIcon icon={faChevronUp} />
         </div>
-      )}
-    </Wrapper>
+      )};
+      </>
   );
 };
 
-const Wrapper = styled.section`
-display: flex;
-justify-content: center;
-align-items: center;
-
-.top-btn{
-  font-size: 1.5rem;
-  font-weight: bold;
-  width: 3rem;
-  height: 3rem;
-  color: #fff;
-  background-color: #DC4A78;
-  border-radius: 50%;
-  position: fixed;
-  bottom: 3rem;
-  right: 5rem;
-  z-index: 999;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-
-}
-
-@media screen and (max-width:750px) {
-  .top-btn{
-      bottom: 1rem;
-      right: 1rem;
-  }
-}
-`;
 export default GoToTop;
