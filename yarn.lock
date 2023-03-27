@@ -1772,9 +1772,9 @@ camelcase@^5.3.1:
   integrity sha512-L28STB170nwWS63UjtlEOE3dldQApaJXZkOI1uMFfzf3rRuPegHaHesyee+YxQ+W6SvRDQV6UrdOdRiR153wJg==
 
 caniuse-lite@^1.0.30001406, caniuse-lite@^1.0.30001449, caniuse-lite@^1.0.30001464:
-  version "1.0.30001469"
-  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001469.tgz#3dd505430c8522fdc9f94b4a19518e330f5c945a"
-  integrity sha512-Rcp7221ScNqQPP3W+lVOYDyjdR6dC+neEQCttoNr5bAyz54AboB4iwpnWgyi8P4YUsPybVzT4LgWiBbI3drL4g==
+  version "1.0.30001470"
+  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001470.tgz#09c8e87c711f75ff5d39804db2613dd593feeb10"
+  integrity sha512-065uNwY6QtHCBOExzbV6m236DDhYCCtPmQUCoQtwkVqzud8v5QPidoMr6CoMkC2nfp6nksjttqWQRRh75LqUmA==
 
 cardinal@^2.1.1:
   version "2.1.1"
@@ -4123,9 +4123,9 @@ just-diff-apply@^5.2.0:
   integrity sha512-OYTthRfSh55WOItVqwpefPtNt2VdKsq5AnAK6apdtR6yCH8pr0CmSr710J0Mf+WdQy7K/OzMy7K2MgAfdQURDw==
 
 just-diff@^6.0.0:
-  version "6.0.0"
-  resolved "https://registry.yarnpkg.com/just-diff/-/just-diff-6.0.0.tgz#77ebd7ee7fbb22f887dbe1dc376e5f781ea0c9c5"
-  integrity sha512-MbEkhMEa9p7bVD/U29cTM6zUHcLPWwSZjnSquOu++6GyKfoc3aGNdsp2uLQ3Zq0ocg60MzTxwB9qjqwgoQu3+g==
+  version "6.0.2"
+  resolved "https://registry.yarnpkg.com/just-diff/-/just-diff-6.0.2.tgz#03b65908543ac0521caf6d8eb85035f7d27ea285"
+  integrity sha512-S59eriX5u3/QhMNq3v/gm8Kd0w8OS6Tz2FS1NG4blv+z0MuQcBRJyFWjdovM0Rad4/P4aUPFtnkNjMjyMlMSYA==
 
 jwa@^1.4.1:
   version "1.4.1"
@@ -5377,9 +5377,9 @@ mute-stream@~1.0.0:
   integrity sha512-avsJQhyd+680gKXyG/sQc0nXaC6rBkPOfyHYcFb9+hdkqQkR9bdnkJ0AMZhke0oesPqIO+mFFJ+IdBc7mst4IA==
 
 nanoid@^3.3.4:
-  version "3.3.4"
-  resolved "https://registry.yarnpkg.com/nanoid/-/nanoid-3.3.4.tgz#730b67e3cd09e2deacf03c027c81c9d9dbc5e8ab"
-  integrity sha512-MqBkQh/OHTS2egovRtLk45wEyNXwF+cokD+1YPf9u5VfJiRdAiRwB2froX5Co9Rh20xs4siNPm8naNotSD6RBw==
+  version "3.3.6"
+  resolved "https://registry.yarnpkg.com/nanoid/-/nanoid-3.3.6.tgz#443380c856d6e9f9824267d960b4236ad583ea4c"
+  integrity sha512-BGcqMMJuToF7i1rt+2PWSNVnWIkGCU78jBG3RxO/bZlnZPK2Cmi2QaffxGO/2RvWi9sL+FAiRiXMgsyxQ1DIDA==
 
 napi-build-utils@^1.0.1:
   version "1.0.2"
