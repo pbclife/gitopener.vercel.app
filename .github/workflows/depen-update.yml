@@ -7,9 +7,16 @@ on:
 jobs:
   update-dependencies:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      issues: write      
+      pull-requests: write
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
+        with:
+         persist-credentials: false
+         fetch-depth: 0
 
       - name: Install Node.js and Yarn
         uses: actions/setup-node@v3
@@ -32,5 +39,6 @@ jobs:
       - name: Push changes
         uses: ad-m/github-push-action@master
         with:
+          token: ${{secrets.DEPENDENCY_SECRET}}
           github_token: ${{ secrets.GITHUB_TOKEN }}
           branch: ${{ github.ref }}
