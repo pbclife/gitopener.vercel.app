@@ -37,3 +37,7 @@ next-env.d.ts
 
 # trash
 .bin
+
+
+# templates
+/templates.mdx
