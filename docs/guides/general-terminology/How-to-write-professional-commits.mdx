@@ -4,19 +4,42 @@ title: How to write professional commits
 
 # How to write professional commits ?
 
-To write professional commits in GitHub, it's important to follow a few best practices:
+To write professional commits in GitHub, it's important to follow a few best practices.
+
+## The conventional way:
+
+` type` `scope ` : `description`
+
+- `type` : Commit Type like build, ci, docs, feat, fix etc. This field is mandatory.
+
+- `scope` : Phrase describing a section of the codebase. This field is optional.
+
+- `description` : description should be in the present tense. Not capitalized. No period in the end. Each description consists of a Title, Body and Footer. The Title and Body are mandatory if the description is large enough. The footer is optional.
+
+#### The command :
+
+git commit -m "`type_of_commit(optional scope)`: `description_title/description`" -m "`description body(optional)`" -m "`description footer(optional)`"
+
+#### The Example:
+
+git commit -m "`docs(guides)`: `change in how to write professional commit`" -m "`fix spelling mistake, add example`" -m "`fixes issue #120`"
+
+## Rules & Specification:
 
 - Write clear, concise commit messages that describe the changes you've made.
-- Use imperative verbs in your commit messages to describe what the change does.
-- Break up large changes into smaller commits that are easier to review.
 - Use a consistent style for your commits, such as starting with a verb and using the present tense.
+- All words should be lowercase.
+- No dot (.) at the end of the description.
+- Use imperative verbs in your commit messages to describe what the change does.
+- Break up large changes into smaller commits to review.
+- The footer should contain additional issue references about the code changes.
 
-# Here are some examples of good commit messages:
+## Type of Commits:
 
 - `feat`: Introduces a new feature or functionality.
 - `fix`: Fixes a bug or error in the codebase.
-- `chore`: Performs changes that do not relate to a fix or feature, such as updating dependencies, build configurations, and so on.
-- `refactor`: Performs changes to the code that neither fix a bug nor add a feature, such as improving code readability or restructuring code.
+- `chore`: Performs changes that do not relate to a fix or feature, such as updating dependencies, building configurations, and so on.
+- `refactor`: Performs changes to the code that neither fixes a bug nor add a feature, such as improving code readability or restructuring code.
 - `docs`: Performs updates to the documentation, such as README files, inline comments, or other markdown files.
 - `style`: Performs changes that do not affect the code's meaning, such as code formatting, whitespace, or styling.
 - `test`: Includes new tests or correcting previous tests to ensure code quality.
@@ -24,3 +47,27 @@ To write professional commits in GitHub, it's important to follow a few best pra
 - `ci`: Performs changes related to the continuous integration or delivery process.
 - `build`: Performs changes that affect the build system, external dependencies, or deployment scripts.
 - `revert`: Reverts a previous commit due to errors or issues that arose.
+
+## Some examples of good commit messages:
+
+1.  #### Commit message with no body or footer
+
+    docs: correct spelling in README.md file
+
+2.  #### Commit message with a body
+
+    feat: change color on hover
+
+    add color change in background while hover
+
+3.  #### Commit message with a body and footer
+
+    fix: solve the scroll issue
+
+    see the issue for details
+
+    fixes issue #85
+
+4.  #### Commit message with scope
+
+    docs(guide/migration): fix spelling mistake
