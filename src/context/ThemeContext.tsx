@@ -26,6 +26,7 @@ const ThemeContext = createContext<ThemeStateType>({
 type ThemeProps = ComponentProps<'div'>;
 
 const ThemeProvider: FC<ThemeProps> = ({ children, className, ...props }) => {
+  const [loading, setLoading] = useState<boolean>(true);
   const [isDark, setIsDark] = useState<boolean>(false);
   const [isThemeChanged, setIsThemeChanged] = useState<number>(0);
   const [mode, setMode] = useState<Mode>(`light`);
@@ -43,10 +44,12 @@ const ThemeProvider: FC<ThemeProps> = ({ children, className, ...props }) => {
       setIsDark(false);
     }
   }
+
   useEffect(() => {
     const darkModeMediaQuery = window.matchMedia(
       '(prefers-color-scheme: dark)'
     );
+
     const isTokenFound = window.localStorage.getItem('prefers-theme');
     if (isTokenFound) {
       if (isTokenFound === 'dark') {
@@ -64,8 +67,10 @@ const ThemeProvider: FC<ThemeProps> = ({ children, className, ...props }) => {
         setMode('light');
         setIsDark(false);
       }
+
       darkModeMediaQuery.addEventListener('change', mediaQueryListener);
     }
+    setLoading(false);
     return () =>
       darkModeMediaQuery.removeEventListener('change', mediaQueryListener);
 
@@ -79,9 +84,11 @@ const ThemeProvider: FC<ThemeProps> = ({ children, className, ...props }) => {
   };
   return (
     <ThemeContext.Provider value={value}>
-      <div className={`${mode} ${className || ``}`} {...props}>
-        {children}
-      </div>
+      {!loading && (
+        <div className={`${mode} ${className || ``}`} {...props}>
+          {children}
+        </div>
+      )}
     </ThemeContext.Provider>
   );
 };

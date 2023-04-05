@@ -6,7 +6,7 @@ import {
 import connectDB from '@/server/db/connectDB';
 import { NextApiHandler } from 'next';
 
-// end-point: origin/api/v1/contributors
+// end-point: origin/api/v1/contributors/:contId
 const handler: NextApiHandler = async (req, res) => {
   const { method } = req;
   if (method === ('GET' as 'GET')) {

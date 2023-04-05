@@ -3,6 +3,7 @@ import errorHandler from '&/middlewares/errorHandler';
 import Contributor from '&/models/contributors';
 import { assertIsString } from '&/validator/assertionGuards';
 import ContV from '&validation/contributor.validation';
+import octokit from '@/server/config/octokit';
 import type { TContributor } from '@/types/server/Contributors';
 import type { NextApiHandler } from 'next';
 
@@ -102,6 +103,10 @@ export const updateContributor: NextApiHandler = errorHandler(
       'email',
       'profile_views',
       'location',
+      'followers',
+      'following',
+      'html_url',
+      'name',
     ]);
     const findContributor = await Contributor.findOne({
       gh_username: contId,
@@ -130,3 +135,27 @@ export const deleteContributor: NextApiHandler = errorHandler(
     res.status(200).json({ message: `Contributor deleted` });
   }
 );
+
+export const syncWithGithub: NextApiHandler = errorHandler(async (req, res) => {
+  const { contId } = req.query;
+
+  assertIsString(contId, `Route does not exist`);
+  const contributor = await Contributor.findOne({ gh_username: contId });
+  if (!contributor) {
+    throw new ERR.Not_Found(`Contributor ${contId} has not contributed yet`);
+  }
+  const { data: ghUser } = await octokit.request('GET /users/{username}', {
+    username: contId,
+  });
+
+  contributor.html_url = ghUser.html_url;
+  contributor.name = ghUser.name as string;
+  contributor.bio = ghUser.bio;
+  contributor.email = ghUser.email;
+  contributor.location = ghUser.location;
+  contributor.followers = ghUser.followers;
+  contributor.following = ghUser.following;
+
+  const mContributor = await contributor.save();
+  res.status(200).json(mContributor);
+});
