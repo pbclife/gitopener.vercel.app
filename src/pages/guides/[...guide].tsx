@@ -4,6 +4,7 @@ import TypoComp from '@/components/utilities/TypoComponent';
 import { useDocumentationContext } from '@/context/DocumentationContext';
 import Container from '@/layouts/Container';
 import DocumentationLayout from '@/layouts/DocumentationLayout';
+import { getAllGuides } from '@/lib/guides';
 import {
   getContentsFromSlug,
   getDocumentsMenu,
@@ -45,7 +46,6 @@ export default Guides;
 
 export const getStaticPaths: GetStaticPaths<{ guide: string[] }> = async () => {
   const paths = await getGuidePaths();
-
   return {
     paths,
     fallback: false,
@@ -55,11 +55,15 @@ export const getStaticPaths: GetStaticPaths<{ guide: string[] }> = async () => {
 export const getStaticProps: GetStaticProps<DocsProps> = async ({ params }) => {
   try {
     const menu = await getDocumentsMenu();
+    const guides = await getAllGuides('docs/guides');
 
     const { guide } = params as { guide: string[] };
     const activeLink = guide.join('/');
-    const { meta, source } = await getContentsFromSlug(activeLink);
 
+    const filePath = guides.find((g) => g.href === activeLink)?.filePath;
+    if (!filePath) throw new Error('File path not found');
+
+    const { meta, source } = await getContentsFromSlug(filePath);
     return {
       props: {
         meta,
@@ -69,6 +73,8 @@ export const getStaticProps: GetStaticProps<DocsProps> = async ({ params }) => {
       },
     };
   } catch (error) {
+    console.log(error);
+
     return {
       notFound: true,
     };
