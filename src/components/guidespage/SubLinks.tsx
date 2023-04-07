@@ -43,12 +43,16 @@ const SubLinks: FC<SubLinksProps> = ({ fileList, onLinkClick }) => {
               <button
                 type="button"
                 onClick={() => handleClick(file.link)}
-                className="capitalize outline-none"
+                className="h-fit w-full text-start capitalize outline-none"
               >
                 {beautify(file.name)}
               </button>
             ) : (
-              <Link href={file.link} onClick={() => handleClick(file.link)}>
+              <Link
+                href={file.link}
+                onClick={() => handleClick(file.link)}
+                className="h-fit w-fit text-start"
+              >
                 {beautify(file.name)}
               </Link>
             )}
