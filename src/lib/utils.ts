@@ -22,6 +22,10 @@ export const getFilesOfDir = async (dirName: string, rem = dirName) => {
   return files;
 };
 
+export const removePriorityBit = (fileName: string) => {
+  return fileName.substring(fileName.indexOf('.') + 1, fileName.length);
+};
+
 export const removeExtension = (path: string) => {
   return path.substring(0, path.lastIndexOf('.'));
 };
@@ -51,8 +55,8 @@ export const prepareMeta: PrepareMeta = (data, slug) => {
     fileName = beautify(slugArr[slugArr.length - 1]);
   }
   const meta: ReturnType<PrepareMeta> = {
-    dirName,
-    fileName,
+    dirName: removePriorityBit(dirName),
+    fileName: removePriorityBit(fileName),
     title: data?.title || ``,
     description: data?.description || ``,
     author: data?.author || ``,

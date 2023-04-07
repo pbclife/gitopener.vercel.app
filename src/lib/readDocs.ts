@@ -1,10 +1,5 @@
 import { getMdxContent } from '@/lib/mdx/getMdxContent';
-import {
-  getFilesHasExtension,
-  getFilesOfDir,
-  prepareMeta,
-  removeExtension,
-} from '@/lib/utils';
+import { prepareMeta, removePriorityBit } from '@/lib/utils';
 import type {
   FolderStructure,
   GetContentsFromSlug,
@@ -23,6 +18,7 @@ import remarkGfm from 'remark-gfm';
 import remarkHtml from 'remark-html';
 import remarkParse from 'remark-parse';
 import { unified } from 'unified';
+import { getPriorityWiseGuides } from './guides/getPriorityWiseGuides';
 import withStyledLi from './mdx/rehype/withStyledLi';
 
 type TSuppordedFile = 'heading' | 'installation' | 'tech-stack';
@@ -68,20 +64,14 @@ export const getProcessedHtml: GetProcessedHtml<TFileContent> = async (
 
 // Get all catch-all paths
 export const getGuidePaths: GetGuidePaths<{ guide: string[] }> = async () => {
-  const files = await getFilesOfDir(guideDirPath);
-  const mdxFiles = getFilesHasExtension(files, 'mdx', 'md');
-  const justFileNames = mdxFiles.map((file) => removeExtension(file));
-  const paramsArr = justFileNames.map((file) => {
-    return file.split('/').filter((dir) => dir !== '');
-  });
-  const paths = paramsArr.map((path) => {
+  const slugsWithPriority = await getPriorityWiseGuides(guideDirPath);
+  return slugsWithPriority.map((slugWithPriority) => {
     return {
       params: {
-        guide: path,
+        guide: slugWithPriority.map((s) => s.slug),
       },
     };
   });
-  return paths;
 };
 
 // Get contents from slug
@@ -110,7 +100,7 @@ export const getDocumentsMenu: GetDocumentsMenu = async () => {
 
   for (const dir of dirs) {
     if (!dir.isDirectory()) {
-      const fileName = dir.name.replace(regX, '');
+      const fileName = removePriorityBit(dir.name.replace(regX, ''));
       menu[fileName] = [];
       menu[fileName].push({
         name: fileName,
@@ -120,12 +110,12 @@ export const getDocumentsMenu: GetDocumentsMenu = async () => {
     }
     const fileNames = await fs.readdir(path.join(guideDirPath, dir.name));
     const fileNamesWithoutExt = fileNames.map((fileName) =>
-      fileName.replace(regX, '')
+      removePriorityBit(fileName.replace(regX, ''))
     );
-    menu[dir.name] = fileNamesWithoutExt.map((fileName) => {
+    menu[removePriorityBit(dir.name)] = fileNamesWithoutExt.map((fileName) => {
       return {
         name: fileName,
-        link: `/guides/${dir.name}/${fileName}`,
+        link: `/guides/${removePriorityBit(dir.name)}/${fileName}`,
       };
     });
   }
