@@ -1,26 +1,6 @@
 import { Contribution } from '@/types/client/Contributors';
 import { PrepareMeta } from '@/types/client/FileSystem';
 import beautify from '@/utils/beautify';
-import { promises as fs } from 'fs';
-
-export const getFilesOfDir = async (dirName: string, rem = dirName) => {
-  let files: string[] = [];
-  const items = await fs.readdir(dirName, { withFileTypes: true });
-
-  for (const item of items) {
-    if (item.isDirectory()) {
-      files = [
-        ...files,
-        ...(await getFilesOfDir(`${dirName}/${item.name}`, dirName)),
-      ];
-    } else {
-      const path = `${dirName}/${item.name}`;
-      files.push(path.replace(rem, ''));
-    }
-  }
-
-  return files;
-};
 
 export const removePriorityBit = (fileName: string) => {
   return fileName.substring(fileName.indexOf('.') + 1, fileName.length);

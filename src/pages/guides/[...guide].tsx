@@ -4,12 +4,8 @@ import TypoComp from '@/components/utilities/TypoComponent';
 import { useDocumentationContext } from '@/context/DocumentationContext';
 import Container from '@/layouts/Container';
 import DocumentationLayout from '@/layouts/DocumentationLayout';
-import { getAllGuides } from '@/lib/guides';
-import {
-  getContentsFromSlug,
-  getDocumentsMenu,
-  getGuidePaths,
-} from '@/lib/readDocs';
+import { getAllGuides, getDocumentsMenu } from '@/lib/guides';
+import { getContentsFromSlug, getGuidePaths } from '@/lib/readDocs';
 import type { FolderStructure, Post } from '@/types/client/FileSystem';
 import type { GetStaticPaths, GetStaticProps, NextPage } from 'next';
 import { MDXRemote } from 'next-mdx-remote';

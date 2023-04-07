@@ -1,7 +1,6 @@
+import { getFilecontents, getPriorityWiseGuides } from '@/lib/guides';
 import { GetAllGuides, TGuideFile } from '@/types/client/guides';
 import path from 'path';
-import { getFilecontents } from './getFileContents';
-import { getPriorityWiseGuides } from './getPriorityWiseGuides';
 
 export const getAllGuides: GetAllGuides = async (dirPath) => {
   const targetPath = path.join(process.cwd(), dirPath);
@@ -24,7 +23,7 @@ export const getAllGuides: GetAllGuides = async (dirPath) => {
       filePath: `${slugPath}`,
       priority: prorityHierarchy,
       title: meta?.title || 'Title',
-      tldr: meta?.tldr || 'TlDr',
+      tldr: meta?.tldr,
     };
     guides.push(cred);
   }

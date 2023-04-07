@@ -1,9 +1,7 @@
 import { getMdxContent } from '@/lib/mdx/getMdxContent';
-import { prepareMeta, removePriorityBit } from '@/lib/utils';
+import { prepareMeta } from '@/lib/utils';
 import type {
-  FolderStructure,
   GetContentsFromSlug,
-  GetDocumentsMenu,
   GetFileContents,
   GetGuidePaths,
   GetProcessedHtml,
@@ -89,36 +87,4 @@ export const getContentsFromSlug: GetContentsFromSlug = async (slug) => {
     meta,
     source,
   };
-};
-
-// Get all Document paths as a Menu
-export const getDocumentsMenu: GetDocumentsMenu = async () => {
-  const dirs = await fs.readdir(guideDirPath, { withFileTypes: true });
-
-  const menu: FolderStructure = {};
-  const regX = /\.mdx|\.md$/;
-
-  for (const dir of dirs) {
-    if (!dir.isDirectory()) {
-      const fileName = removePriorityBit(dir.name.replace(regX, ''));
-      menu[fileName] = [];
-      menu[fileName].push({
-        name: fileName,
-        link: `/guides/${fileName}`,
-      });
-      continue;
-    }
-    const fileNames = await fs.readdir(path.join(guideDirPath, dir.name));
-    const fileNamesWithoutExt = fileNames.map((fileName) =>
-      removePriorityBit(fileName.replace(regX, ''))
-    );
-    menu[removePriorityBit(dir.name)] = fileNamesWithoutExt.map((fileName) => {
-      return {
-        name: fileName,
-        link: `/guides/${removePriorityBit(dir.name)}/${fileName}`,
-      };
-    });
-  }
-
-  return menu;
 };
