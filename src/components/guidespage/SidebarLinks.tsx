@@ -15,10 +15,7 @@ const SidebarLinks: FC<SidebarLinksProps> = ({
   ...props
 }) => {
   // additional functionalities
-  const folders = [
-    'starting-contribution',
-    ...Object.keys(data).filter((dir) => dir !== 'starting-contribution'),
-  ];
+  const folders = [...Object.keys(data)];
 
   // JSX
   return (
