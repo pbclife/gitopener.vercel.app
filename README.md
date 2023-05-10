@@ -1,6 +1,12 @@
 # GitOpener 🚪🔓
 
 [![Open in GitPod](https://img.shields.io/badge/Gitpod-Ready--to--Code-blue?logo=gitpod)](https://gitpod.io/#https://github.com/pbclife/gitopener.vercel.app)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/pbclife/gitopener.vercel.app/blob/main/LICENSE)
+[![Contributors][contributors-shield]][contributors-url]
+[![Forks][forks-shield]][forks-url]
+[![Stargazers][stars-shield]][stars-url]
+[![Issues][issues-shield]][issues-url]
+![pr-shield]
 
 ![landingPage](https://user-images.githubusercontent.com/71945723/227792530-993f74ab-7c78-4e46-a3f6-69de0af9c597.jpg)
 
